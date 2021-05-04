@@ -1,0 +1,331 @@
+/* Reset estilos navegador. */
+*{
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	text-decoration: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	min-height: 100%;
+	position: relative;
+}
+
+body{
+	font-family: arial;
+	font-size: 14px;
+	color: #1c1e21;
+	font-weight: normal;
+	background: #f0f2f5; 
+}
+
+/* Barra lateral del cuerpo de página. */
+body::-webkit-scrollbar{
+    width: 8px;
+    background: rgba(255, 111, 0, 0.699);
+}
+body::-webkit-scrollbar-thumb{
+    width: 8px;
+    background: rgba(52, 189, 220, 0.918);
+	border-radius: 5px;
+    max-height: 5px;
+}
+
+
+/* main{
+	//margin-bottom: 20px; 
+} */
+
+
+/*contenedor principal */
+.login_signup{
+	padding: 50px;
+}
+
+/* Contenedor secundario */
+.container{
+	max-width: 992px;
+	margin: 50px auto;
+}
+
+/* contenedores que abarcan derecha e izquierda */
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.justify-content-between{
+	justify-content: space-between;
+}
+
+/* Contenedor izquierdo, nombre e imagen dparking. */
+.content-left{
+	max-width: 500px;
+	margin: -10px auto;
+	margin-left: -100px;
+	margin-right: 100px; 
+}
+/* Estilos títulos. */
+.content-left h1{
+	font-size: 70px;
+	color: #ff6f00da;
+    /* color: #f3870b; */
+	margin-bottom: 0px;
+	font-weight: 300;
+	font-family: 'Lobster', cursive;
+}
+
+.content-left h2{
+	font-size: 70px;
+	color: #34BCDC;
+    /* color: #0bb1f3; */
+    font-weight: 300;
+	padding-left: 80px;
+	margin-bottom: 30px;
+	font-family: 'Lobster', cursive;
+}
+
+/* Estilos logo dparking */
+.container__logo_principal{
+	width: 500px;
+}
+
+/* Estilos contenedor derecho, formulario inicio de sesión. */
+.content-right{
+	max-width: 450px;
+	margin: auto;
+	margin-left: 40px;
+	text-align: center;
+}
+/* 
+	X============================================X
+		 Estilos css para el formulario de login 
+	X============================================X
+*/
+
+/* Estilos formulario */
+.content-right .formulario{
+	width: 400px;
+	height: 310px;
+	background: #fff;
+	border-radius: 5px;
+	padding: 15px;
+	-webkit-box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
+	-moz-box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
+	box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
+	margin-bottom: 30px;
+}
+
+
+
+/* Contenedor del formulario. */
+.contenedorform{
+	width: 100%;
+	padding: 0px;
+	padding-top: 15px;
+  
+}
+
+
+/* Contenedor de input */
+.input-contenedor{
+	margin-bottom: 15px;
+	border: 2px solid  #a1a4a586;
+	border-radius: 5px;
+}
+
+.input-contenedor:hover{
+border: 2px solid#f3870bb6;
+}
+
+/* Input de login en el index. */
+.input_index{
+	font-size: 20px;
+	width: 82%;
+	padding: 10px;
+	border: none;
+}
+
+/* Estilos de los íconos de input-login */
+
+.icon_login{
+	min-width: 50px;
+	text-align: center;
+	color: #999;
+}
+
+/* Botón iniciar sesión. */
+.button-index{
+	border: none;
+	width: 100%;
+	color: white;
+	font-size: 20px;
+	background: #f3870b;
+	padding: 15px 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	
+}
+  
+.button-index:hover{
+	background: #f3ae53;
+}
+  
+/* p{
+	text-align: center;
+} */
+
+/* Estilos 'recuperar contraseña' */
+.forgot{
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.forgot a{
+    
+	font-size: 14px;
+	line-height: 19px;
+	color:#1877f2;
+}
+
+.forgot a:hover,
+.contenedorform p a:hover{
+	text-decoration: underline;
+	color: #f3ae53;
+}
+/* Línea de formulario login */
+.line{
+    width: 100%;
+    max-width: 200%;
+    margin: 0 auto;
+    height: 1px;
+    background: rgba(20, 20, 20, 0.2);
+    margin-bottom: 10px;
+}
+
+/* Estilos crear nueva cuenta. */
+.new_account{
+    padding-top: 5px;
+    font-size: 115%;
+	color: #1c1e21;
+    text-align: center;
+}
+
+.new_account .link{
+	text-decoration: none;
+	color: #f3870b;
+	font-weight: 600;
+}
+
+.new_account .link:hover{
+	color: #f3ae53;
+}
+
+/* Estilos terminos y condiciones. */
+.tyc{
+    font-weight: 600;
+}
+
+/* Estilos pie de página */
+.footer_index{
+    background-color: #fff;
+	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+	height: 20%;
+}
+
+.footer_index p{
+    padding-top: 20px;
+    color: rgba(20, 20, 20, 0.5);
+    text-align: center;
+
+}
+
+@media(min-width: 768px){
+	.formulario{
+	  margin: auto;
+	  width: 500px;
+	  margin-top: 100px;
+	  border-radius: 2%;
+	  margin-bottom: 30px;
+	}
+  }
+  
+@media screen and (max-width:1200px){
+	.content-left{
+		margin: -10px auto;
+	}
+	.content-right{
+		margin: auto;
+	}
+
+	.formulario{
+	  margin: auto;
+	  width: 400px;
+	  margin-top: 100px;
+	  border-radius: 2%;
+	  
+	}
+  
+	.controls{
+	  font-size: 18px;
+	  width: 80%;
+	  padding: 5px;
+	  border: none;
+	  background: none;
+	}
+
+	.container__logo_principal{
+		width: 400px;
+	}
+
+	.footer_index{
+		height: 10%;
+	}
+
+	.content-left h1, .content-left h2{
+		font-size: 65px;
+	}
+  }
+  @media screen and (max-width:950px){
+	.content-left h1, .content-left h2{
+		font-size: 60px;
+	}
+
+	.container__logo_principal{
+		width: 300px;
+	}
+
+
+  }
+  @media screen and (max-width:700px){
+	.formulario{
+	  margin: auto;
+	  width: 350px;
+	  margin-top: 100px;
+	  border-radius: 2%;
+	}
+
+	.container__logo_principal{
+		width: 250px;
+	}
+
+	.footer_index{
+		height: 10%;
+	}
+
+	.content-left h1, .content-left h2{
+		font-size: 40px;
+	}
+
+	/* Estilos notificacion contraseña/documento incompleto */
+	#dato_faltante{
+		margin-top:30px;
+	}
+  } 
+   

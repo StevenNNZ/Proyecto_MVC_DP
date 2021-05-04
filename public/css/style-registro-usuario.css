@@ -1,0 +1,253 @@
+/* mostrar formulario de login */
+.registro_usuario-contenedor{
+  position: fixed;
+  background: rgba(78, 77, 77, 0.753);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(100%);
+  transition: transform .4s ease-in-out;
+  z-index: 100;
+  margin: 0 auto;
+}
+
+.show_login{
+  transform: translate(0)
+}
+
+/* Boton de cerrar login */
+.close_login{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  cursor: pointer;
+}
+
+/* Contenedor principal */
+.contenedor_usuario-principal{
+  padding: 50px;
+  max-width: 992px;
+  margin: 0 auto;
+  /* justify-content: space-between; */
+  font-family: 'Noto Sans JP';
+}
+
+/* Contenedor del form */
+.content-form_usuario{
+  width: 800px;
+  position: relative;
+  margin: -400px auto;
+}
+
+/* Estilos contenedor título. */
+.tittle{
+  text-align: center;
+}
+
+/* Estilos del título */
+.tittle .tittle1{
+display: inline-flex;
+font-size: 40px;
+color: #f3870b;
+margin-bottom: 0px;
+font-weight: 700;
+}
+
+.tittle .tittle2{
+display: inline-flex;
+font-size: 40px;
+color: #0bb1f3;
+margin-bottom: 0px;
+font-weight: 700;
+}
+
+/* Estilos contenedor subtítulos. */
+.sub{
+  font-style: italic;
+  text-align: center;
+  font-weight: 300;
+}
+/* Estilos de los subtítulos */
+.sub-1{
+display: inline-flex;
+font-size: 20px;
+color:  #0bb1f3;
+margin-bottom: 0px;
+}
+
+.sub-2{
+display: inline-flex;
+font-size: 20px;
+color: #f3870b;
+margin-bottom: 0px;
+}
+
+/* Estilos formulario_registro_usuario */
+.formulario_registro_usuario{
+  margin: 5% auto;
+  width: 800px;
+  height: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  -webkit-box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
+  -moz-box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
+  box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
+  margin-bottom: 30px;
+}
+
+/* Estilos de input */
+.input_registro{
+font-size: 15px;
+width: 82%;
+padding: 10px;
+border: none;
+font-family: 'Noto Sans JP', sans-serif;
+}
+
+.contenido-user .content-nombres_usuario{
+display: inline-block;
+width: 370px;
+}
+#nombres_usuario{
+width: 60%;
+text-transform:capitalize;
+}
+.input_registro:hover{
+  background: rgba(185, 187, 187, 0.080);
+}
+
+
+/*Estilos select*/
+
+.controls_registro{
+font-size: 15px;
+width: 85%;
+padding: 5px;
+border: none;
+background: none;
+color: #828385;
+font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+/* Estilos fieldset */
+.fieldset-user{
+margin-bottom: 15px;
+padding: 10px;
+border: 2px solid #14569983;
+border-radius: 10px;
+/* height: 70px; */
+} 
+
+
+
+.legend-principal{
+  font-size: 20px;
+  font-weight: 500;
+  color: #042342;
+}
+
+/* Estilos fieldset secundario */
+.second{
+  border: 1px solid #6a6d7083;
+  font-size: 14px;
+}
+
+/* Estilos contenedores de los input */
+.input_registro-contenedor{
+  margin-bottom: 15px;
+  border: 2px solid  #a1a4a586;
+  border-radius: 5px;
+}
+
+.input_registro-contenedor:hover{
+  border: 2px solid#f3870b62;
+  background: rgba(185, 187, 187, 0.2);
+}
+
+/* Estilos íconos formularios */
+.icon-form{
+min-width: 50px;
+font-size: 18px;
+text-align: center;
+color: #999;
+}
+
+/* Estilos contenedor de botones */
+.button_registro-contenedor{
+  text-align: center;
+}
+/* Estilos botones */
+
+.button_registro{
+  display: inline-block;
+border: none;
+width: 20%;
+color: white;
+font-size: 17px;
+background: #0bb1f3;
+padding: 10px 15px;
+border-radius: 10px;
+cursor: pointer;
+transition: 0.7s;
+}
+
+/* Botón reset */
+.reset{
+background: #f3870b;
+}
+
+.button_registro:hover{
+background: #0bb1f38f;
+}
+
+.reset:hover{
+background: #f3ae53;
+}
+
+
+/* Boton de cerrar login */
+ .close_registro_usuario{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  cursor: pointer;
+}  
+
+
+@media screen and (max-width:1200px){
+	.formulario_registro_usuario{
+    width: 600px;
+  }
+  .contenido-user .content-nombres_usuario{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:700px){
+  .formulario_registro_usuario{
+    width: 400px;
+  }
+
+  #cargo_usuario{
+    width: 78%;
+  }
+  .button_registro{
+    font-size: 15px;
+    width: 80px;
+  }
+
+} 
+
+@media screen and(max-height:700px){
+  body{
+    background-color: #042342;
+  }
+}

@@ -1,0 +1,477 @@
+/* Reset de estilos. */
+*{
+	margin: 0;
+	outline: 0;
+	text-decoration: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Estilos DOM */
+html {
+	min-height: 100%;
+	position: relative;
+}
+
+/* Estilos cuerpo página */
+body{
+    font-family: 'Open Sans', sans-serif, arial;
+    background-color: rgba(234, 243, 243, 0.884);
+	overflow-x: hidden;
+}
+
+
+/* 
+		===================ººº========================
+		| 			Estilos de la cabecera  		  |
+		===================ººº========================
+*/
+
+/* Estilos del header. */
+.header-dashboard__nav{
+	background-image: linear-gradient(to right, #1992b1 0%, #f38a00 100%);
+    height: 90px;
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    border-bottom: 2px solid #fff;
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.521);
+}
+
+/* ---------->  Estilos de títulos  <----------- */
+
+/* Título1 =  Digital */
+.header-dashboard__label--principal{
+	color: #ff6f00;
+    font-size: 30px;
+	font-weight: 300;
+    font-weight: bold;
+	font-family: 'Lobster', cursive;
+}
+/* Título2 = Parking  */
+.principal--sub{
+	font-weight: 300;
+	font-size: 30px;
+	font-weight: 300;
+	padding-left: 35px;
+	color: #00ccfa;
+	font-family: 'Lobster', cursive;
+}
+
+/* Estilos logotipo dparking */
+.header-dashboard__label--img{
+width: 100px;
+position: absolute;
+margin-top: -4%;
+margin-left: 5.2%;
+}
+
+/*   --------->  ESTILOS DATOS DE USUARIOS <------ */
+
+/* Estilos label datos de usuarios */
+.label__datos_usuario{
+	text-align: center;
+    color: #fff;
+}
+/* Estilos de rol usuario */
+.header-dashboard__label{
+	display: inline-block;
+	width: 180px;
+    font-size: 23px;
+    text-transform: uppercase;
+    color: #fff;
+	font-weight: 600;
+}
+
+
+/* Estilos bienvenida %nombre_usuario% */
+.header-dashboard__label-sub{
+	display: inline-block;
+	max-width: 200px;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	white-space: nowrap;
+}
+
+/* Estilos fecha de ingreso */
+.header-dashboard__label-sub2{
+	font-size: 11px;
+	font-weight: 400;
+	white-space: nowrap;
+}
+
+
+/* Estilos ícono usuario */
+.icon{
+	position: absolute;
+	margin-top: .5%;
+	margin-left: -6%;
+	font-size: 55px;
+}
+
+/* Estilos botones home, configuración y cierre de sesión */
+.header-dashboard__label--links .config, .log_out, .home-header{
+	font-size: 35px;
+    color: #fff;
+    text-transform: uppercase;
+	padding-right: 20px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Estilos main por clases */
+main{
+    padding-bottom: 62px;
+}
+
+.main_consulta_clientes{
+	padding-bottom: 105px;
+}
+.main-vehiculo{
+	padding-bottom: 0;
+}
+
+.main-estacionamiento{
+	padding-bottom: 20.5px;
+}
+
+.main-tarifa{
+    padding-bottom: 111px;
+
+}
+
+.main_tickets{
+	padding-bottom: 165px;
+}
+
+.main-actualizar-tarifa{
+    padding-bottom: 84.5px;
+
+}
+
+.main-estacionamiento_consultar{
+    padding-bottom: 130.5px;
+
+}
+
+.main-estado_estacionamiento{
+    padding-bottom: 83px;
+}
+
+.main_usuarios{
+	padding-bottom: 83px;
+}
+
+.contenedor-principal{
+	padding: 50px;
+}
+
+.container{
+	max-width: 992px;
+	margin: auto;
+} 
+
+.justify-content-between{
+	justify-content: space-between;
+}
+
+.content-form{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tittle{
+	text-align: center;
+}
+
+.tittle1{
+	display: inline-flex;
+	font-size: 40px;
+	color: #f3870b;
+	margin-bottom: 0px;
+	font-weight: 700;
+}
+
+.tittle2{
+	display: inline-flex;
+	font-size: 40px;
+	color: #0bb1f3;
+	margin-bottom: 0px;
+	font-weight: 700;
+}
+
+.sub{
+	font-style: italic;
+	text-align: center;
+	font-weight: 300;
+
+}
+.sub-1{
+	display: inline-flex;
+	font-size: 20px;
+	color:  #0bb1f3;
+	margin-bottom: 0px;
+}
+
+.sub-2{
+	display: inline-flex;
+	font-size: 20px;
+	color: #f3870b;
+	margin-bottom: 0px;
+}
+
+.tittle:hover{
+    color: #f3ae53;
+}
+
+.formulario{
+    width: 800px;
+	height: auto;
+	background: #fff;
+	border-radius: 10px;
+	padding: 16px;
+	-webkit-box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
+	-moz-box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
+	box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
+	margin-bottom: 30px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="list"]{
+	font-size: 15px;
+	width: 82%;
+	padding: 10px;
+	border: none;
+}
+
+input:hover{
+    background: rgba(185, 187, 187, 0.080);
+}
+
+
+/*Estilos select*/
+
+.controls{
+	font-size: 15px;
+	width: 85%;
+	padding: 5px;
+	border: none;
+    background: none;
+    color: #828385;
+}
+
+
+.fieldset{
+	margin-bottom: 15px;
+	border: 2px solid #14569983;
+	border-radius: 10px;
+	/* height: 70px; */
+} 
+
+legend{
+	font-size: 15px;
+	font-weight: 400;
+	color: #042342;
+
+}
+.legend-principal{
+    font-size: 20px;
+	font-weight: 400;
+	color: #042342;
+}
+.input-contenedor{
+	margin-bottom: 15px;
+	border: 2px solid  #a1a4a586;
+	border-radius: 5px;
+}
+  
+.input-contenedor:hover{
+    border: 2px solid#f3870b62;
+    background: rgba(185, 187, 187, 0.2);
+  }
+
+.icon{
+	min-width: 50px;
+	text-align: center;
+	color: #999;
+}
+
+.second{
+    border: 1px solid #6a6d7083;
+}
+
+.button-contenedor{
+    text-align: center;
+    /* align-items: center;
+    justify-content: center; */
+    /* max-width: 00%; */
+    /* margin-left: 30%; */
+    /* margin-right: 25%; */
+
+}
+.button{
+    display: inline-block;
+	border: none;
+	width: 20%;
+	color: white;
+	font-size: 17px;
+	background: #0bb1f3;
+	padding: 10px 15px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.7s;
+}
+
+.reset{
+	background: #f3870b;
+}
+
+.button:hover{
+	background: #0bb1f38f;
+}
+
+.reset:hover{
+	background: #f3ae53;
+}
+
+/* Estilos footer */
+footer
+{
+	background-image: linear-gradient(to left, #6d7070 0%, #1993b1c4 100%);
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.521);
+    position: absolute;
+  	bottom: 0;
+  	width: 100%;
+
+}
+
+.footer-contenedor{
+	margin-top: 0 auto;
+	display: flex;
+    justify-content:space-evenly;
+}
+
+.footer-credits{
+	padding-top: 40px;
+}
+
+.footer-contenedor label{
+	font-size: 20px;
+	color: #fff;
+	font-weight: 600;
+	
+} 
+
+.line{
+    width: 90%;
+    max-width: 1200px;
+    margin: 15px auto;
+    height: 2px;
+    background: #fff;
+    margin-bottom: 35.5px;
+}
+
+/* Fin estilos footer */
+
+/* Responsive design */
+@media screen and (max-width:1800px){
+	.header-dashboard__label--img{
+		margin-top: -4.5%;
+		margin-left: 5.5%;
+	}
+}
+
+@media screen and (max-width:1500px){
+	.header-dashboard__label--img{
+		margin-top: -5.3%;
+		margin-left: 6%;
+	}
+
+	.icon{
+		margin-left: -5%;
+	}
+}
+
+@media screen and (max-width:1300px){
+	.header-dashboard__label--img{
+		margin-top: -6.3%;
+		margin-left: 7.2%;
+	}
+}
+
+@media screen and (max-width:1212px){
+	.contenedor_opciones{
+		margin-bottom: 220px;
+	}	
+}
+
+@media screen and (max-width:1100px){
+	.header-dashboard__label--img{
+		margin-top: -7.3%;
+		margin-left: 8.5%;
+	}
+
+	.icon{
+		margin-left: -6.5%;
+		font-size: 47px;
+	}
+}
+
+@media screen and (max-width:900px){
+	.header-dashboard__label--img{
+		margin-top: -10%;
+		margin-left: 11%;
+	}
+
+	.icon{
+		font-size: 40px;
+	}
+
+	.logotipo_dparking{
+		margin-right: 30px;
+	}
+
+	.footer-contenedor label{
+		font-size: 18px;
+		margin: auto 10px;
+	} 
+}
+
+@media screen and (max-width:700px){
+	.header-dashboard__label--img{
+		margin-top: -14%;
+		margin-left: 15%;
+		width: 80px;
+	}
+
+	.header-dashboard__label--principal, .principal--sub{
+		font-size: 25px;
+	}
+
+	.icon{
+		font-size: 40px;
+		margin-top: -1000px;
+	}
+
+	.header-dashboard__label{
+		font-size: 20px;
+	}
+	
+	.header-dashboard__label--links .config, .log_out, .home-header{
+		font-size: 20px;
+		padding-right: 10px;
+	}
+
+	.footer-contenedor label{
+		font-size: 12px;
+	}
+}
