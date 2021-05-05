@@ -116,7 +116,7 @@
                                 </div>
                                     <!-- <input type="submit" value="Iniciar sesión" id="iniciar_sesion_boton" class="button-index"> -->
                                     <input type="hidden" name="enviar" class="form-control" value="si">
-                                    <button type="submit" class="button-index">Acceder</button>
+                                    <button type="submit" class="button-index">Iniciar sesión</button>
                                     <div class="forgot">
                                         <a href="">Recuperar contraseña</a>
                                     </div>

@@ -30,6 +30,7 @@
                             $_SESSION["nombre"]=$resultado["nombre"];
                             $_SESSION["apellido"]=$resultado["apellido"];
                             $_SESSION["Cargo"]=$resultado["Cargo"];
+                            $_SESSION["hora_ingreso"]=$resultado["ultimo_ingreso"];
                             header("Location:".Conectar::ruta()."view/Home/");
                             exit();
                         }else{
