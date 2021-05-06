@@ -12,36 +12,7 @@
 	<?php require_once("../mainHeader/header.php") ?>
     </header>
 	<!-- Content page -->
-	<?php 
-		if(isset($_SESSION['Cargo']) and $_SESSION['Cargo']=='Administrador'){
-	?>
-    <main>
-		<div class="contenedor_opciones admin">
-			<ul>
-				<li>
-					<a href="../RepVTA/">Reporte de<br> ventas</a>
-				</li>
-				<li>
-					<a href="../GtUser/">Gestionar<br>usuarios</a>
-				</li>
-				<li>
-					<a href="../conCVET/">Consultas <br>CVET</a>
-				</li>
-				<li>
-					<a href="../intCajero/">Interfaz Cajero</a>
-				</li>
-				<li>
-					<a href="../ultMov/">Últimos movimientos</a>
-				</li>
-				<li>
-					<a href="../RepTCK/">Reporte de tickets</a>
-				</li>
-			</ul>
-		</div>
-	</main> 
-	<?php 
-		}else{
-	?>
+    <h1 class="Tittle-admin"><i class="fas fa-store"></i> Interfaz de cajero</h1>
 	<main>
 		<div class="contenedor_opciones">
 			<ul>
@@ -66,9 +37,6 @@
 			</ul>
    		</div>
 	</main> 
-	<?php 
-		}
-	?>
 	<?php require_once("../mainFooter/footer.php") ?>
     </footer> 
 

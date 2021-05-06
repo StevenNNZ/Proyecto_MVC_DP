@@ -1,7 +1,7 @@
 /* 
-        =========================$$$$$$$$$$$$===================
+        =========================$$$$$$$$$$$$===========================
                 ESTILOS RELACIONADOS A LAS TABLAS/ENTORNOS DE CONSULTAS
-        =========================$$$$$$$$$$$$===================
+        =========================$$$$$$$$$$$$===========================
 */
 
 /* Título de ayuda. (info de lo que se muestra en pantalla)*/
@@ -46,13 +46,67 @@
     box-shadow: 1px 4px 10px #000;
 }
 
+.contenedor-main_barra-busqueda_usuario{
+    display: flex;
+    margin: 0 auto 50px;
+    width: 50%;
+    /* border: 2px solid #000; */
+    padding: 8px;
+    background-image: linear-gradient(to right, #1992b1 0%, #43a5e7 100%);
+    border-radius: 5px;
+    box-shadow: 1px 4px 10px #000;
+    justify-content: center;
+}
+
+.contenedor-main_barra-busqueda_cvet{
+    display: flex;
+    margin: 0 auto 50px;
+    width: 80%;
+    /* border: 2px solid #000; */
+    padding: 8px;
+    background-image: linear-gradient(to right, #1992b1 0%, #43a5e7 100%);
+    border-radius: 5px;
+    box-shadow: 1px 4px 10px #000;
+    justify-content: center;
+}
+
 /* Label barra de búsqueda. (Búsqueda) */
 .contenedor-main_barra-busqueda__label-busqueda{
     font-size: 25px;
     padding-right: 30px;
     color: #fff;
     margin-right: 80px;
-    border-right: 2px solid rgb(85, 84, 84);
+    border-right: 3px solid rgb(255, 255, 255);
+}
+
+/* Label barra de búsqueda usuarios. */
+.contenedor-main_barra-busqueda__label-busqueda_usuario{
+    display: inline-block;
+    height: 35px;
+    font-size: 30px;
+    color: #fff;
+    border-right: 3px solid rgb(255, 255, 255);
+    padding-right: 5%;
+    margin-right: 8%;
+} 
+
+/* input de búsqueda mediante texto */
+.contenedor-main_barra-busqueda__search_texto{
+    width: 70%;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    padding: 3px;
+    padding-left: 10px;
+}
+
+.contenedor-main_barra-busqueda__search_texto:focus{
+    /* outline: 2px solid #7bcaff; */
+    border: 2px solid rgb(134, 134, 134);
+}
+
+.ultMov{
+    border-radius: 0;
 }
 
 /* Estilos input tipo fecha -- Barra de búsqueda */
@@ -64,6 +118,20 @@
 .contenedor-main_barra-busqueda__label{
     font-size: 25px;
     color: #fff;
+}
+/* Estilos select --- Barra de búsqueda */
+
+.contenedor-main_barra-busqueda_select{
+    width: 20%;
+    height: 35px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    padding: 3px;
+    padding-left: 10px;
+    font-size: 20px;
+    /* color: #fff; */
+    /* font-weight: bold; */
+    background: #cac8c8;
 }
 
 /* Estilos botón consultar -- barra de búsqueda */
@@ -81,10 +149,19 @@
     cursor: pointer;
 }
 
+
 .contenedor-main_barra-busqueda__search:hover, .contenedor-main_barra-busqueda__search:active {
     background: #fff;
 }
 
+.ultMovBtn{
+    margin-left: 0;
+    box-shadow: none; 
+    height: 35px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background: #cac8c8;
+}
 
 /* Estilos contenedor del resultado a la petición de buscar reportes. */
 #contenedor_resultado{
@@ -109,6 +186,7 @@
     height: 50px;
 }
 
+/* Estilos tabla head */
 .contenedor-table__thead{
     border: 2px solid #1992b1;
 }
@@ -119,6 +197,7 @@
     color: rgb(255, 255, 255);
 } 
 
+/* Estilos elementos de la cabecera, por etiqueta */
 th{
     /* #f38a00  #1992b1 */
     background: #1992b1;
@@ -130,19 +209,14 @@ th{
     padding-right: 37px;
     z-index: 50;
 }
-/* 
-    =================================================
-        ESTILOS TABLA RESULTADOS DE REPORTE VENTA.
-    =================================================
-*/
+
 
 /* Contenedor de tabla reporte venta. */
 .contenedor_table_principal--reporte_venta{
     height: 328px;
 }
 
-
-
+/* 
 .contenedor_table_principal--estacionamiento{
     height: 280.5px;
 }
@@ -156,63 +230,63 @@ th{
 }
 
 .contenedor_table_principal--usuarios{
-    height: 328px;
-}
+    height: 328px; 
+}*/
 
 /* Estilos contenedor tabla */
- .contenedor-table{
+ /* .contenedor-table{
     max-height: 310px;
     width: 792px;
     margin: 2px auto;
     overflow:hidden;
     overflow-y:auto; 
     border: 2px solid black;
-}
+} */
 
 /* Estilos contenedor tabla-vehículo */
-.contenedor-table--vehiculo{
+/* .contenedor-table--vehiculo{
     max-height: 310px;
     width: 833px;
     margin: 2px auto;
     overflow:hidden;
     overflow-y:auto; 
     border: 2px solid black;
-}
+} */
 
 /* Estilos contenedor tabla-estacionamiento */
-.contenedor-table--estacionamiento{
+/* .contenedor-table--estacionamiento{
     max-height: 280px;
     width: 915px;
     margin: 2px auto;
     overflow:hidden;
     overflow-y:auto; 
     border: 2px solid black;
-}
+} */
 
 /* Estilos contenedor tabla estado_estacionamiento */
-.contenedor-table--estado_estacionamiento{
+/* .contenedor-table--estado_estacionamiento{
     max-height: 328px;
     width: 915px;
     margin: 2px auto;
     overflow:hidden;
     overflow-y:auto; 
     border: 2px solid black;
-}
+} */
 
 
 
 
 /* Estilos contenedor tabla-usuarios */
-.contenedor-table--usuarios{
+/* .contenedor-table--usuarios{
     max-height: 328px;
     width: 83.5%;
     margin: 2px auto;
     overflow:hidden;
     overflow-y:auto; 
     border: 2px solid black;
-}
+} */
 
-.contenedor-table--tarifa{
+/* .contenedor-table--tarifa{
     width: 600px;
     max-height: 300px;
     margin: 2px auto;
@@ -220,10 +294,10 @@ th{
     overflow:hidden;
     overflow-y:auto; 
     border: 2px solid black;
-}
+} */
 
 
-.contenedor-table--tickets{
+/* .contenedor-table--tickets{
     width: 1018px;
     max-height: 328px;
     margin: 2px auto;
@@ -231,9 +305,9 @@ th{
     overflow:hidden;
     overflow-y:auto; 
     border: 2px solid black;
-}
+} */
 
-.contenedor-table--tickets--salida{
+/* .contenedor-table--tickets--salida{
     max-height: 328px;
     width: 1018px;
     margin: 2px auto;
@@ -241,9 +315,9 @@ th{
     overflow:hidden;
     overflow-y:auto; 
     border: 2px solid black;
-}
+} */
 
-.scroll-table::-webkit-scrollbar{
+/* .scroll-table::-webkit-scrollbar{
     width: 2px;
     background: rgb(10, 10, 10);
 }
@@ -251,10 +325,10 @@ th{
     width: 2px;
     background: rgb(83, 83, 83);
     max-height: 5px;
-}
+} */
 
 
-.contenedor-table__table-estacionamiento{
+/* .contenedor-table__table-estacionamiento{
     margin: 0px auto;
     border-collapse: collapse;
     width: 100px;
@@ -263,19 +337,19 @@ th{
 
 .tickets{
     width: 1018px;
-}
+} */
 
 /* Estilos títulos */
-h2 {
+/* h2 {
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 1rem;
     display: inline;
     padding: 3px;
 
-}
+} */
 
-caption{
+/* caption{
     font-size: 25px;
     margin: 10px auto;
     font-weight: 600;
@@ -290,13 +364,11 @@ caption{
 
 .tittle-2{
     color: rgb(243, 135, 11);
-    
-
-}
+} */
 
 
 
-.contenedor-table__tr--estacionamiento{
+/* .contenedor-table__tr--estacionamiento{
     font-size: 17.5px;
     color: rgb(255, 255, 255);
 } 
@@ -306,6 +378,7 @@ caption{
     padding-right: 30px;
 }
 
+
 /* Estilos campos del cuerpo tabla */
 .contenedor-table__tbody{
     background: rgb(255, 255, 255);
@@ -313,7 +386,13 @@ caption{
     border-top: none;
 }
 
+/* Estilos tbody */
+tbody{
+    border: 1px solid rgb(83, 83, 83);
+}
 
+
+/* Estilos elementos del cuerpo tabla por etiqueta */
 td{
     border: 1px solid rgba(83, 83, 83, 0.582);
     padding: 1px 10px;
@@ -332,10 +411,8 @@ td::-webkit-scrollbar-thumb{
     background: rgb(61, 60, 60);
     border-radius: 5px;
 }
-tbody{
-    border: 1px solid rgb(83, 83, 83);
-}
 
+/* Estilo tabla de reporte de ventas (Sumatoria de pagos) */
 .total_pagos{
     text-align: center;
     text-transform: uppercase;
@@ -344,7 +421,7 @@ tbody{
 }
 
 /* Estilos agregar - tarifa (icon) */
-.agregar-tarifa{
+/* .agregar-tarifa{
     margin: 20px auto;
 }
 
@@ -352,25 +429,45 @@ tbody{
     font-size: 45px;
     color: rgb(14, 145, 233);
     text-decoration: none;
+} */
+
+/* 
+    ===================================================
+            ESTILOS ÍCONOS TABLAS
+    ===================================================
+
+*/
+
+.icon_tabla{
+    font-size: 25px;
 }
-/* Estilos íconos */
-.icon{
-    font-size: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
+
+/* icono eliminar */
 #delete{
-    color: rgb(277,0,0);
+    color: rgb(255, 0, 0);
 }
 
+/* icono activar usuario */
+#activar{
+    color:#27a11c;
+}
+
+/* icono bloquear usuario */
+#bloquear{
+    color:#5d5d5f;
+}
+
+/* icono editar */
 #edit{
-    color: rgb(36, 175, 9);
+    color: rgb(8, 156, 255);
 }
 
+/* icono imprimir */
 #print{
     color: rgb(2, 2, 2);
 }
 
+/* NO SE QUE HACE ESTA COSA :V */
 #btn-ticket{
     color: rgb(16, 187, 255);
 }

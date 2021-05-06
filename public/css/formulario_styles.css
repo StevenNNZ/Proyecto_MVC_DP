@@ -1,126 +1,8 @@
-/* Reset de estilos. */
-*{
-	margin: 0;
-	outline: 0;
-	text-decoration: none;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-/* Estilos DOM */
-html {
-	min-height: 100%;
-	position: relative;
-}
-
 /* Estilos cuerpo página */
 body{
     font-family: 'Open Sans', sans-serif, arial;
     background-color: rgba(234, 243, 243, 0.884);
 	overflow-x: hidden;
-}
-
-
-/* 
-		===================ººº========================
-		| 			Estilos de la cabecera  		  |
-		===================ººº========================
-*/
-
-/* Estilos del header. */
-.header-dashboard__nav{
-	background-image: linear-gradient(to right, #1992b1 0%, #f38a00 100%);
-    height: 90px;
-    width: 100%;
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    border-bottom: 2px solid #fff;
-    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.521);
-}
-
-/* ---------->  Estilos de títulos  <----------- */
-
-/* Título1 =  Digital */
-.header-dashboard__label--principal{
-	color: #ff6f00;
-    font-size: 30px;
-	font-weight: 300;
-    font-weight: bold;
-	font-family: 'Lobster', cursive;
-}
-/* Título2 = Parking  */
-.principal--sub{
-	font-weight: 300;
-	font-size: 30px;
-	font-weight: 300;
-	padding-left: 35px;
-	color: #00ccfa;
-	font-family: 'Lobster', cursive;
-}
-
-/* Estilos logotipo dparking */
-.header-dashboard__label--img{
-width: 100px;
-position: absolute;
-margin-top: -4%;
-margin-left: 5.2%;
-}
-
-/*   --------->  ESTILOS DATOS DE USUARIOS <------ */
-
-/* Estilos label datos de usuarios */
-.label__datos_usuario{
-	text-align: center;
-    color: #fff;
-}
-/* Estilos de rol usuario */
-.header-dashboard__label{
-	display: inline-block;
-	width: 180px;
-    font-size: 23px;
-    text-transform: uppercase;
-    color: #fff;
-	font-weight: 600;
-}
-
-
-/* Estilos bienvenida %nombre_usuario% */
-.header-dashboard__label-sub{
-	display: inline-block;
-	max-width: 200px;
-	font-size: 15px;
-	font-style: normal;
-	font-weight: 400;
-	white-space: nowrap;
-}
-
-/* Estilos fecha de ingreso */
-.header-dashboard__label-sub2{
-	font-size: 11px;
-	font-weight: 400;
-	white-space: nowrap;
-}
-
-
-/* Estilos ícono usuario */
-.icon{
-	position: absolute;
-	margin-top: .5%;
-	margin-left: -6%;
-	font-size: 55px;
-}
-
-/* Estilos botones home, configuración y cierre de sesión */
-.header-dashboard__label--links .config, .log_out, .home-header{
-	font-size: 35px;
-    color: #fff;
-    text-transform: uppercase;
-	padding-right: 20px;
-	text-decoration: none;
-	cursor: pointer;
 }
 
 /* Estilos main por clases */
@@ -241,7 +123,7 @@ main{
 	margin-bottom: 30px;
 }
 
-input[type="text"],
+/* input[type="text"],
 input[type="number"],
 input[type="password"],
 input[type="email"],
@@ -251,11 +133,11 @@ input[type="list"]{
 	width: 82%;
 	padding: 10px;
 	border: none;
-}
+} */
 
-input:hover{
+/* input:hover{
     background: rgba(185, 187, 187, 0.080);
-}
+} */
 
 
 /*Estilos select*/
@@ -297,12 +179,6 @@ legend{
 .input-contenedor:hover{
     border: 2px solid#f3870b62;
     background: rgba(185, 187, 187, 0.2);
-  }
-
-.icon{
-	min-width: 50px;
-	text-align: center;
-	color: #999;
 }
 
 .second{
@@ -342,45 +218,6 @@ legend{
 .reset:hover{
 	background: #f3ae53;
 }
-
-/* Estilos footer */
-footer
-{
-	background-image: linear-gradient(to left, #6d7070 0%, #1993b1c4 100%);
-    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.521);
-    position: absolute;
-  	bottom: 0;
-  	width: 100%;
-
-}
-
-.footer-contenedor{
-	margin-top: 0 auto;
-	display: flex;
-    justify-content:space-evenly;
-}
-
-.footer-credits{
-	padding-top: 40px;
-}
-
-.footer-contenedor label{
-	font-size: 20px;
-	color: #fff;
-	font-weight: 600;
-	
-} 
-
-.line{
-    width: 90%;
-    max-width: 1200px;
-    margin: 15px auto;
-    height: 2px;
-    background: #fff;
-    margin-bottom: 35.5px;
-}
-
-/* Fin estilos footer */
 
 /* Responsive design */
 @media screen and (max-width:1800px){

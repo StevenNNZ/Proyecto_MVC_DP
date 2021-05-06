@@ -31,6 +31,8 @@
                             $_SESSION["apellido"]=$resultado["apellido"];
                             $_SESSION["Cargo"]=$resultado["Cargo"];
                             $_SESSION["hora_ingreso"]=$resultado["ultimo_ingreso"];
+                            $sql = ("UPDATE usuarios SET ultimo_ingreso = NOW() WHERE documento = $documento;");
+                            $conectar->query($sql);
                             header("Location:".Conectar::ruta()."view/Home/");
                             exit();
                         }else{
