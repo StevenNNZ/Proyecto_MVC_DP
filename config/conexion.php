@@ -3,7 +3,7 @@
 
     class Conectar{
         protected $dbh;
-
+        //Creacion metodo para acceder a la conexión.
         protected function Conexion(){
             try{
                 $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=par_queadero", "root", "");
@@ -14,10 +14,12 @@
             }
         }
 
+        //Enviar los caracteres especiales
         public function set_names(){
             return $this->dbh->query("SET NAMES 'utf-8'");
         }
 
+        //ruta raiz del sistema
         public function ruta(){
             return "http://localhost/proyecto_MVC_DP/";
         }

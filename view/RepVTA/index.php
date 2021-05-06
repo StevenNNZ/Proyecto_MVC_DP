@@ -22,47 +22,7 @@
             </div>
             <div class="contenedor_table_principal--reporte_venta">
                 <div id="contenedor_resultado">
-                    <div class='alert alert_success alert_sm' id='contenedor-alerta-reportes_venta' style='animation-delay: .2s;margin:0 auto;margin-bottom:10px'>
-                        <div class='alert--icon'>
-                            <i class='fas fa-bell'></i>
-                        </div>
-                        <div class='alert--content'>
-                            Mostrando registros desde <b>$desde</b> hasta <b>$hasta</b>
-                        </div>
-                        <div class='alert--close'>
-                            <i class='far fa-times-circle'></i>
-                        </div>
-                    </div>
-                    <table class="contenedor-table__table">
-                            <thead class="contenedor-table__thead">
-                                <tr class="contenedor-table__tr--principal">
-                                    <th>ID</th>
-                                    <th>NOMBRE</th>
-                                    <th>APELLIDO</th>
-                                    <th>PLACA</th>
-                                    <th>DATOS ENTRADA</th>
-                                    <th>DATOS SALIDA</th>
-                                    <th>TIEMPO SERVICIO</th>
-                                    <th>TOTAL PAGO</th>
-                                </tr>
-                            </thead>
-                            <tbody class="contenedor-table__tbody">
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Steven</td>
-                                            <td>Nuñez</td>
-                                            <td>VCH 205</td>
-                                            <td>29/04/2021<br>15:00</td>
-                                            <td>29/04/2021<br>18:10</td>
-                                            <td>3 horas 10 minutos</td>
-                                            <td>$6000</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="total_pagos" colspan="7">Total pagos</td>
-                                            <td colspan="1">$12.000</td>
-                                        </tr>
-                            </tbody>
-                        </table>
+                    
                 </div>
             </div>
         </div>  
@@ -71,6 +31,7 @@
 
     <?php require_once("../mainFooter/footer.php");?>
     <?php require_once("../mainJS/js.php");?>
+    <script src="reportes_ventas.js"></script>
 </body>
 </html>
 
