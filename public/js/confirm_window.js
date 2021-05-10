@@ -29,20 +29,6 @@ function ConfirmLeft(){
 }
 
 function ConfirmLogOut(){
-    /*var respuesta = Swal.fire({
-        title: '¿Desea cerrar la sesión?',
-        showDenyButton: false,
-        showCancelButton: true,
-        confirmButtonText: `Cerrar sesión`,
-        cancelButtonText: `Cancelar`,
-      });
-    
-    if(respuesta.isConfirmed){
-        return true;
-    }else{
-        return false;
-    }*/
-    
     Swal.fire({
         title: '¿Desea cerrar la sesión?',
         showDenyButton: false,
@@ -54,6 +40,23 @@ function ConfirmLogOut(){
         if (result.isConfirmed) {
               Swal.fire('¡Sesión finalizada!', '', 'success');
             setTimeout(()=>{window.location.href="../Logout/logout.php"}, 1500);
+            // return true;
+        }
+    })
+}
+
+function ConfirmLogOutSub(){
+    Swal.fire({
+        title: '¿Desea cerrar la sesión?',
+        showDenyButton: false,
+        showCancelButton: true,
+        confirmButtonText: `Cerrar sesión`,
+        cancelButtonText: `Cancelar`,
+      }).then((result) => {
+        // Read more about isConfirmed, isDenied below
+        if (result.isConfirmed) {
+              Swal.fire('¡Sesión finalizada!', '', 'success');
+            setTimeout(()=>{window.location.href="../../Logout/logout.php"}, 1500);
             // return true;
         }
     })

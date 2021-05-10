@@ -1,118 +1,21 @@
-/* Estilos cuerpo página */
-body{
-    font-family: 'Open Sans', sans-serif, arial;
-    background-color: rgba(234, 243, 243, 0.884);
-	overflow-x: hidden;
-}
-
-/* Estilos main por clases */
-main{
-    padding-bottom: 62px;
-}
-
-.main_consulta_clientes{
-	padding-bottom: 105px;
-}
-.main-vehiculo{
-	padding-bottom: 0;
-}
-
-.main-estacionamiento{
-	padding-bottom: 20.5px;
-}
-
-.main-tarifa{
-    padding-bottom: 111px;
-
-}
-
-.main_tickets{
-	padding-bottom: 165px;
-}
-
-.main-actualizar-tarifa{
-    padding-bottom: 84.5px;
-
-}
-
-.main-estacionamiento_consultar{
-    padding-bottom: 130.5px;
-
-}
-
-.main-estado_estacionamiento{
-    padding-bottom: 83px;
-}
-
-.main_usuarios{
-	padding-bottom: 83px;
-}
-
-.contenedor-principal{
-	padding: 50px;
-}
-
+/* Contenedor principal registrar bahía */
 .container{
-	max-width: 992px;
-	margin: auto;
+	max-width: 100%;
+	padding: 50px;
+
 } 
 
-.justify-content-between{
-	justify-content: space-between;
-}
 
+/* Contenedor del formulario */
 .content-form{
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    width:80%;
+	margin: 10px auto;
+	margin-bottom: 300px;
 }
 
-.tittle{
-	text-align: center;
-}
-
-.tittle1{
-	display: inline-flex;
-	font-size: 40px;
-	color: #f3870b;
-	margin-bottom: 0px;
-	font-weight: 700;
-}
-
-.tittle2{
-	display: inline-flex;
-	font-size: 40px;
-	color: #0bb1f3;
-	margin-bottom: 0px;
-	font-weight: 700;
-}
-
-.sub{
-	font-style: italic;
-	text-align: center;
-	font-weight: 300;
-
-}
-.sub-1{
-	display: inline-flex;
-	font-size: 20px;
-	color:  #0bb1f3;
-	margin-bottom: 0px;
-}
-
-.sub-2{
-	display: inline-flex;
-	font-size: 20px;
-	color: #f3870b;
-	margin-bottom: 0px;
-}
-
-.tittle:hover{
-    color: #f3ae53;
-}
-
+/* Estilos del formulario */
 .formulario{
-    width: 800px;
+    width: 100%;
 	height: auto;
 	background: #fff;
 	border-radius: 10px;
@@ -121,27 +24,167 @@ main{
 	-moz-box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
 	box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
 	margin-bottom: 30px;
+    font-family: 'Lato', sans-serif;
 }
 
-/* input[type="text"],
-input[type="number"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-input[type="list"]{
+/* 
+	======================================
+		ESTILOS DE TÍTULOS FORMULARIO
+	======================================
+*/
+
+/* contenedor títulos */
+.tittle{
+	text-align: center;
+}
+
+/* título 1 */
+.tittle1{
+	display: inline-flex;
+	font-size: 40px;
+	color: #f3870b;
+	margin-bottom: 0px;
+	font-weight: 700;
+}
+
+/* título 2 */
+.tittle2{
+	display: inline-flex;
+	font-size: 40px;
+	color: #0bb1f3;
+	margin-bottom: 0px;
+	font-weight: 700;
+}
+
+/* Contenedor subtítulos */
+.sub{
+	font-style: italic;
+	text-align: center;
+	font-weight: 300;
+
+}
+
+/* Subtítulo 1 */
+.sub-1{
+	display: inline-flex;
+	font-size: 20px;
+	color:  #0bb1f3;
+	margin-bottom: 0px;
+}
+
+/* Subtítulo 2 */
+.sub-2{
+	display: inline-flex;
+	font-size: 20px;
+	color: #f3870b;
+	margin-bottom: 0px;
+}
+
+/* 
+	======================================
+		ESTILOS DE FIELDSET FORMULARIO
+	======================================
+*/
+
+/* Fieldset general */
+.fieldset{
+	margin-bottom: 15px;
+	border: 2px solid #14569983;
+	border-radius: 10px;
+} 
+
+/* Estilos fieldset secundario  */
+.second{
+    border: 1px solid #6a6d7083;
+	width: 49.5%;
+	display: inline-block;
+}
+
+/* Fieldset que contiene el textarea/descripción */
+.fieldset_textarea{
+	border: 1px solid #6a6d7083;
+	width: 100%;
+}
+
+/* Legend principal del formulario */
+.fieldset .legend-principal{
+	font-size: 20px;
+	font-weight: 400;
+	color: #042342;
+}
+
+/* Estilos legend */
+.fieldset legend{
+	font-size: 15px;
+	font-weight: 400;
+	color: #042342;
+}
+
+/* 
+	======================================
+		ESTILOS CONTENEDORES INPUT FORMULARIO
+	======================================
+*/
+
+/* Contenedor del input */
+.input-contenedor{
+	margin-bottom: 15px;
+	border: 2px solid  #a1a4a586;
+	border-radius: 5px;
+	width: 24%;
+	display: inline-block;
+}
+
+/* Contenedores input secundarios */
+.contenedor_secundario{
+	width: 100%;
+}
+
+/* Contenedor del textarea */
+.contenedor_textarea{
+	width: 100%;
+}
+  
+.input-contenedor:hover{
+    border: 2px solid#f3870b62;
+    background: rgba(185, 187, 187, 0.2);
+}
+
+/* Estilos input de los formularios registrar. */
+.input_registrar{
 	font-size: 15px;
 	width: 82%;
 	padding: 10px;
 	border: none;
-} */
+} 
 
-/* input:hover{
+.input_registrar:hover{
     background: rgba(185, 187, 187, 0.080);
-} */
+} 
 
+.textarea_registro{
+	font-size: 15px;
+	width: 100%;
+	height: 100px;
+	padding: 10px;
+	border: none;
+	overflow-y: auto;
+    resize: none;
+}
+
+.textarea_registro:hover{
+    background: rgba(185, 187, 187, 0.080);
+}
+
+
+/* Estilos íconos formularios registrar */
+.icon_formularios_registro{
+	min-width: 50px;
+	text-align: center;
+	color: #999;
+}
 
 /*Estilos select*/
-
 .controls{
 	font-size: 15px;
 	width: 85%;
@@ -151,53 +194,22 @@ input[type="list"]{
     color: #828385;
 }
 
+/* 
+	======================================
+		ESTILOS BOTONES FORMULARIO
+	======================================
+*/
 
-.fieldset{
-	margin-bottom: 15px;
-	border: 2px solid #14569983;
-	border-radius: 10px;
-	/* height: 70px; */
-} 
-
-legend{
-	font-size: 15px;
-	font-weight: 400;
-	color: #042342;
-
-}
-.legend-principal{
-    font-size: 20px;
-	font-weight: 400;
-	color: #042342;
-}
-.input-contenedor{
-	margin-bottom: 15px;
-	border: 2px solid  #a1a4a586;
-	border-radius: 5px;
-}
-  
-.input-contenedor:hover{
-    border: 2px solid#f3870b62;
-    background: rgba(185, 187, 187, 0.2);
-}
-
-.second{
-    border: 1px solid #6a6d7083;
-}
-
+/* Contenedor de los botones */
 .button-contenedor{
     text-align: center;
-    /* align-items: center;
-    justify-content: center; */
-    /* max-width: 00%; */
-    /* margin-left: 30%; */
-    /* margin-right: 25%; */
-
 }
+
+/* Estilos botones */
 .button{
     display: inline-block;
 	border: none;
-	width: 20%;
+	width: 30%;
 	color: white;
 	font-size: 17px;
 	background: #0bb1f3;
@@ -207,6 +219,7 @@ legend{
 	transition: 0.7s;
 }
 
+/* Botón de reset */
 .reset{
 	background: #f3870b;
 }
@@ -220,95 +233,61 @@ legend{
 }
 
 /* Responsive design */
-@media screen and (max-width:1800px){
-	.header-dashboard__label--img{
-		margin-top: -4.5%;
-		margin-left: 5.5%;
+
+@media screen and (max-width:1750px){
+	.input_registrar{
+		width: 80%;
 	}
 }
 
-@media screen and (max-width:1500px){
-	.header-dashboard__label--img{
-		margin-top: -5.3%;
-		margin-left: 6%;
-	}
-
-	.icon{
-		margin-left: -5%;
+@media screen and (max-width:1590px){
+	.input_registrar{
+		width: 75%;
 	}
 }
 
-@media screen and (max-width:1300px){
-	.header-dashboard__label--img{
-		margin-top: -6.3%;
-		margin-left: 7.2%;
+@media screen and (max-width:1320px){
+	.input_registrar{
+		width: 72%;
 	}
 }
 
-@media screen and (max-width:1212px){
-	.contenedor_opciones{
-		margin-bottom: 220px;
-	}	
+@media screen and (max-width:1200px){
+	.input_registrar{
+		width: 68%;
+	}
 }
 
 @media screen and (max-width:1100px){
-	.header-dashboard__label--img{
-		margin-top: -7.3%;
-		margin-left: 8.5%;
-	}
-
-	.icon{
-		margin-left: -6.5%;
-		font-size: 47px;
+	.input_registrar{
+		width: 62%;
 	}
 }
 
-@media screen and (max-width:900px){
-	.header-dashboard__label--img{
-		margin-top: -10%;
-		margin-left: 11%;
+@media screen and (max-width:1100px){
+	.input-contenedor{
+		display: block;
+		width: 100%;
 	}
 
-	.icon{
-		font-size: 40px;
+	.input_registrar{
+		width: 78%;
 	}
 
-	.logotipo_dparking{
-		margin-right: 30px;
+	/* Estilos fieldset secundario  */
+	.second{
+		width: 100%;
 	}
 
-	.footer-contenedor label{
-		font-size: 18px;
-		margin: auto 10px;
-	} 
-}
-
-@media screen and (max-width:700px){
-	.header-dashboard__label--img{
-		margin-top: -14%;
-		margin-left: 15%;
-		width: 80px;
+	.contenedor_secundario{
+		width: 100%;
 	}
 
-	.header-dashboard__label--principal, .principal--sub{
-		font-size: 25px;
+	.controls{
+		width: 70%;
 	}
 
-	.icon{
-		font-size: 40px;
-		margin-top: -1000px;
-	}
-
-	.header-dashboard__label{
-		font-size: 20px;
-	}
-	
-	.header-dashboard__label--links .config, .log_out, .home-header{
-		font-size: 20px;
-		padding-right: 10px;
-	}
-
-	.footer-contenedor label{
-		font-size: 12px;
+	.button{
+		width: 40%;
 	}
 }

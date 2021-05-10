@@ -46,7 +46,7 @@
 		<div class="contenedor_opciones">
 			<ul>
 				<li>
-					<a href="../formularios/registrar_cliente.php" class="title">Ingresar Bahía</a>
+					<a href="../Cliente/Registrar/" class="title">Ingresar Bahía</a>
 				</li>
 				<li>
 					<a href="../formularios/consultar-cliente.php">Consultar<br>cliente/vehículo</a>
