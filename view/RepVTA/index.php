@@ -21,8 +21,8 @@
                 <input class="contenedor-main_barra-busqueda__button" type="submit" value="Consultar" id="consultar_reportes">
             </div>
             <div class="contenedor_table_principal--reporte_venta">
-                <div id="contenedor_resultado">
-                    
+                <div id="contenedor_resultado" class="table-responsive">
+                
                 </div>
             </div>
         </div>  

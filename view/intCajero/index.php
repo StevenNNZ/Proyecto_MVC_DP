@@ -14,10 +14,18 @@
 	<!-- Content page -->
     <h1 class="Tittle-admin"><i class="fas fa-store"></i> Interfaz de cajero</h1>
 	<main>
+		<div class='alert alert_info alert_sm' id='contenedor-alerta-reportes_venta' style='animation-delay: .2s;margin:0 auto;'>
+			<div class='alert--icon'>
+				<i class='fas fa-bell'></i>
+			</div>
+			<div class='alert--content'>
+				Actualmente se encuentra en la interfaz de cajero. Haga <a href="../home/" style="color:#3eb6ff"><b>click aquí</b></a> para regresar a la interfaz de Admin.
+			</div>
+		</div>
 		<div class="contenedor_opciones">
 			<ul>
 				<li>
-					<a href="../formularios/registrar_cliente.php" class="title">Ingresar Bahía</a>
+					<a href="../Cliente/Registrar/">Ingresar Bahía</a>
 				</li>
 				<li>
 					<a href="../formularios/consultar-cliente.php">Consultar<br>cliente/vehículo</a>

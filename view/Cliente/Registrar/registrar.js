@@ -6,24 +6,11 @@ function init(){
 
 // Se ejecuta este código cuando se haya cargado completamente nuestra página
 $(document).ready(function(){
-    console.log("funcionando...");
 });
 
 function guardaryeditar(e){
     e.preventDefault();
     var formData = new FormData($("#form_bahia")[0]);
-    console.log( formData.get('documento_cliente') );
-    console.log( formData.get('nombre_cliente') );
-    console.log( formData.get('apellido_cliente') );
-    console.log( formData.get('telefono_cliente') );
-    console.log( formData.get('placa_vehiculo') );
-    console.log( formData.get('color_vehiculo') );
-    console.log( formData.get('modelo_vehiculo') );
-    console.log( formData.get('tamano_vehiculo') );
-    console.log( formData.get('tipo_vehiculo') );
-    console.log( formData.get('num_estacionamiento') );
-    console.log( formData.get('descripcion_esta') );
-    console.log( formData.get('id_usuario') );
     $.ajax({
         url: "../../../controller/bahia.php?op=insert",
         type: "POST",
@@ -49,6 +36,18 @@ function guardaryeditar(e){
                 confirmButtonText: 'Aceptar',
                 
             });
+
+            document.getElementById('respuesta_registroBahia').innerHTML = `
+            <div class='alert alert_success alert_sm' id='contenedor-alerta-reportes_venta' style='animation-delay: .2s;margin:0 auto;'>
+                <div class='alert--icon'>
+                    <i class='fas fa-bell'></i>
+                </div>
+                <div class='alert--content'>
+                    Se ha generado un nuevo ticket. Haga <a href="../../consultarTicket/" style="color:#23ad5c;"><b>click aquí</b></a> para consultarlo.
+                </div>
+            </div>`;
+
+            location.href = '#respuesta_registroBahia';
         }
     });
 }

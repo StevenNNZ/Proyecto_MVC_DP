@@ -11,6 +11,7 @@
     </header>
     <main>  
         <h1 class="Tittle-admin"><i class="fas fa-book"></i> Registro de Bahía</h1>
+        <div id="respuesta_registroBahia"></div>
         <div class="container">
             <div class="content-form">
                 <form method="post" id="form_bahia" class="formulario">

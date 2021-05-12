@@ -1,34 +1,29 @@
 <?php 
     require_once("../config/conexion.php");
-    require_once("../models/Reporte_venta.php");
+    require_once("../models/ReporteTicket.php");
 
-    // Instancia clase Reporte_venta
-    $reportesVenta = new Reporte_venta();
+    $reportesTicket = new ReporteTicket();
 
     switch($_GET["op"]){
         case "combo":
             $desde = $_GET['desde'];
+            $desdeH = $_GET['desdeH'];
             $hasta = $_GET['hasta'];
+            $hastaH = $_GET['hastaH'];
             $html="";
             // Método getReporte_venta --> recibe la fecha desde y la fecha hasta requeridos para la consulta sql.
-            $datos = $reportesVenta->getReporte_venta($desde, $hasta);
+            $datos = $reportesTicket->getReporteTicket($desde, $desdeH, $hasta, $hastaH);
             
-            //Función dar formato de moneda a los resultados de la tabla.
-            function formatoMoneda($valor){
-                number_format($valor);
-                return '$'.' '.$valor;
-            }
             
             //Creación de la respuesta a la vista.
             if(is_array($datos) and count($datos)>0){
-                $totalPagos=0;
                 $html.="
                 <div class='alert alert_success alert_sm' id='contenedor-alerta-reportes_venta' style='animation-delay: .2s;margin:0 auto;margin-bottom:10px'>
                     <div class='alert--icon'>
                         <i class='fas fa-bell'></i>
                     </div>
                     <div class='alert--content'>
-                        Mostrando registros desde <b>$desde</b> hasta <b>$hasta</b>
+                        Mostrando registros desde <b>$desdeH $desde</b> hasta <b>$hastaH $hasta</b>
                     </div>
                 </div>
                 <div class='contenedor_resultado_consultas'>
@@ -38,39 +33,28 @@
                     <thead class='contenedor-table__thead'>
                         <tr class='contenedor-table__tr--principal tabla_reporte-ventas'>
                             <th>ID</th>
-                            <th>DOCUMENTO</th>
-                            <th>NOMBRE</th>
-                            <th>APELLIDO</th>
-                            <th>PLACA</th>
                             <th>ENTRADA</th>
                             <th>SALIDA</th>
-                            <th>TIEMPO SERVICIO</th>
-                            <th>TOTAL PAGO</th>
+                            <th>CAJERO</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody class='contenedor-table__tbody'>";
                 
                 foreach($datos as $row){
-                    $totalPagos+=$row['Pago_total'];
                     $html.="
                                     <tr>
-                                        <td>$row[id_reporte]</td>
-                                        <td>$row[Documento]</td>
-                                        <td>$row[Nombre]</td>
-                                        <td>$row[Apellido]</td>
-                                        <td>$row[Placa]</td>
-                                        <td>$row[Fecha_entrada]<br>$row[Hora_entrada]</td>
-                                        <td>$row[Fecha_salida]<br>$row[Hora_salida]</td>
-                                        <td>$row[tiempo_servicio]</td>
-                                        <td>".formatoMoneda($row['Pago_total'])."</td>
+                                        <td>$row[Id_ticket]</td>
+                                        <td>$row[Hora_entrada]<br>$row[Fecha_entrada]</td>
+                                        <td>$row[Hora_salida]<br>$row[Fecha_salida]</td>
+                                        <td>$row[cajero]</td>
+                                        <td>
+                                            <a href='#'><i id='btn-ticket' class='fas fa-eye icon_tabla' title='Eliminar Usuario'></i></a>
+                                        </td>
                                     </tr>";
                 }
                 
                 $html.="
-                        <tr>
-                            <td class='total_pagos' colspan='8'>Totales consulta</td>
-                            <td class='sumatoria_total_pagos'>".formatoMoneda($totalPagos)."</td>
-                        </tr>
                     </tbody>
                     </table>
                     </div>

@@ -27,11 +27,12 @@
 .contenedor-main{
     margin: 50px 10px;
     text-align: center;
+    padding-bottom: 200px;
 }
 
 /* 
         ============================================
-            ESTILOS BARRA DE BÚSQUEDA REPORTES
+            ESTILOS BARRA DE BÚSQUEDA
         ============================================
 */
 
@@ -59,9 +60,9 @@
 }
 
 .contenedor-main_barra-busqueda_cvet{
-    display: flex;
+    /* display: flex; */
     margin: 0 auto 50px;
-    width: 80%;
+    width: 90%;
     /* border: 2px solid #000; */
     padding: 8px;
     background-image: linear-gradient(to right, #1992b1 0%, #43a5e7 100%);
@@ -73,13 +74,13 @@
 /* Label barra de búsqueda. (Búsqueda) */
 .contenedor-main_barra-busqueda__label-busqueda{
     font-size: 25px;
-    padding-right: 30px;
+    padding-right: 4%;
     color: #fff;
     margin-right: 80px;
     border-right: 3px solid rgb(255, 255, 255);
 }
 
-/* Label barra de búsqueda usuarios. */
+/* Label barra de búsqueda General. */
 .contenedor-main_barra-busqueda__label-busqueda_usuario{
     display: inline-block;
     height: 35px;
@@ -136,7 +137,7 @@
 
 /* Estilos botón consultar -- barra de búsqueda */
 .contenedor-main_barra-busqueda__button{
-    margin-left: 50px;
+    margin-left: 5%;
     width: 150px;
     height: 40px;
     padding: 5px;
@@ -182,7 +183,7 @@
 .contenedor-table__table{
     margin: 0px auto;
     border-collapse: collapse;
-    width: 600px;
+    width: 70%;
     height: 50px;
 }
 
@@ -204,16 +205,19 @@ th{
     position: sticky;
     top: -1px;
     /* border: 1px solid rgb(83, 83, 83); */
+    min-width:210px ;
     height: 50px;
     padding-left: 37px;
     padding-right: 37px;
     z-index: 50;
 }
 
+.tabla_reporte-ventas th{
+    min-width:100px ;
+}
 
-/* Contenedor de tabla reporte venta. */
-.contenedor_table_principal--reporte_venta{
-    height: 328px;
+.tabla_gestion-usuarios th{
+    min-width:100px ;
 }
 
 /* 
@@ -405,10 +409,10 @@ td{
 
 td::-webkit-scrollbar{
     height: 3px;
-    /* background: black; */
+    background: rgb(73, 72, 72);
 }
 td::-webkit-scrollbar-thumb{
-    background: rgb(61, 60, 60);
+    background: rgb(184, 181, 181);
     border-radius: 5px;
 }
 
@@ -477,7 +481,8 @@ td::-webkit-scrollbar-thumb{
     color: rgb(2, 2, 2);
 }
 
-/* NO SE QUE HACE ESTA COSA :V */
+/* icono de ticket*/
 #btn-ticket{
     color: rgb(16, 187, 255);
 }
+

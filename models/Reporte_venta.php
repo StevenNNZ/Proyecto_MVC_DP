@@ -1,5 +1,4 @@
 <?php 
-    //Se crea la clase categoria que hereda de la clase Conectar
     class Reporte_venta extends Conectar{
         public function getReporte_venta($desde, $hasta){
             $conectar = parent::Conexion();

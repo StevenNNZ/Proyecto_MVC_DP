@@ -36,6 +36,9 @@
 				<li>
 					<a href="../RepTCK/">Reporte de tickets</a>
 				</li>
+				<li>
+					<a id="add_rate">Agregar tarifa</a>
+				</li>
 			</ul>
 		</div>
 	</main> 
@@ -52,7 +55,7 @@
 					<a href="../formularios/consultar-cliente.php">Consultar<br>cliente/vehículo</a>
 				</li>
 				<li>
-					<a href="../formularios/consultar-ticket.php">Consultar<br>ticket</a>
+					<a href="../consultarTicket/">Consultar<br>ticket</a>
 				</li>
 				<li>
 					<a href="../formularios/consultar-tarifa.php">Consultar<br>tarifa</a>
@@ -73,6 +76,7 @@
     </footer> 
 
     <?php require_once("../mainJS/js.php") ?>
+	<script src="rate.js"></script>
 </body>
 </html>
 
