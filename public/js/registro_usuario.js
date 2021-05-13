@@ -18,3 +18,4 @@ tarifa_click.addEventListener('click', ()=>{
     contenedorTarifa.classList.toggle('show_login')
      hamburguer1.style.opacity = '0'
 })
+

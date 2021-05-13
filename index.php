@@ -121,7 +121,7 @@
                                         <a href="">Recuperar contraseña</a>
                                     </div>
                                 <div class="line"></div>
-                                <p class="new_account">¿Aún no tienes una cuenta? <a href="#" class="link tarifa_click">Regístrate</a></p>
+                                <p class="new_account">¿Aún no tienes una cuenta? <a id="registrarse" class="link tarifa_click">Regístrate</a></p>
                             </div>
                         </form>
                         <p class="tyc">Al iniciar sesión, aceptas las condiciones de uso y políticas de privacidad.</p>
@@ -140,6 +140,10 @@
     <!-- Script sweet alert -->
 	<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
     <!-- <script type="text/javascript" src="controlador/iniciar_sesion.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="public/js/alerts.min.js"></script>
+    <script src="public/js/registroUsuario.js"></script>
 </body>
 </html>

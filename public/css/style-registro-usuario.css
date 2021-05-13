@@ -1,48 +1,3 @@
-/* mostrar formulario de login */
-.registro_usuario-contenedor{
-  position: fixed;
-  background: rgba(78, 77, 77, 0.753);
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translate(100%);
-  transition: transform .4s ease-in-out;
-  z-index: 100;
-  margin: 0 auto;
-}
-
-.show_login{
-  transform: translate(0)
-}
-
-/* Boton de cerrar login */
-.close_login{
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 40px;
-  cursor: pointer;
-}
-
-/* Contenedor principal */
-.contenedor_usuario-principal{
-  padding: 50px;
-  max-width: 992px;
-  margin: 0 auto;
-  /* justify-content: space-between; */
-  font-family: 'Noto Sans JP';
-}
-
-/* Contenedor del form */
-.content-form_usuario{
-  width: 800px;
-  position: relative;
-  margin: -400px auto;
-}
 
 /* Estilos contenedor título. */
 .tittle{
@@ -87,37 +42,16 @@ color: #f3870b;
 margin-bottom: 0px;
 }
 
-/* Estilos formulario_registro_usuario */
-.formulario_registro_usuario{
-  margin: 5% auto;
-  width: 800px;
-  height: auto;
-  background: #fff;
-  border-radius: 10px;
-  padding: 16px;
-  -webkit-box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
-  -moz-box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
-  box-shadow: -1px -1px 8px -1px rgba(0,0,0,0.52);
-  margin-bottom: 30px;
-}
 
 /* Estilos de input */
 .input_registro{
 font-size: 15px;
-width: 82%;
+width: 85%;
 padding: 10px;
 border: none;
 font-family: 'Noto Sans JP', sans-serif;
 }
 
-.contenido-user .content-nombres_usuario{
-display: inline-block;
-width: 370px;
-}
-#nombres_usuario{
-width: 60%;
-text-transform:capitalize;
-}
 .input_registro:hover{
   background: rgba(185, 187, 187, 0.080);
 }
@@ -127,7 +61,7 @@ text-transform:capitalize;
 
 .controls_registro{
 font-size: 15px;
-width: 85%;
+width: 70%;
 padding: 5px;
 border: none;
 background: none;
@@ -146,17 +80,18 @@ border-radius: 10px;
 } 
 
 
-
 .legend-principal{
   font-size: 20px;
   font-weight: 500;
   color: #042342;
+  text-align: left;
 }
 
 /* Estilos fieldset secundario */
 .second{
   border: 1px solid #6a6d7083;
   font-size: 14px;
+  text-align: left;
 }
 
 /* Estilos contenedores de los input */
@@ -167,10 +102,30 @@ border-radius: 10px;
 }
 
 .input_registro-contenedor:hover{
-  border: 2px solid#f3870b62;
+  border: 2px solid  #0c6b8b86;
   background: rgba(185, 187, 187, 0.2);
 }
+.active{
+  border: 2px solid  #e95d5d;
+}
 
+.required_row::after{
+  content: "*";
+  position: absolute;
+  left: 20%;
+  padding-top: 2.5%;
+  color: rgb(251, 67, 67);
+  font-size: 25px;
+}
+
+.required_row--active::after{
+  content: "*";
+  position: absolute;
+  left: 22%;
+  padding-top: 2%;
+  color: rgb(251, 67, 67);
+  font-size: 25px;
+}
 /* Estilos íconos formularios */
 .icon-form{
 min-width: 50px;
@@ -179,75 +134,28 @@ text-align: center;
 color: #999;
 }
 
-/* Estilos contenedor de botones */
-.button_registro-contenedor{
-  text-align: center;
-}
-/* Estilos botones */
+@media screen and (max-width: 600px) {
+  .input_registro{
+    width: 80%;
+    }
 
-.button_registro{
-  display: inline-block;
-border: none;
-width: 20%;
-color: white;
-font-size: 17px;
-background: #0bb1f3;
-padding: 10px 15px;
-border-radius: 10px;
-cursor: pointer;
-transition: 0.7s;
-}
-
-/* Botón reset */
-.reset{
-background: #f3870b;
-}
-
-.button_registro:hover{
-background: #0bb1f38f;
-}
-
-.reset:hover{
-background: #f3ae53;
-}
-
-
-/* Boton de cerrar login */
- .close_registro_usuario{
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 40px;
-  cursor: pointer;
-}  
-
-
-@media screen and (max-width:1200px){
-	.formulario_registro_usuario{
-    width: 600px;
+  .required_row::after{
+    content: "*";
+    position: absolute;
+    left: 25%;
+    padding-top: 2.5%;
+    color: rgb(251, 67, 67);
+    font-size: 25px;
   }
-  .contenido-user .content-nombres_usuario{
-    width: 100%;
+
+  .required_row--active::after{
+    content: "*";
+    position: absolute;
+    left: 25%;
+    padding-top: 2%;
+    color: rgb(251, 67, 67);
+    font-size: 25px;
   }
 }
 
-@media screen and (max-width:700px){
-  .formulario_registro_usuario{
-    width: 400px;
-  }
 
-  #cargo_usuario{
-    width: 78%;
-  }
-  .button_registro{
-    font-size: 15px;
-    width: 80px;
-  }
-
-} 
-
-@media screen and(max-height:700px){
-  body{
-    background-color: #042342;
-  }
-}
