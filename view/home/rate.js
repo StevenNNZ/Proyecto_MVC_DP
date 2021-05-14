@@ -22,7 +22,9 @@ $('#add_rate').on('click', function(){
             </div>
             </fieldset>`,
             confirmButtonText:'Registrar',
+            cancelButtonText:'Cancelar',
             showCancelButton:true,
+            allowOutsideClick: false,
             preConfirm: () => {
                 // function guardaryeditar(e){
                     let tipo = $('#tipo').val();

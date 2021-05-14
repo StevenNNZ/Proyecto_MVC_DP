@@ -118,7 +118,7 @@
                                     <input type="hidden" name="enviar" class="form-control" value="si">
                                     <button type="submit" class="button-index">Iniciar sesión</button>
                                     <div class="forgot">
-                                        <a href="">Recuperar contraseña</a>
+                                        <!-- <a href="">Recuperar contraseña</a> -->
                                     </div>
                                 <div class="line"></div>
                                 <p class="new_account">¿Aún no tienes una cuenta? <a id="registrarse" class="link tarifa_click">Regístrate</a></p>

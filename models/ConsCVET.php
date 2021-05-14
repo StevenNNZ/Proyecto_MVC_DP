@@ -87,6 +87,17 @@
 
             return $resultado=$sql->fetchAll();
         }
+
+        public function getBahiaActiva(){
+            $conectar = parent::Conexion();
+            parent::set_names();
+
+            $sql="SELECT id_estacionamiento, Num_estacionamiento, id_vehiculo, id_cliente, Estado_estacionamiento, esta_descripcion, hora_creacion  FROM estacionamiento WHERE Estado_estacionamiento = 'Activo';";
+            $sql=$conectar->prepare($sql);
+            $sql->execute();
+
+            return $resultado=$sql->fetchAll();
+        }
         
     }
 ?>

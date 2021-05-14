@@ -59,14 +59,6 @@ $(document).ready(function() {
                 confirmButtonText:'Registrar',
                 showCancelButton:true,
                 allowOutsideClick: false,
-                // didOpen: () =>{
-                //     $('#contrasena').on('keyup', ()=>{
-                //         let contador=$('#contrasena').val().lenght;
-                //         console.log($("#contrasena").val().length);
-                        
-                //         console.log(contador);
-                //     })
-                // }, 
                 preConfirm: () => {
                         let documento = $('#documento_usuario').val();
                         let nombre = $('#nombre_usuario').val();

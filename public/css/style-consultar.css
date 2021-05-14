@@ -183,7 +183,7 @@
 .contenedor-table__table{
     margin: 0px auto;
     border-collapse: collapse;
-    width: 70%;
+    width: 80%;
     height: 50px;
 }
 
@@ -205,7 +205,7 @@ th{
     position: sticky;
     top: -1px;
     /* border: 1px solid rgb(83, 83, 83); */
-    min-width:210px ;
+    width:10% ;
     height: 50px;
     padding-left: 37px;
     padding-right: 37px;

@@ -28,19 +28,16 @@
 					<a href="../Cliente/Registrar/">Ingresar Bahía</a>
 				</li>
 				<li>
-					<a href="../formularios/consultar-cliente.php">Consultar<br>cliente/vehículo</a>
+					<a href="../formularios/../Cliente/Consultar/">Consultar<br>cliente/vehículo</a>
 				</li>
 				<li>
-					<a href="../formularios/consultar-ticket.php">Consultar<br>ticket</a>
+					<a href="../Ticket/">Consultar<br>ticket</a>
 				</li>
 				<li>
-					<a href="../formularios/consultar-tarifa.php">Consultar<br>tarifa</a>
+					<a href="../Tarifa/">Consultar<br>tarifa</a>
 				</li>
 				<li>
-					<a href="../formularios/estacionamiento-activo.php">Bahías<br>Activas</a>
-				</li>
-				<li>
-					<a href="../formularios/consultar-estacionamiento.php">Consultar<br>Bahías</a>
+					<a href="../Bahias/">Bahías<br>Activas</a>
 				</li>
 			</ul>
    		</div>

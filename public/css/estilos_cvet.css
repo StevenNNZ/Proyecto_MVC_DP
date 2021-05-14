@@ -33,10 +33,14 @@
     box-shadow: 1px 1px 10px rgb(88, 88, 88);
 }
 
-
 /* iconos de CVET */
 .contenedor__consultas--item .icon_cvet{
     font-size: 70px;
+    color: #656768;
+}
+
+.contenedor__consultas--item .icon_cvet_arrow{
+    font-size: 45px;
     color: #656768;
 }
 
@@ -92,6 +96,18 @@
     margin-left: 25px;
 } 
 
+/* Icono de ticket_entrada */
+.contenedor__consultas--item .ticket_entrada{
+    margin-top: -25px;
+    margin-left: 5px;
+} 
+
+/* Icono de ticket_salida */
+.contenedor__consultas--item .ticket_salida{
+    margin-top: -25px;
+    margin-left: 5px;
+} 
+
 /* Botón para consultar CVET */
 .button_cvet{
     display: inline-block;
@@ -105,6 +121,7 @@
     font-size: 20px;
     font-weight: bold;
     padding: 2px;
+    cursor: pointer;
 }
 
 .button_cvet:hover{
