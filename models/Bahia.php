@@ -151,11 +151,11 @@
             $validacion_esta=$sql->fetchAll();
             foreach ($validacion_esta as $row){
                 $vali_esta = $row["id_estacionamiento"]; //Recuperar el atributo requerido.
-                echo $vali_esta;
+                // echo $vali_esta;
                 break;
             }
             $descripcion_mov3 = "Ha agregado un nuevo <b>estacionamiento</b> con ID: <b>$vali_esta</b>";
-            echo $descripcion_mov3;
+            // echo $descripcion_mov3;
             $sql="INSERT INTO user_movimiento (mov_id, mov_user, mov_descrip, mov_fecha) VALUES(NULL, ?, ?, now());";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1,$id_user);

@@ -95,7 +95,7 @@
                 <div class="button-contenedor">
                     <input class="button reset" type="reset" name="btn-limpiar" value="Limpiar">
                     <!-- <input class="button" type="submit" name="btn-registrar" id="btn-registrar" value="Registrar"> -->
-                    <button type="submit" name="action" value="add" class="button">Registrar</button>
+                    <button type="submit" name="button_action" id='button_action' value="add" class="button">Registrar</button>
                 </div>
                 </form>
             </div>

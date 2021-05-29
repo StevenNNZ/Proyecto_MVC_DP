@@ -5,12 +5,23 @@
 
 } 
 
+.container_edit{
+	width: 50%;
+	padding: 50px;
+	margin: 0 auto;
+}
+
 
 /* Contenedor del formulario */
 .content-form{
     width:80%;
 	margin: 10px auto;
 	margin-bottom: 300px;
+}
+
+.content-form_edit{
+	width:100%;
+	margin: 10px auto;
 }
 
 /* Estilos del formulario */
@@ -100,6 +111,11 @@
 	display: inline-block;
 }
 
+.second_edit{
+    border: 1px solid #6a6d7083;
+	width: 100%;
+	display: inline-block;
+}
 /* Fieldset que contiene el textarea/descripción */
 .fieldset_textarea{
 	border: 1px solid #6a6d7083;
@@ -132,6 +148,14 @@
 	border: 2px solid  #a1a4a586;
 	border-radius: 5px;
 	width: 24%;
+	display: inline-block;
+}
+
+.input-contenedor-edit{
+	margin-bottom: 15px;
+	border: 2px solid  #a1a4a586;
+	border-radius: 5px;
+	width: 100%;
 	display: inline-block;
 }
 
@@ -217,6 +241,18 @@
 	border-radius: 10px;
 	cursor: pointer;
 	transition: 0.7s;
+}
+
+.button:disabled{
+	cursor: progress;
+	color: rgb(116, 114, 114);
+	background-color: #c2c1c1;
+	box-shadow: 0 0 10px rgb(109, 109, 109) inset;
+}
+
+.button:disabled:hover{
+	background-color: #c2c1c1;
+	box-shadow: 0 0 10px rgb(109, 109, 109) inset;
 }
 
 /* Botón de reset */

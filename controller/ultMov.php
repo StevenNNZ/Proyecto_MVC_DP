@@ -31,7 +31,7 @@
                 $html.="
                                 <tr>
                                     <td>$row[mov_id]</td>
-                                    <td>$row[mov_id]</td>
+                                    <td>$row[documento]</td>
                                     <td>$row[nombre]<br>$row[apellido]</td>
                                     <td>$row[mov_descrip]</td>
                                     <td>$row[mov_fecha]</td>

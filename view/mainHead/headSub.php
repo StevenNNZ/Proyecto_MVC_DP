@@ -6,23 +6,17 @@
 	<!-- Estilos Normalize -->
     <link rel="stylesheet" type="text/css" href="../../../public/css/normalize.css">
 
-	<!-- Conexion a fuentes de google. -->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-
 	<!-- Tipografía lobster -->
-	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<link href="../../../public/css/fonts/Lobster.css" rel="stylesheet">
 
 	<!-- Tipografía Open Sans  -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-
-	<!-- Fuente noto sans -->
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
-
-	<!-- Fuente Lato -->
-	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<link href="../../../public/css/fonts/Open-Sans.css" rel="stylesheet">
 
     <!-- Fuente Heebo -->
-    <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+	<link href="../../../public/css/fonts/Heebo.css" rel="stylesheet">
+	
+	<!-- Estilos formulario usuarios -->
+	<link rel="stylesheet" href="../../../public/css/style-registro-usuario.css">
 
 	<!-- Estilos del dashboard -->
 	<link rel="stylesheet" href="../../../public/css/styles-dashboard.css">
@@ -37,3 +31,8 @@
 	<link rel="stylesheet" href="../../../public/css/estilos_cvet.css">
     <!-- Estilos alertas -->
     <link rel="stylesheet" href="../../../public/css/alerts-css.min.css">
+
+	<!-- íconos fontawesome -->
+	<link rel="stylesheet" href="../../../public/css/lib/fontawesome/all.min.css">
+
+

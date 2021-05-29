@@ -20,18 +20,22 @@
     <!-- Estilos formulario registro de usuario. -->
     <link rel="stylesheet" href="public/css/style-registro-usuario.css">
 
-    <!-- Conexión para fuentes de google. -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- Fuente Lobster -->
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <!-- Fuente Noto Sans JP -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2235ad2cfb.js" crossorigin="anonymous"></script>
+    <!-- Tipografía lobster -->
+	<link href="public/css/fonts/Lobster.css" rel="stylesheet">
+
+    <!-- Tipografía Open Sans  -->
+    <link href="public/css/fonts/Open-Sans.css" rel="stylesheet">
+
+    <!-- Fuente Heebo -->
+    <link href="public/css/fonts/Heebo.css" rel="stylesheet">
 
     <!-- Estilos de alertas avisos emergentes. -->
     <link rel="stylesheet" href="public/css/alerts-css.min.css">
+
     <!-- Estilos fontawesome. -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <!-- <script src="public/js/lib/fontawesome/2235ad2cfb.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="public/css/lib/fontawesome/all.min.css">
+    
 </head>
 <body>
     <main>
@@ -140,9 +144,9 @@
     <!-- Script sweet alert -->
 	<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
     <!-- <script type="text/javascript" src="controlador/iniciar_sesion.js"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="public/js/lib/jquery/jquery.min.js"></script>
 
-	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="public/js/lib/sweetalert/sweetalert2.all.min.js"></script>
     <script src="public/js/alerts.min.js"></script>
     <script src="public/js/registroUsuario.js"></script>
 </body>

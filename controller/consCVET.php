@@ -700,7 +700,7 @@
                         <i class='fas fa-bell'></i>
                     </div>
                     <div class='alert--content'>
-                        Mostrando <b>tarifas</b> disponibles.
+                        Mostrando <b>bahías</b> activas.
                     </div>
                 </div>";
 

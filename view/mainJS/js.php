@@ -1,10 +1,10 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- <script src="../../public/js/lib/jquery/jquery.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <script src="../../public/js/lib/jquery/jquery.min.js"></script>
     <!-- Script fontawesome -->
-    <script src="https://kit.fontawesome.com/2235ad2cfb.js" crossorigin="anonymous"></script>
+    <!-- <script src="../../public/js/lib/fontawesome/2235ad2cfb.js" crossorigin="anonymous"></script> -->
 
 	<!-- Script sweet alert -->
-	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="../../public/js/lib/sweetalert/sweetalert2.all.min.js"></script>
 
     <!-- Script alertas de diálogo-->
     <script src="../../public/js/alerts.min.js"></script>

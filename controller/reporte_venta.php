@@ -31,7 +31,8 @@
                         Mostrando registros desde <b>$desde</b> hasta <b>$hasta</b>
                     </div>
                 </div>
-                <div class='contenedor_resultado_consultas'>
+                <div class='contenedor_resultado_consultas' style='text-align:right'>
+                <a id='icon_print-reporteVenta' target='_blank' href='../pdfRepVta/?desde=$desde&hasta=$hasta' ><i class='fas fa-print'></i></a>
                 <div id='contenedor_tabla-general'>
                 <div class='table-responsive'>
                 <table class='contenedor-table__table'>

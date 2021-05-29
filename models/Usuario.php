@@ -48,7 +48,7 @@
         public function insertUser($documento, $nombre, $apellido, $email, $cargo, $password){
             $conectar = parent::Conexion();
             parent::set_names();
-            //Consulta vehículo existente.
+            //Consulta correo usuario existente.
             $sql="SELECT correo FROM usuarios WHERE correo=?";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $email);
@@ -62,7 +62,7 @@
             $validacion_documento=$sql->fetchAll();
             //Validación cliente existente.
             if(is_array($validacion_email) and count($validacion_email)==0 and is_array($validacion_documento) and count($validacion_documento)==0){
-                $sql="INSERT INTO usuarios (documento, nombre, apellido, correo, Cargo, contrasena, estado_usuario, ultimo_ingreso) VALUES (?,?,?,?,?,?, 'Bloqueado', '');";
+                $sql="INSERT INTO usuarios (documento, nombre, apellido, correo, Cargo, contrasena, estado_usuario, ultimo_ingreso, est) VALUES (?,?,?,?,?,?, 'Bloqueado', '', 1);";
 
                 $sql=$conectar->prepare($sql);
                 $sql->bindValue(1, $documento);
