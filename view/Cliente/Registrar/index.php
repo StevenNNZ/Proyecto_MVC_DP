@@ -59,15 +59,15 @@
                                     <input type="number" class="input_registrar" name="modelo_vehiculo" id="modelo_vehiculo" placeholder="Modelo vehículo">
                                 </div>
                                 <fieldset class="fieldset second"><legend>Tamaño vehículo</legend>
-                                     <div class="input-contenedor contenedor_secundario">
+                                    <div class="input-contenedor contenedor_secundario">
                                         <i class="fas fa-car-side icon_formularios_registro"></i>
-                                    <select class="controls" name="tamano_vehiculo" id="tamano_vehiculo" required>
-                                        <option value="" selected="true" disabled="disabled">Seleccionar *</option>
-                                        <option value="Grande">Grande</option>
-                                        <option value="Mediano">Mediano</option>
-                                        <option value="Pequeño">Pequeño</option>
-                                    </select>
-                                </div>
+                                        <select class="controls" name="tamano_vehiculo" id="tamano_vehiculo" required>
+                                            <option value="" selected="true" disabled="disabled">Seleccionar *</option>
+                                            <option value="Grande">Grande</option>
+                                            <option value="Mediano">Mediano</option>
+                                            <option value="Pequeño">Pequeño</option>
+                                        </select>
+                                    </div>
                                 </fieldset >
                                 <fieldset class="fieldset second"><legend>Tipo vehículo</legend>
                                     <div class="input-contenedor contenedor_secundario">
@@ -79,6 +79,7 @@
                                             <option value="Carro">Carro</option>
                                          </select>
                                     </div>
+                                </fieldset>
                             </div>
                         </fieldset>
                         <fieldset class="fieldset"><legend class="legend-principal">Datos Estacionamiento</legend>

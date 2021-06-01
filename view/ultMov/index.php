@@ -13,7 +13,9 @@
     ?>
     </header>
     <main class="main_usuarios">
-        <h1 class="Tittle-admin"><i class="fas fa-users-cog"></i> Últimos movimientos</h1>
+        <h1 class="Tittle-admin">
+            <a href="../home"><i class="fas fa-arrow-alt-circle-left"></i> Últimos movimientos</a>
+        </h1>
         <div class="contenedor-main">
             <div class="contenedor-main_barra-busqueda_usuario">
                 <select class="contenedor-main_barra-busqueda_select">

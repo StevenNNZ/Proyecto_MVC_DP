@@ -14,33 +14,73 @@ $(document).ready(function() {
     
 });
 
-function deleteUser(documento){
+function deleteUser(documento, user_active = $('#user-active').val()){
     Swal.fire({
         title: '¿Realmente desea eliminar este campo?',
         showDenyButton: false,
-        icon: 'error',
+        icon: 'info',
         showCancelButton: true,
         confirmButtonText: `Eliminar`,
         cancelButtonText: `Cancelar`,
       }).then((result) => {
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
-            $.post("../../controller/gest_user.php?op=delete&documento="+documento+"",function(data, status){
+            $.post("../../controller/gest_user.php?op=delete&documento="+documento+"&user_active="+user_active,function(data, status){
                 console.log(data);
-                Swal.fire('¡Campo eliminado!', '', 'success');
+                Swal.fire('¡Campo eliminado!', '', 'error');
                 let search = '';
-                cargarUser($(search));
+                cargarUser(search);
             });
             // return true;
         }
-    })
+    });
 }
 
-function estadoUser($documento){
-    
+function activarUsuario(documento, user_active = $('#user-active').val()){
+    Swal.fire({
+        title: '¿Realmente desea activar este usuario?',
+        showDenyButton: false,
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonText: `Activar`,
+        cancelButtonText: `Cancelar`,
+      }).then((result) => {
+        // Read more about isConfirmed, isDenied below
+        if (result.isConfirmed) {
+            $.post("../../controller/gest_user.php?op=activarUser&documento="+documento+"&user_active="+user_active,function(data, status){
+                console.log(data);
+                Swal.fire('¡Usuario activado!', '', 'success');
+                let search = ' ';
+                cargarUser(search);
+            });
+            // return true;
+        }
+    });
 }
 
-function updateUser(documento){
+function desactivarUsuario(documento, user_active = $('#user-active').val()){
+    Swal.fire({
+        title: '¿Realmente desea desactivar este usuario?',
+        showDenyButton: false,
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonText: `Desactivar`,
+        cancelButtonText: `Cancelar`,
+      }).then((result) => {
+        // Read more about isConfirmed, isDenied below
+        if (result.isConfirmed) {
+            $.post("../../controller/gest_user.php?op=desactivarUser&documento="+documento+"&user_active="+user_active,function(data, status){
+                console.log(data);
+                Swal.fire('¡Usuario desactivado!', '', 'success');
+                let search = ' ';
+                cargarUser(search);
+            });
+            // return true;
+        }
+    });
+}
+
+function updateUser(documento, estado){
     Swal.fire({
         title: '¿Está seguro de editar este campo?',
         showDenyButton: false,
@@ -50,7 +90,7 @@ function updateUser(documento){
       }).then((result) => {
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
-            window.location.href="editarUsuario/?id="+documento;
+            window.location.href="editarUsuario/?id="+documento+"&estado="+estado;
             // return true;
         }
     })

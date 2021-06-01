@@ -41,12 +41,13 @@
                                             <a href='#' onclick='deleteUser($row[documento])' id='$row[documento]'><i id='delete' class='far fa-trash-alt icon_tabla' title='Eliminar Usuario'></i></a>
                                             ";
                     if($row['estado_usuario']=='Activo'){
-                        $html.="<a href='#' onclick='estadoUser($row[documento])' id='$row[documento]'><i id='bloquear' class='fas fa-user-alt-slash icon_tabla' title='Desactivar Usuario'></i></a>";
+                        $prueba = 'hola';
+                        $html.="<a href='#' onclick='desactivarUsuario($row[documento])' id='$row[documento]'><i id='bloquear' class='fas fa-user-alt-slash icon_tabla' title='Desactivar Usuario'></i></a>";
                     }else{
-                        $html.="<a href='#' onclick='estadoUser($row[documento])' id='$row[documento]'><i id='activar' class='fas fa-user-check icon_tabla' title='Activar usuario'></i></a>";
+                        $html.="<a href='#' onclick='activarUsuario($row[documento])' id='$row[documento]'><i id='activar' class='fas fa-user-check icon_tabla' title='Activar usuario'></i></a>";
                     }
                     
-                    $html.="        <a href='#' onclick='updateUser($row[documento])' id='$row[documento]'><i id='edit' class='far fa-edit icon_tabla' title='Editar Usuario'></i></a>
+                    $html.="<a href='#' onclick='updateUser($row[documento], \"$row[estado_usuario]\")' id='$row[documento]'><i id='edit' class='far fa-edit icon_tabla' title='Editar Usuario'></i></a>
                                 </td>
                             </tr>";
                 }
@@ -72,10 +73,12 @@
 
         case "delete":
             $documento = $_GET['documento'];
-            $usuario->deleteUser($documento);
-            break;
+            $user_active = $_GET['user_active'];
 
-        case "editarUsuario":
+            $usuario->deleteUser($documento, $user_active);
+        break;
+
+        case "showEditarUsuario":
             $documento = $_GET['documento'];
             $html="";
             $datos = $usuario->getUser_x_id($documento);
@@ -84,7 +87,7 @@
                 $html.="
                 <div class='container_edit'>
                     <div class='content-form_edit'>
-                        <form method='post' id='form_bahia' class='formulario'>
+                        <form method='post' id='form_editar' class='formulario'>
                             <fieldset class='fieldset'><legend class='legend-principal'>Datos usuario</legend>
                                 <div class='contenido-cliente'>";
                 
@@ -92,7 +95,7 @@
                     $html.="
                             <div class='input-contenedor-edit'>
                                 <i class='fas fa-id-card icon_formularios_registro'></i>
-                                <input type='number' class='input_registrar' name='documento_usaurio' id='documento_usuario' placeholder='Número documento *' value='$row[documento]' disabled readonly required>
+                                <input type='number' class='input_registrar' name='documento_usuario' id='documento_usuario' placeholder='Número documento *' value='$row[documento]' disabled readonly required>
                             </div>
                             <div class='input-contenedor-edit'>
                                 <i class='fas fa-user icon_formularios_registro'></i>
@@ -122,15 +125,14 @@
                             </fieldset>
                             <div class='input-contenedor-edit'>
                                 <i class='fas fa-key icon_formularios_registro'></i>
-                                <input type='password' class='input_registrar' name='contrasena_usuario' id='contrasena_usuario' placeholder='Contraseña  *' min-lenght='8' required>
+                                <input type='password' class='input_registrar' value='$row[contrasena]' name='contrasena_usuario' id='contrasena_usuario' placeholder='Contraseña  *' min-lenght='8' required>
                             </div>";
                 }
                 
                 $html.="
                                         <div class='button-contenedor'>
                                             <input class='button reset' type='reset' name='btn-limpiar' value='Limpiar'>
-                                            <!-- <input class='button' type='submit' name='btn-registrar' id='btn-registrar' value='Registrar'> -->
-                                            <button type='submit' name='action' value='add' class='button'>Registrar</button>
+                                            <button type='submit' name='action' value='add' id='button_action' class='button'>Registrar</button>
                                     </div>
                                 </div>
                             </fieldset>
@@ -151,6 +153,34 @@
                 </div>";
                 echo $html;
             }
+        break;
+        
+        case "activarUser":
+            $documento = $_GET['documento'];
+            $user_active = $_GET['user_active'];
+
+            $usuario->activarUser($documento, $user_active);
+        break;
+        
+        case "desactivarUser":
+            $documento = $_GET['documento'];
+            $user_active = $_GET['user_active'];
+
+            $usuario->desactivarUser($documento, $user_active);
+        break;
+
+        case "updateUser":
+            $id = $_GET['id'];
+            $id_user = $_GET['user'];
+            /*$nom = $_POST['nombre_usuario'];
+            $nom1 = $_POST['apellido_usuario'];
+            $nom2 = $_POST['cargo'];
+            $nom3 = $_POST['contrasena_usuario'];
+            $nom4 = $_POST['email_usuario']; */
+            $usuario->updateUser($id, $_POST['nombre_usuario'], $_POST['apellido_usuario'], $_POST['email_usuario'], $_POST['cargo'], $_POST['contrasena_usuario'], $id_user);
+            
+             return '';
+            
         break;
     }
 ?>

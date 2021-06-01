@@ -1,5 +1,5 @@
 <?php 
-    require '../../public/lib/php/vendor/autoload.php';
+    require '../../public/php/vendor/autoload.php';
     require_once("../../controller/pdfReporteVenta.php");
     $desde = $_GET['desde'];
     $hasta = $_GET['hasta'];
