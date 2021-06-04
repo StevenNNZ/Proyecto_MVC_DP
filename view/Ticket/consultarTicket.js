@@ -1,16 +1,24 @@
+function cargarTicketEntrada(){
+    $.post("../../controller/ticket.php?op=listar_ticketE",function(data, status){
+        $('#contenedor_resultado').html(data);
+    })
+}
+
+function cargarTicketSalida(){
+    $.post("../../controller/ticket.php?op=listar_ticketS",function(data, status){
+        $('#contenedor_resultado').html(data);
+    })
+}
+
 $(document).ready(function() {
         $('#Consultar_ticketE').on('click', function(){
             //Llamado al controlador de 
-            $.post("../../controller/ticket.php?op=listar_ticketE",function(data, status){
-                $('#contenedor_resultado').html(data);
-            })
+            cargarTicketEntrada();
         });
     
         $('#Consultar_ticketS').on('click', function(){
             //Llamado al controlador de 
-            $.post("../../controller/ticket.php?op=listar_ticketS",function(data, status){
-                $('#contenedor_resultado').html(data);
-            })
+            cargarTicketSalida();
         });
     
         function info(mensaje){
@@ -33,3 +41,26 @@ $(document).ready(function() {
         });
     
 });
+
+function terminarTicketEntrada(id, user_active = $('#user-active').val()){
+    console.log(id);
+    $.post("../../controller/ticket.php?op=terminarTicketE&id="+id+"&user_active="+user_active,function(data, status){
+        Swal.fire('¡Ticket generado con éxito!', '', 'success');
+    });
+    cargarTicketEntrada();
+        
+}
+
+
+//GENERAR TICKET DE SALIDA
+function getTicketSalida(id_salida, user_active = $('#user-active').val()){
+
+    $.post("../../controller/ticket.php?op=terminarTicketS&id="+id_salida+"&user_active="+user_active,function(data, status){
+    })
+    .done(function(){
+        cargarTicketSalida();
+        Swal.fire('¡Ticket generado con éxito!', '', 'success');
+        window.open(`../pdfTickSalida/?id_ticket_salida=${id_salida}`);
+    });
+}
+

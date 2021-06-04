@@ -49,7 +49,9 @@
                                         <td>$row[Hora_salida]<br>$row[Fecha_salida]</td>
                                         <td>$row[cajero]</td>
                                         <td>
-                                            <a href='#'><i id='btn-ticket' class='fas fa-eye icon_tabla' title='Eliminar Usuario'></i></a>
+                                            <a href='#' onclick='deleteTicket($row[Id_ticket])' id='$row[Id_ticket]'><i id='delete' class='far fa-trash-alt icon_tabla' title='Eliminar ticket'></i></a>
+                                            <a href='../pdfRepTck/?id=$row[Id_ticket]' target='_blank' ><i id='btn-ticket' class='fas fa-eye icon_tabla' title='Visualizar ticket'></i></a>
+                                            
                                         </td>
                                     </tr>";
                 }
@@ -73,6 +75,12 @@
                 </div>";
                 echo $html;
             }
+        break;
+
+        case "deleteTicket": 
+            $id = $_GET['id'];
+            $user = $_GET['user_active'];
+            $reportesTicket->deleteTicket($id, $user);
         break;
     }
 ?>

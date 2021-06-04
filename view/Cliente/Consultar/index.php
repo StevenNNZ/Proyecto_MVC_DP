@@ -13,7 +13,9 @@
     ?>
     </header>
     <main class="main_cvet">
-        <h1 class="Tittle-admin"><i class="fab fa-elementor"></i> Consultar cliente/vehículo</h1>
+        <h1 class="Tittle-admin">
+            <a href="../../home/"><i class="fas fa-arrow-alt-circle-left"></i> Consultar cliente/Vehículo</a>
+        </h1>
         <div class="contenedor__consultas">
             <div class="contenedor__consultas__cuerpo">
                 <div class="contenedor__consultas--item">

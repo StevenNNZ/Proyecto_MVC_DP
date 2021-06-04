@@ -6,6 +6,7 @@
                 <label class="label__datos_usuario">
                     <i class="fas fa-user-tie icon_usuario"></i>
                     <b class="header-dashboard__label"><?php echo $_SESSION['Cargo']?></b><br><i class="header-dashboard__label-sub">Bienvenido &#40;a&#41; <?php echo $_SESSION['nombre']?></i><br><i class="header-dashboard__label-sub2">&#218;LTIMO INGRESO: <?php echo $_SESSION['hora_ingreso']?></i>
+                    <input type="hidden" id="user-active" name="user-active" value="<?php echo $_SESSION['documento']?>">
                 </label>
                 <label class="header-dashboard__label--links">
                     <a href="<?php require_once("../../../config/conexion.php"); echo Conectar::ruta()."view/home";?>"><i class="fas fa-home home" title="Inicio"></i></a>

@@ -10,14 +10,16 @@
     <?php require_once("../../mainHeader/headerSub.php") ?>
     </header>
     <main>  
-        <h1 class="Tittle-admin"><i class="fas fa-book"></i> Registro de Bahía</h1>
+        <h1 class="Tittle-admin">
+            <a href="../../home/"><i class="fas fa-arrow-alt-circle-left"></i> Registro de bahía</a>
+        </h1>
         <div id="respuesta_registroBahia"></div>
         <div class="container">
             <div class="content-form">
                 <form method="post" id="form_bahia" class="formulario">
                     <input type="hidden" name="id_usuario" id="id_usuario" value="<?php echo $_SESSION['documento']?>">
                     <div class="tittle">
-                        <h1 class="tittle1">Registrar </h1>
+                        <h2 class="tittle1">Registrar </h2>
                         <h2 class="tittle2">Bahía</h2>
                     </div>
                     <div class="sub">
@@ -28,19 +30,19 @@
                             <div class="contenido-cliente">
                                 <div class="input-contenedor">
                                 <i class="fas fa-id-card icon_formularios_registro"></i>
-                                <input type="number" class="input_registrar" name="documento_cliente" id="documento_cliente" placeholder="Número documento *" required>
+                                <input type="number" class="input_registrar" name="documento_cliente" id="documento_cliente" placeholder="Número documento *" required pattern="[0-9]+">
                             </div>
                             <div class="input-contenedor">
                                 <i class="fas fa-user icon_formularios_registro"></i>
-                                <input type="text" class="input_registrar" name="nombre_cliente" id="nombre_cliente" placeholder="Nombre *" required>
+                                <input type="text" class="input_registrar" name="nombre_cliente" id="nombre_cliente" placeholder="Nombre *" required pattern="[a-zA-záéíóúÁÉÍÓÚÑñ ]+">
                             </div>
                             <div class="input-contenedor">
                                 <i class="far fa-user icon_formularios_registro"></i>
-                                <input type="text" class="input_registrar" name="apellido_cliente" id="apellido_cliente" placeholder="Apellido *" required>
+                                <input type="text" class="input_registrar" name="apellido_cliente" id="apellido_cliente" placeholder="Apellido *" pattern="[a-zA-záéíóúÁÉÍÓÚÑñ ]+" required>
                             </div>
                             <div class="input-contenedor">
                                 <i class="fas fa-phone icon_formularios_registro"></i>
-                                <input type="tel" class="input_registrar" name="telefono_cliente" id="telefono_cliente" placeholder="Teléfono *" required>
+                                <input type="number" class="input_registrar" name="telefono_cliente" id="telefono_cliente" placeholder="Teléfono *" required>
                             </div>
                         </div>
                         </fieldset>
@@ -85,7 +87,7 @@
                         <fieldset class="fieldset"><legend class="legend-principal">Datos Estacionamiento</legend>
                             <div class="input-contenedor">
                                 <i class="fas fa-map-marker-alt icon_formularios_registro"></i>
-                                <input type="text" class="input_registrar" name="num_estacionamiento" id="num_estacionamiento" placeholder="Número estacionamiento *" required>
+                                <input type="number" class="input_registrar" name="num_estacionamiento" id="num_estacionamiento" placeholder="Número estacionamiento *" required>
                             </div><br>
                             <fieldset class="fieldset fieldset_textarea"><legend>Descripción/Detalles</legend>
                                 <div class="input-contenedor contenedor_textarea">

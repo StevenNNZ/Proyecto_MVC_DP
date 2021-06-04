@@ -157,6 +157,15 @@
     font-size: 35px;
     color: #ff6f00;
 }
+
+#retirarBahia{
+    color: #ff6f00;
+}
+
+#retirarBahia:active{
+    color: #ff0000;
+}
+
 /*  */
 @media screen and (max-width: 767px) {
     .table-responsive {

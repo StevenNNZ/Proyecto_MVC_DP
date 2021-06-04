@@ -9,11 +9,6 @@
             // Método getReporte_venta --> recibe la fecha desde y la fecha hasta requeridos para la consulta sql.
             $datos = $reportesVenta->getReporte_venta($desde, $hasta);
             
-            //Función dar formato de moneda a los resultados de la tabla.
-            function formatoMoneda($valor){
-                number_format($valor);
-                return '$'.' '.$valor;
-            }
             
             //Creación de la respuesta a la vista.
             if(is_array($datos) and count($datos)>0){
@@ -49,14 +44,14 @@
                                         <td>$row[Fecha_entrada]<br>$row[Hora_entrada]</td>
                                         <td>$row[Fecha_salida]<br>$row[Hora_salida]</td>
                                         <td>$row[tiempo_servicio]</td>
-                                        <td>".formatoMoneda($row['Pago_total'])."</td>
+                                        <td>$".number_format($row['Pago_total'])."</td>
                                     </tr>";
                 }
                 
                 $html.="
                         <tr>
                             <td class='total_pagos' colspan='7'>Totales consulta</td>
-                            <td class='sumatoria_total_pagos' colspan='2'>".formatoMoneda($totalPagos)."</td>
+                            <td class='sumatoria_total_pagos' colspan='2'>$".number_format($totalPagos)."</td>
                         </tr>
                     </tbody>
                     </table>

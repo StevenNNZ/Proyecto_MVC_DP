@@ -162,7 +162,7 @@
             $sql->bindValue(2,$descripcion_mov3);
             $sql->execute();
 
-            $sql = "INSERT INTO ticket_entrada (Id_ticket_entrada, id_estacionamiento, Hora_entrada, Fecha_entrada, estado_entrada) VALUES (NULL, ?, curtime(), curdate(), 'Activo')";
+            $sql = "INSERT INTO ticket_entrada (Id_ticket_entrada, id_estacionamiento, Hora_entrada, Fecha_entrada, estado_entrada, Fecha_creacion, cajero) VALUES (NULL, ?, curtime(), curdate(), 'Activo', curdate(), $id_user)";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $vali_esta);
             $sql->execute();

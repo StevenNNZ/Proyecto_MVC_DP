@@ -3,6 +3,7 @@
 $(document).ready(function() {
     let id = $('#id_vehiculo').val();
     let user = $('#id_usuario_responsable').val();
+    let rol = $('#cargo_user').val();
 
     
         $.post("../../../controller/consCVET.php?op=showEditarVehiculo&placa="+id,function(data, status){
@@ -49,7 +50,14 @@ $(document).ready(function() {
                                 confirmButtonText: 'Aceptar',
                                 
                             });
-                            setInterval(()=>location.href = '../', 1000);
+                            setInterval(()=>{
+                                if(rol == 'Administrador'){
+                                    location.href = '../'
+                                }else if(rol == 'Cajero'){
+                                    location.href = '../../Cliente/Consultar/'
+                                }
+                            
+                            }, 1000);
                             
                         }
                     }

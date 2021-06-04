@@ -1,6 +1,7 @@
 <?php 
     require_once("../config/conexion.php");
     require_once("../models/ConsCVET.php");
+    require_once("../models/Ticket.php");
 
     // Instancia clase Consultas CVET (Clientes, Vehiculos, Estacionamientos, Tarifas)
     $consCVET = new ConsCVET();
@@ -351,11 +352,11 @@
                                         <input type='text' class='input_registrar' name='placa' id='placa' placeholder='Placa *' value='$row[Placa]' required>
                                     </div>
                                     <div class='input-contenedor-edit'>
-                                        <i class='fas fa-user icon_formularios_registro'></i>
+                                        <i class='fas fa-palette icon_formularios_registro'></i>
                                         <input type='text' class='input_registrar' name='color_vehiculo' id='color_vehiculo' placeholder='Color' value='$row[Color_vehiculo]'>
                                     </div>
                                     <div class='input-contenedor-edit'>
-                                        <i class='far fa-user icon_formularios_registro'></i>
+                                        <i class='fas fa-car icon_formularios_registro'></i>
                                         <input type='text' class='input_registrar' name='modelo_vehiculo' id='modelo_vehiculo' placeholder='Modelo *' value='$row[Modelo_vehiculo]'>
                                     </div>
                                     <fieldset class='fieldset second'><legend>Tamaño vehículo</legend>
@@ -634,7 +635,7 @@
                                     </fieldset >
                                     <fieldset class='fieldset second'><legend>Cliente</legend>
                                         <div class='input-contenedor contenedor_secundario'>
-                                            <i class='fas fa-car-side icon_formularios_registro'></i>
+                                            <i class='fas fa-user icon_formularios_registro'></i>
                                             <select class='controls' name='cliente' id='cliente' required>
                                                 <option value='$row[id_cliente]' selected='true'>$row[id_cliente]</option>";
                                                 $html.=getClientes($row['id_cliente']);
@@ -856,7 +857,7 @@
                                     </div>
                                     </fieldset >
                                     <div class='input-contenedor-edit'>
-                                        <i class='fas fa-user icon_formularios_registro'></i>
+                                        <i class='fas fa-hand-holding-usd icon_formularios_registro'></i>
                                         <input type='number' class='input_registrar' name='valor_tarifa' id='valor_tarifa' placeholder='Valor tarifa' value='$row[Valor_tarifa]'>
                                     </div>";
                 }
@@ -929,8 +930,8 @@
                                         <td>$row[Apellido]</td>
                                         <td>$row[Telefono]</td>
                                         <td>
-                                            <a href='#'><i id='delete' class='far fa-trash-alt icon_tabla' title='Eliminar cliente'></i></a>
-                                            <a href='#'><i id='edit' class='far fa-edit icon_tabla' title='Editar cliente'></i></a>
+                                            <a href='#' onclick='deleteCliente($row[Documento])' id='$row[Documento]'><i id='delete' class='far fa-trash-alt icon_tabla' title='Eliminar cliente'></i></a>
+                                            <a href='#' onclick='updateCliente($row[Documento])' id='$row[Documento]'><i id='edit' class='far fa-edit icon_tabla' title='Editar cliente'></i></a>
                                         </td>
                                     </tr>";
                 }
@@ -990,8 +991,8 @@
                                             <td>$row[Tamano_vehiculo]</td>
                                             <td>$row[Tipo_vehiculo]</td>
                                             <td>
-                                                <a href='#'><i id='delete' class='far fa-trash-alt icon_tabla' title='Eliminar vehículo'></i></a>
-                                                <a href='#'><i id='edit' class='far fa-edit icon_tabla' title='Editar vehículo'></i></a>
+                                                <a href='#' onclick='deleteVehiculo(\"$row[Placa]\")' id='$row[Placa]'><i id='delete' class='far fa-trash-alt icon_tabla' title='Eliminar Vehiculo'></i></a>
+                                                <a href='#' onclick='updateVehiculo(\"$row[Placa]\")' id='$row[Placa]'><i id='edit' class='far fa-edit icon_tabla' title='Editar Vehiculo'></i></a>
                                             </td>
                                         </tr>";
                     }
@@ -1117,6 +1118,9 @@
                         <tbody class='contenedor-table__tbody'>";
                 
                 foreach($datos as $row){
+                    $fecha = $row['fecha_creacion'];
+                    $entradaFecha = date_create($fecha);
+                    $entradaFecha = date_format($entradaFecha, 'd-M-Y');
                     $html.="
                                     <tr>
                                         <td>$row[id_estacionamiento]</td>
@@ -1125,9 +1129,9 @@
                                         <td>$row[id_cliente]</td>
                                         <td>$row[Estado_estacionamiento]</td>
                                         <td>$row[esta_descripcion]</td>
-                                        <td>$row[hora_creacion]</td>
+                                        <td>$entradaFecha <br> $row[hora_creacion]</td>
                                         <td>
-                                            <a href='#'><i id='delete' class='fas fa-sign-in-alt icon_tabla' title='Retirar bahía'></i></a>
+                                            <a onclick='retirarBahia($row[id_estacionamiento], $row[Id_ticket_entrada])' href='#' id='retirarBahia'><i id='' class='fas fa-sign-in-alt icon_tabla' title='Retirar bahía'></i></a>
                                         </td>
                                     </tr>";
                 }
@@ -1154,5 +1158,23 @@
             }
         break;
 
+        case "retirarBahia": 
+            $id = $_GET['id'];
+            $id_entrada = $_GET['id_entrada'];
+            $user_active = $_GET['user_active']; //Usuario que realiza los movimientos
+            
+            //Retirar la bahía de los estacionamientos activos.
+            $consCVET->retirarBahia($id, $id_entrada, $user_active);
+
+            $ticket = new Ticket();
+            $ticketSalida = $ticket->getTicketSalida_x_id($id_entrada);
+            foreach($ticketSalida as $row){
+                $id_ticket_salida = $row['Id_ticket'];
+            }
+
+            $terminarTicket = new Ticket();
+            $terminarTicket->terminarTicketS($id_ticket_salida, $user_active);
+            
+        break;
     }
 ?>

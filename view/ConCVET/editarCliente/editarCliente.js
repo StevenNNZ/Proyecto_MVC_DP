@@ -3,7 +3,8 @@
 $(document).ready(function() {
     let id = $('#id_cliente').val();
     let user = $('#id_usuario_responsable').val();
-
+    let rol = $('#cargo_user').val();
+    console.log(id, user, rol);
     
         $.post("../../../controller/consCVET.php?op=showEditarCliente&documento="+id,function(data, status){
             $('#contenedor_resultado').html(data);
@@ -49,7 +50,14 @@ $(document).ready(function() {
                                 confirmButtonText: 'Aceptar',
                                 
                             });
-                            setInterval(()=>location.href = '../', 1000);
+                            setInterval(()=>{
+                                if(rol == 'Administrador'){
+                                    location.href = '../'
+                                }else if(rol == 'Cajero'){
+                                    location.href = '../../Cliente/Consultar/'
+                                }
+                            
+                            }, 1000);
                             
                         }
                     }

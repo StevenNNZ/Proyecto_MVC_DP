@@ -327,8 +327,28 @@
             $conectar = parent::Conexion();
             parent::set_names();
 
-            $sql="SELECT id_estacionamiento, Num_estacionamiento, id_vehiculo, id_cliente, Estado_estacionamiento, esta_descripcion, hora_creacion  FROM estacionamiento WHERE Estado_estacionamiento = 'Activo';";
+            $sql="SELECT e.id_estacionamiento, te.Id_ticket_entrada, e.Num_estacionamiento, e.id_vehiculo, e.id_cliente, e.Estado_estacionamiento, e.esta_descripcion, e.fecha_creacion, e.hora_creacion FROM estacionamiento e, ticket_entrada te WHERE e.Estado_estacionamiento = 'Activo' AND e.id_estacionamiento = te.id_estacionamiento AND e.est = 1;";
             $sql=$conectar->prepare($sql);
+            $sql->execute();
+
+            return $resultado=$sql->fetchAll();
+        }
+
+        public function retirarBahia($id,$id_entrada, $id_usuario){
+            $conectar = parent::Conexion();
+            parent::set_names();
+            $descrip = "Ha retirado la <b>bahía</b> con id: <b>$id</b>";
+
+            $sql="UPDATE estacionamiento SET Estado_estacionamiento = 'Terminado' WHERE estacionamiento.id_estacionamiento = ?;
+            INSERT INTO user_movimiento (mov_id, mov_user, mov_descrip, mov_fecha) VALUES(NULL, ?, ?, now());
+            INSERt INTO ticket_salida VALUES (NULL, ?, CURDATE(), CURTIME(), 'Activo', ?, CURDATE(), 1)";
+
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $id);
+            $sql->bindValue(2, $id_usuario);
+            $sql->bindValue(3, $descrip);
+            $sql->bindValue(4, $id_entrada);
+            $sql->bindValue(5, $id_usuario);
             $sql->execute();
 
             return $resultado=$sql->fetchAll();

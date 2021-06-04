@@ -5,6 +5,7 @@
     $ticket = new Ticket();
 
     switch($_GET["op"]){
+        //Listar tickets de entrada
         case "listar_ticketE":
             $html="";
             $datos = $ticket->getTicketEntrada();
@@ -42,7 +43,7 @@
                                         <td>$row[Fecha_entrada]</td>
                                         <td>$row[estado_entrada]</td>
                                         <td>
-                                            <a target='_BLANK' href='#'><i id='print' class='fas fa-print icon' title='Imprimir ticket ingreso'></i></a>
+                                            <a target='_BLANK' href='../pdfTickEntrada?id=$row[Id_ticket_entrada]' onclick='terminarTicketEntrada($row[Id_ticket_entrada])'><i id='print' class='fas fa-print icon' title='Imprimir ticket ingreso'></i></a>
                                         </td>
                                     </tr>";
                 }
@@ -66,6 +67,8 @@
                 echo $html;
             }
         break;
+
+        //Listar tickets de salida
         case "listar_ticketS":
             $html="";
             $datos = $ticket->getTicketsalida();
@@ -103,7 +106,7 @@
                                         <td>$row[estado_salida]</td>
                                         <td>$row[cajero]</td>
                                         <td>
-                                            <a target='_BLANK' href='#'><i id='print' class='fas fa-print icon' title='Imprimir ticket salida'></i></a>
+                                            <a href='#' onclick='getTicketSalida($row[Id_ticket])'><i id='print' class='fas fa-print icon' title='Imprimir ticket salida'></i></a>
                                         </td>
                                     </tr>";
                 }
@@ -126,6 +129,22 @@
                 </div>";
                 echo $html;
             }
+        break;
+
+        //Desactivar tickets de entrada
+        case "terminarTicketE":
+            $id = $_GET['id'];
+            $user_active = $_GET['user_active'];
+
+            $ticket->terminarTicketE($id, $user_active);
+        break;
+        
+        //Desactivar tickets de salida
+        case "terminarTicketS":
+            $id = $_GET['id'];
+            $user_active = $_GET['user_active'];
+
+            $ticket->terminarTicketS($id, $user_active);
         break;
     }
 ?>

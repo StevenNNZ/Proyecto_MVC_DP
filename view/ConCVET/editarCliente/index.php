@@ -13,11 +13,22 @@
     ?>
     </header>
     <main class="main_usuarios">
-        <h1 class="Tittle-admin">
-            <a href="../"><i class="fas fa-arrow-alt-circle-left"></i> Editar cliente</a>
+        <?php 
+            if(isset($_SESSION['Cargo'])){
+                $rol = $_SESSION['Cargo'];
+            }
+        ?>
+        <h1 class="Tittle-admin">   
+            <?php if($rol == 'Administrador'):?>
+                <a href="../"><i class="fas fa-arrow-alt-circle-left"></i> Editar cliente</a>
+            <?php endif?>
+            <?php if($rol == 'Cajero'):?>
+                <a href="../../Cliente/Consultar/"><i class="fas fa-arrow-alt-circle-left"></i> Editar cliente</a>
+            <?php endif?>
         </h1>
-        <input type="hidden" name="id_usuario_responsable" id="id_usuario_responsable" value="<?php echo $_SESSION['documento']?>">
-        <input type="hidden" name="id_cliente" id="id_cliente" value="<?php echo $_GET['id']?>">
+        <input type="hidden" name="id_usuario_responsable" id="id_usuario_responsable" value="<?= $_SESSION['documento']?>">
+        <input type="hidden" name="cargo_user" id="cargo_user" value="<?= $rol?>">
+        <input type="hidden" name="id_cliente" id="id_cliente" value="<?=$_GET['id']?>">
          <div id="contenedor_resultado">
          
          </div> 

@@ -10,7 +10,9 @@
     <?php require_once("../mainHeader/header.php") ?>
     </header>
     <main>  
-        <h1 class="Tittle-admin"><i class="fas fa-book"></i> Consultar Ticket</h1>
+        <h1 class="Tittle-admin">
+                <a href="../home/"><i class="fas fa-arrow-alt-circle-left"></i> Consultar Ticket</a>
+        </h1>
         <div class="contenedor__consultas">
             <div class="contenedor__consultas__cuerpo">
                 <div class="contenedor__consultas--item">

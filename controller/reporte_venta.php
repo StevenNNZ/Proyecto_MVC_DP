@@ -10,18 +10,13 @@
             $desde = $_GET['desde'];
             $hasta = $_GET['hasta'];
             $html="";
-            // Método getReporte_venta --> recibe la fecha desde y la fecha hasta requeridos para la consulta sql.
             $datos = $reportesVenta->getReporte_venta($desde, $hasta);
             
-            //Función dar formato de moneda a los resultados de la tabla.
-            function formatoMoneda($valor){
-                number_format($valor);
-                return '$'.' '.$valor;
-            }
             
             //Creación de la respuesta a la vista.
             if(is_array($datos) and count($datos)>0){
-                $totalPagos=0;
+                $totalPagos = 0;
+                floatval($totalPagos);
                 $html.="
                 <div class='alert alert_success alert_sm' id='contenedor-alerta-reportes_venta' style='animation-delay: .2s;margin:0 auto;margin-bottom:10px'>
                     <div class='alert--icon'>
@@ -52,7 +47,8 @@
                     <tbody class='contenedor-table__tbody'>";
                 
                 foreach($datos as $row){
-                    $totalPagos+=$row['Pago_total'];
+                    $totalPagos+=floatval($row['Pago_total']);
+                    // $tipo = number_format($row['Pago_total']);
                     $html.="
                                     <tr>
                                         <td>$row[id_reporte]</td>
@@ -63,14 +59,14 @@
                                         <td>$row[Fecha_entrada]<br>$row[Hora_entrada]</td>
                                         <td>$row[Fecha_salida]<br>$row[Hora_salida]</td>
                                         <td>$row[tiempo_servicio]</td>
-                                        <td>".formatoMoneda($row['Pago_total'])."</td>
+                                        <td>$".number_format($row['Pago_total'])."</td>
                                     </tr>";
                 }
                 
                 $html.="
                         <tr>
                             <td class='total_pagos' colspan='8'>Totales consulta</td>
-                            <td class='sumatoria_total_pagos'>".formatoMoneda($totalPagos)."</td>
+                            <td class='sumatoria_total_pagos'>$".number_format($totalPagos)."</td>
                         </tr>
                     </tbody>
                     </table>
