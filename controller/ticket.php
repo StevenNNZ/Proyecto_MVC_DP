@@ -309,7 +309,7 @@
     }
 
     //Calcula el valor final a pagar
-    function calcularPagoFinal($valorTarifa, $s, $i, $H, $cantidadDias){
+    function calcularPagoFinal($valorTarifa, $H, $i, $s, $cantidadDias){
         //Definir valores por segundo/minuto/hora/dia
         $valorSegundo = 0; $valorMinuto = 0; $valorHora = 0; $valorDias = 0;
 
