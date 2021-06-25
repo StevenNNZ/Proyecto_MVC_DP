@@ -12,7 +12,7 @@ $(document).ready(function() {
                 </div>
             </div>`;
         }else{
-            $.post("../../controller/ultMov.php?op=consultaMovimiento&search="+search+"",function(data, status){
+            $.post("../../controller/usuario.php?op=ultimos_movimientos&search="+search+"",function(data, status){
                 $('#contenedor_resultado').html(data);
             })
         }

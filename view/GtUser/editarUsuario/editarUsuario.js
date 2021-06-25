@@ -1,11 +1,9 @@
-
-
 $(document).ready(function() {
-    let id = $('#id_usuario').val();
-    let user = $('#id_usuario_responsable').val();
+    const id = $('#id_usuario').val();
+    const user = $('#id_usuario_responsable').val();
 
     
-        $.post("../../../controller/gest_user.php?op=showEditarUsuario&documento="+id,function(data, status){
+        $.post("../../../controller/usuario.php?op=showEditarUsuario&documento="+id,function(data, status){
             $('#contenedor_resultado').html(data);
 
             function init(){
@@ -21,7 +19,7 @@ $(document).ready(function() {
                 e.preventDefault();
                 var formData = new FormData($("#form_editar")[0]);
                 $.ajax({
-                    url: "../../../controller/gest_user.php?op=updateUser&id="+id+"&user="+user,
+                    url: "../../../controller/usuario.php?op=updateUser&id="+id+"&user="+user,
                     type: "POST",
                     data: formData,
                     contentType: false,

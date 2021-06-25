@@ -55,12 +55,12 @@ function terminarTicketEntrada(id, user_active = $('#user-active').val()){
 //GENERAR TICKET DE SALIDA
 function getTicketSalida(id_salida, user_active = $('#user-active').val()){
 
-    $.post("../../controller/ticket.php?op=terminarTicketS&id="+id_salida+"&user_active="+user_active,function(data, status){
+    $.post("../../controller/ticket.php?op=terminarTicketSalida&id="+id_salida+"&user_active="+user_active,function(data, status){
     })
     .done(function(){
         cargarTicketSalida();
         Swal.fire('¡Ticket generado con éxito!', '', 'success');
-        window.open(`../pdfTickSalida/?id_ticket_salida=${id_salida}`);
+        window.open(`../viewPDF/pdfTickSalida/?id_ticket_salida=${id_salida}`);
     });
 }
 

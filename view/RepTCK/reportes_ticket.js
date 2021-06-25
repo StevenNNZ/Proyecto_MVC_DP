@@ -18,19 +18,19 @@ $(document).ready(function() {
             
         }else{
             //Llamado al controlador de 
-            $.post("../../controller/reporteTicket.php?op=combo&desde="+desde+"&hasta="+hasta+"&desdeH="+desdeH+"&hastaH="+hastaH+"",function(data, status){
+            $.post("../../controller/ticket.php?op=getReporteTickets&desde="+desde+"&hasta="+hasta+"&desdeH="+desdeH+"&hastaH="+hastaH+"",function(data, status){
                     $('#contenedor_resultado').html(data);
             });
         }
     });
 });
 
-function cargarTicket(){
+function cargarTickets(){
     let desde = $('#desde').val(),
         desdeH = $('#desde_hora').val(),
         hasta = $('#hasta').val(),
         hastaH = $('#hasta_hora').val();
-    $.post("../../controller/reporteTicket.php?op=combo&desde="+desde+"&hasta="+hasta+"&desdeH="+desdeH+"&hastaH="+hastaH+"",function(data, status){
+    $.post("../../controller/ticket.php?op=getReporteTickets&desde="+desde+"&hasta="+hasta+"&desdeH="+desdeH+"&hastaH="+hastaH+"",function(data, status){
         $('#contenedor_resultado').html(data);
     });
 }
@@ -47,13 +47,46 @@ function deleteTicket(id, user_active = $('#user-active').val()){
       }).then((result) => {
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
-            $.post("../../controller/reporteTicket.php?op=deleteTicket&id="+id+"&user_active="+user_active,function(data, status){
+            $.post("../../controller/ticket.php?op=deleteTicketSalida&id="+id+"&user_active="+user_active,function(data, status){
                 Swal.fire('¡Campo eliminado!', '', 'error');
             })
             .done(function(){
-                cargarTicket();
+                cargarTickets();
             });
             // return true;
         }
+    });
+}
+
+function activarTicketSalida(id, user_active = $('#user-active').val()){
+    Swal.fire({
+        title: '¿Está seguro de activar este ticket?',
+        showDenyButton: false,
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonText: `Activar`,
+        cancelButtonText: `Cancelar`,
+      }).then((result) => {
+        // Read more about isConfirmed, isDenied below
+        if (result.isConfirmed) {
+            $.post("../../controller/ticket.php?op=activarTicketSalida&id="+id+"&user_active="+user_active,function(data, status){
+                Swal.fire('¡Ticket activado!', '', 'success');
+            })
+            .done(function(){
+                cargarTickets();
+            });
+            // return true;
+        }
+    });
+}
+
+//GENERAR TICKET DE SALIDA
+function getTicketSalida(id_salida, user_active = $('#user-active').val()){
+    $.post("../../controller/ticket.php?op=terminarTicketSalida&id="+id_salida+"&user_active="+user_active,function(data, status){
+    })
+    .done(function(){
+        cargarTickets();
+        Swal.fire('¡Ticket generado con éxito!', '', 'success');
+        window.open(`../viewPDF/pdfTickSalida/?id_ticket_salida=${id_salida}`);
     });
 }

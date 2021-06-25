@@ -1,23 +1,23 @@
 function cargarCliente(){
-    $.post("../../controller/consCVET.php?op=cliente",function(data, status){
+    $.post("../../controller/cliente.php?op=getClientes",function(data, status){
         $('#contenedor_resultado').html(data);
     })
 }
 
 function cargarVehiculo(){
-    $.post("../../controller/consCVET.php?op=vehiculo",function(data, status){
+    $.post("../../controller/vehiculo.php?op=getVehiculos",function(data, status){
         $('#contenedor_resultado').html(data);
     })
 }
 
-function cargarEstacionamiento(){
-    $.post("../../controller/consCVET.php?op=estacionamiento",function(data, status){
+function cargarBahias(){
+    $.post("../../controller/bahia.php?op=getBahias",function(data, status){
         $('#contenedor_resultado').html(data);
     })
 }
 
-function cargarTarifa(){
-    $.post("../../controller/consCVET.php?op=tarifa",function(data, status){
+function cargarTarifas(){
+    $.post("../../controller/tarifa.php?op=getTarifas",function(data, status){
         $('#contenedor_resultado').html(data);
     })
 }
@@ -26,13 +26,13 @@ $(document).ready(function() {
         $('#Consultar_cliente').on('click', function(){
             //Llamado al controlador de 
             
-            $.post("../../controller/consCVET.php?op=cliente",function(data, status){
+            $.post("../../controller/cliente.php?op=getClientes",function(data, status){
                 $('#contenedor_resultado').html(data);
             })
             .done(function() {
                 $('#search_cliente').on('keyup', function(){
-                    let search = $('#search_cliente').val();
-                    $.post("../../controller/consCVET.php?op=consultaCliente&search="+search+"",function(data, status){
+                    const search = $('#search_cliente').val();
+                    $.post("../../controller/cliente.php?op=consultaClientes&search="+search+"",function(data, status){
                         $('#contenedor_tabla-general').html(data);
                     });
                 });
@@ -41,14 +41,14 @@ $(document).ready(function() {
 
         $('#Consultar_vehiculo').on('click', function(){
             //Llamado al controlador de 
-            $.post("../../controller/consCVET.php?op=vehiculo",function(data, status){
+            $.post("../../controller/vehiculo.php?op=getVehiculos",function(data, status){
                 $('#contenedor_resultado').html(data);
             })
 
             .done(function() {
                 $('#search_vehiculo').on('keyup', function(){
                     let search = $('#search_vehiculo').val();
-                    $.post("../../controller/consCVET.php?op=consultaVehiculo&search="+search+"",function(data, status){
+                    $.post("../../controller/vehiculo.php?op=consultaVehiculos&search="+search+"",function(data, status){
                         $('#contenedor_tabla-general').html(data);
                     });
                 });
@@ -57,7 +57,7 @@ $(document).ready(function() {
 
         $('#Consultar_estacionamiento').on('click', function(){
             //Llamado al controlador de 
-            $.post("../../controller/consCVET.php?op=estacionamiento",function(data, status){
+            $.post("../../controller/bahia.php?op=getBahias",function(data, status){
                 $('#contenedor_resultado').html(data);
             })
 
@@ -77,7 +77,7 @@ $(document).ready(function() {
                         </div>`;
                     }else{
                         //Llamado al controlador de 
-                        $.post("../../controller/consCVET.php?op=consultaEstacionamiento&desde="+desde+"&hasta="+hasta+"",function(data, status){
+                        $.post("../../controller/bahia.php?op=getBahiaBetween&desde="+desde+"&hasta="+hasta+"",function(data, status){
                                 $('#contenedor_tabla-general').html(data);
                         });
                     }
@@ -87,14 +87,14 @@ $(document).ready(function() {
 
         $('#Consultar_tarifas').on('click', function(){
             //Llamado al controlador de 
-            $.post("../../controller/consCVET.php?op=tarifa",function(data, status){
+            $.post("../../controller/tarifa.php?op=getTarifas",function(data, status){
                 $('#contenedor_resultado').html(data);
             })
 
             .done(function() {
                 $('#search_tarifa').on('keyup', function(){
                     let search = $('#search_tarifa').val();
-                    $.post("../../controller/consCVET.php?op=consultaTarifa&search="+search+"",function(data, status){
+                    $.post("../../controller/tarifa.php?op=consultaTarifas&search="+search+"",function(data, status){
                         $('#contenedor_tabla-general').html(data);
                     });
                 });
@@ -130,6 +130,9 @@ $(document).ready(function() {
 
 });
 
+
+//FUNCIONES
+
 function deleteCliente(documento, user_active = $('#user-active').val()){
     Swal.fire({
         title: '¿Está seguro de eliminar este cliente?',
@@ -141,7 +144,7 @@ function deleteCliente(documento, user_active = $('#user-active').val()){
       }).then((result) => {
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
-            $.post("../../controller/consCVET.php?op=deleteCliente&documento="+documento+"&user_active="+user_active,function(data, status){
+            $.post("../../controller/cliente.php?op=deleteCliente&documento="+documento+"&user_active="+user_active,function(data, status){
                 console.log(data);
                 Swal.fire('¡Campo eliminado!', '', 'error');
             });
@@ -178,7 +181,7 @@ function deleteVehiculo(placa, user_active = $('#user-active').val()){
       }).then((result) => {
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
-            $.post("../../controller/consCVET.php?op=deleteVehiculo&placa="+placa+"&user_active="+user_active,function(data, status){
+            $.post("../../controller/vehiculo.php?op=deleteVehiculo&placa="+placa+"&user_active="+user_active,function(data, status){
                 console.log(data);
                 Swal.fire('¡Campo eliminado!', '', 'error');
             });
@@ -213,11 +216,11 @@ function deleteEstacionamiento(id, user_active = $('#user-active').val()){
       }).then((result) => {
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
-            $.post("../../controller/consCVET.php?op=deleteEstacionamiento&id="+id+"&user_active="+user_active,function(data, status){
+            $.post("../../controller/bahia.php?op=deleteBahia&id="+id+"&user_active="+user_active,function(data, status){
                 console.log(data);
                 Swal.fire('¡Campo eliminado!', '', 'error');
             });
-            cargarEstacionamiento();
+            cargarBahias();
             // return true;
         }
     });
@@ -248,10 +251,10 @@ function deleteTarifa(id, user_active = $('#user-active').val()){
       }).then((result) => {
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
-            $.post("../../controller/consCVET.php?op=deleteTarifa&id="+id+"&user_active="+user_active,function(data, status){
+            $.post("../../controller/tarifa.php?op=deleteTarifa&id="+id+"&user_active="+user_active,function(data, status){
                 Swal.fire('¡Campo eliminado!', '', 'error');
             });
-            cargarTarifa();
+            cargarTarifas();
             // return true;
         }
     });

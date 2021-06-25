@@ -12,7 +12,9 @@
 	<?php require_once("../mainHeader/header.php") ?>
     </header>
 	<!-- Content page -->
-    <h1 class="Tittle-admin"><i class="fas fa-store"></i> Interfaz de cajero</h1>
+    <h1 class="Tittle-admin">
+                <a href="../home/"><i class="fas fa-arrow-alt-circle-left"></i> Interfaz cajero</a>
+        </h1>
 	<main>
 		<div class='alert alert_info alert_sm' id='contenedor-alerta-reportes_venta' style='animation-delay: .2s;margin:0 auto;'>
 			<div class='alert--icon'>

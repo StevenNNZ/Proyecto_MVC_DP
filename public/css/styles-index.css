@@ -25,37 +25,36 @@ body{
 
 /* Barra lateral del cuerpo de página. */
 body::-webkit-scrollbar{
-    width: 8px;
+    width: 6px;
     background: rgba(255, 111, 0, 0.699);
 }
 body::-webkit-scrollbar-thumb{
-    width: 8px;
+    width: 6px;
     background: rgba(52, 189, 220, 0.918);
 	border-radius: 5px;
     max-height: 5px;
 }
 
-
-/* main{
-	//margin-bottom: 20px; 
-} */
-
-
 /*contenedor principal */
 .login_signup{
 	padding: 50px;
+	margin-bottom: 100px;
 }
 
 /* Contenedor secundario */
 .container{
-	max-width: 992px;
+	width: 90%;
 	margin: 50px auto;
+	align-items: center;
+	justify-content: center;
 }
 
 /* contenedores que abarcan derecha e izquierda */
 .row{
 	display: flex;
-	flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 550px;
+    align-items: center;
 }
 
 .justify-content-between{
@@ -64,10 +63,10 @@ body::-webkit-scrollbar-thumb{
 
 /* Contenedor izquierdo, nombre e imagen dparking. */
 .content-left{
-	max-width: 500px;
-	margin: -10px auto;
-	margin-left: -100px;
-	margin-right: 100px; 
+	width: 40%;
+    margin: 0 auto;
+    margin-top: -166px;
+    margin-right: -173px;
 }
 /* Estilos títulos. */
 .content-left h1{
@@ -96,21 +95,28 @@ body::-webkit-scrollbar-thumb{
 
 /* Estilos contenedor derecho, formulario inicio de sesión. */
 .content-right{
-	max-width: 450px;
-	margin: auto;
-	margin-left: 40px;
-	text-align: center;
+	width: 40%;
+    margin: 0 auto;
+    /* margin-left: 40px; */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dato_faltante{
+	margin-bottom: 20px;
 }
 /* 
 	X============================================X
-		 Estilos css para el formulario de login 
+		Estilos css para el formulario de login 
 	X============================================X
 */
 
 /* Estilos formulario */
 .content-right .formulario{
 	width: 400px;
-	height: 310px;
+	height: 325px;
 	background: #fff;
 	border-radius: 5px;
 	padding: 15px;
@@ -127,7 +133,7 @@ body::-webkit-scrollbar-thumb{
 	width: 100%;
 	padding: 0px;
 	padding-top: 15px;
-  
+	margin-bottom: 15px;
 }
 
 
@@ -201,7 +207,7 @@ border: 2px solid#f3870bb6;
 .line{
     width: 100%;
     max-width: 200%;
-    margin: 0 auto;
+    margin: 27px auto;
     height: 1px;
     background: rgba(20, 20, 20, 0.2);
     margin-bottom: 10px;
@@ -228,7 +234,8 @@ border: 2px solid#f3870bb6;
 
 /* Estilos terminos y condiciones. */
 .tyc{
-    font-weight: 600;
+    font-style: italic;
+    color: #a5a9ad;
 }
 
 /* Estilos pie de página */
@@ -246,87 +253,4 @@ border: 2px solid#f3870bb6;
     text-align: center;
 
 }
-
-@media(min-width: 768px){
-	.formulario{
-	  margin: auto;
-	  width: 500px;
-	  margin-top: 100px;
-	  border-radius: 2%;
-	  margin-bottom: 30px;
-	}
-  }
-  
-@media screen and (max-width:1200px){
-	.content-left{
-		margin: -10px auto;
-	}
-	.content-right{
-		margin: auto;
-	}
-
-	.formulario{
-	  margin: auto;
-	  width: 400px;
-	  margin-top: 100px;
-	  border-radius: 2%;
-	  
-	}
-  
-	.controls{
-	  font-size: 18px;
-	  width: 80%;
-	  padding: 5px;
-	  border: none;
-	  background: none;
-	}
-
-	.container__logo_principal{
-		width: 400px;
-	}
-
-	.footer_index{
-		height: 10%;
-	}
-
-	.content-left h1, .content-left h2{
-		font-size: 65px;
-	}
-  }
-  @media screen and (max-width:950px){
-	.content-left h1, .content-left h2{
-		font-size: 60px;
-	}
-
-	.container__logo_principal{
-		width: 300px;
-	}
-
-
-  }
-  @media screen and (max-width:700px){
-	.formulario{
-	  margin: auto;
-	  width: 350px;
-	  margin-top: 100px;
-	  border-radius: 2%;
-	}
-
-	.container__logo_principal{
-		width: 250px;
-	}
-
-	.footer_index{
-		height: 10%;
-	}
-
-	.content-left h1, .content-left h2{
-		font-size: 40px;
-	}
-
-	/* Estilos notificacion contraseña/documento incompleto */
-	#dato_faltante{
-		margin-top:30px;
-	}
-  } 
    

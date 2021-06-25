@@ -24,7 +24,7 @@
         require_once("../mainFooter/footer.php");
         require_once("../mainJS/js.php");    
     ?>
-    <script src="consultasCVET.js"></script>
+    <script src="tarifas.js"></script>
 </body>
 </html>
 

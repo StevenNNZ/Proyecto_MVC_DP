@@ -32,3 +32,6 @@
     <!-- Estilos alertas -->
     <link rel="stylesheet" href="../../public/css/alerts-css.min.css">
 
+	<!-- Estilos  responsive -->
+	<link rel="stylesheet" href="../../public/css/responsive.css">
+

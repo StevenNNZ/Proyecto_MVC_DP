@@ -1,12 +1,11 @@
 function cargarBahia(){
-    $.post("../../controller/consCVET.php?op=bahiasActivas",function(data, status){
+    $.post("../../controller/bahia.php?op=getBahiasActivas",function(data, status){
         $('#contenedor_resultado').html(data);
     })
 }
 
 $(document).ready(function() {
     cargarBahia();
-            
 });
 
 
@@ -21,12 +20,16 @@ function retirarBahia(id, id_entrada, user_active = $('#user-active').val()){
       }).then((result) => {
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
-            $.post("../../controller/consCVET.php?op=retirarBahia&id="+id+"&id_entrada="+id_entrada+"&user_active="+user_active,function(data, status){
-                // Swal.fire('¡Campo eliminado!', '', 'error');
+
+            let id_salida;
+
+            $.post(`../../controller/bahia.php?op=retirarBahia&id=${id}&id_entrada=${id_entrada}&user_active=${user_active}`,function(data, status){
+                Swal.fire('¡Bahía retirada con éxito!', '', 'success');
+                id_salida = data;
             })
             .done(function(){
                 cargarBahia();
-                window.open(`../pdfTickSalida/?id=${id}&id_entrada=${id_entrada}`);
+                window.open(`../viewPDF/pdfTickSalida/?id_ticket_salida=${id_salida}`);
             });
             
             // return true;

@@ -29,6 +29,10 @@
    
 	<!-- Estilos consultas CVET -->
 	<link rel="stylesheet" href="../../../public/css/estilos_cvet.css">
+
+	<!-- Estilos  responsive -->
+	<link rel="stylesheet" href="../../../public/css/responsive.css">
+	
     <!-- Estilos alertas -->
     <link rel="stylesheet" href="../../../public/css/alerts-css.min.css">
 

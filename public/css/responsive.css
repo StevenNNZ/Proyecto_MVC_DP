@@ -1,0 +1,576 @@
+/* ESTILOS RESPONSIVE MEDIA QUERY*/
+
+@media screen and (max-width:1800px){
+	.header-dashboard__label--img {
+		margin-top: -70px;
+		margin-left: 90px;
+	}
+
+	.input_registrar{
+		width: 80%;
+	}
+}
+
+@media screen and (max-width:1620px){
+	.contenido-cliente .input-contenedor {
+		width: 48%;
+	}
+
+	.contenido-vehiculo .input-contenedor {
+		width: 33%;
+	}
+
+	.contenido-vehiculo .contenedor_secundario{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width:1590px){
+	.input_registrar{
+		width: 75%;
+	}
+
+	/* .header-dashboard__label--img {
+		margin-top: -70px;
+		margin-left: 85px;
+	} */
+
+	.icon_usuario{
+		margin-left: -5%;
+	}
+
+	.content-left {
+		width: 40%;
+		margin: 0 auto;
+		margin-top: -166px;
+		margin-right: -50px;
+	}
+}
+
+@media screen and (max-width:1410px){
+	.Tittle-admin {
+		width: 20%;
+	}
+
+	.Tittle-admin:hover{
+		width: 22%;
+	}
+
+	.content-left {
+		margin-right: 0px;
+	}
+}
+
+@media screen and (max-width:1320px){
+	.input_registrar{
+		width: 72%;
+	}
+
+	/* .header-dashboard__label--img{
+		margin-top: -6.3%;
+		margin-left: 7.2%;
+	} */
+
+	.content-left {
+		margin-right: 110px;
+	}
+}
+
+@media screen and (max-width:1212px){
+	.contenedor_opciones{
+		margin-bottom: 220px;
+	}	
+
+	.input_registrar{
+		width: 68%;
+	}
+
+	.Tittle-admin {
+		width: 38%;
+	}
+
+	.Tittle-admin:hover {
+		width: 40%;
+	}
+
+	.contenido-vehiculo {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.contenido-vehiculo .input-contenedor {
+		width: 30%;
+		margin: -1px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.contenido-vehiculo .contenedor_secundario {
+		width: 100%;
+	}
+
+	.second {
+		margin-top: 10px;
+		width: 45.5%;
+		display: inline-block;
+		margin-left: 10px;
+	}
+
+	/* .content-left{
+		margin: -10px auto;
+	}
+	.content-right{
+		margin: auto;
+	} */
+
+	/* .formulario{
+	  margin: auto;
+	  width: 400px;
+	  margin-top: 100px;
+	  border-radius: 2%;
+	  
+	} */
+  
+	.controls{
+	  width: 80%;
+	  padding: 5px;
+	  border: none;
+	  background: none;
+	}
+
+	/* .container__logo_principal{
+		width: 400px;
+	} */
+
+	/* .footer_index{
+		height: 10%;
+	} */
+
+	/* .content-left h1, .content-left h2{
+		font-size: 65px;
+	} */
+
+	/* .Tittle-admin {
+		width: 22%;
+	}
+
+	.Tittle-admin:hover{
+		width: 23%;
+	} */
+}
+
+@media screen and (max-width:1130px){
+
+	/* index */
+	.content-left {
+		margin-right: 89px;
+		margin-top: -147px;
+	}
+
+	.content-left h1, .content-left h2 {
+		font-size: 50px;
+	}
+
+	.container__logo_principal {
+		width: 441px;
+	}
+
+	.content-right .formulario {
+		width: 379px;
+		height: 300px;
+		margin-top: 39px;
+		margin-bottom: 30px;
+	}
+
+	.contenedorform {
+		margin-bottom: 11px;
+	}
+
+	.input_index {
+		font-size: 17px;
+	}
+
+	.button-index {
+		width: 83%;
+		padding: 11px 15px;
+		font-size: 18px;
+	}
+
+	.line {
+		margin: 20px auto;
+		margin-bottom: 5px;
+	}
+
+	.new_account {
+		padding-top: 4px;
+	}
+
+
+	/* ? */
+
+	.contenido-vehiculo {
+		display: block;
+	}
+
+	.contenido-cliente .input-contenedor, 
+	.contenido-vehiculo .input-contenedor {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+
+	.second {
+		margin-top: 0px;
+		margin-left: 0px;
+	}
+
+
+
+	.input_registrar{
+		width: 85%;
+	}
+
+	.input-contenedor{
+		display: block;
+		width: 100%;
+	}
+
+	/* Estilos fieldset secundario  */
+	.second{
+		width: 100%;
+	}
+
+	.contenedor_secundario{
+		width: 100%;
+	}
+
+	.controls{
+		width: 85%;
+	}
+
+	.button{
+		width: 40%;
+	}
+
+	.Tittle-admin {
+		width: 24%;
+	}
+
+	.Tittle-admin:hover{
+		width: 25%;
+	}
+
+
+	.icon_usuario{
+		margin-left: -6.5%;
+		font-size: 47px;
+	}
+}
+
+@media screen and (max-width: 1043px){
+	.table-responsive {
+        width: 100%;
+        margin-bottom: 15px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid #ddd;
+    }
+
+    .table-responsive > .table {
+        margin-bottom: 0;
+    }
+    .table-responsive > .table > thead > tr > th,
+    .table-responsive > .table > tbody > tr > th,
+    .table-responsive > .table > tfoot > tr > th,
+    .table-responsive > .table > thead > tr > td,
+    .table-responsive > .table > tbody > tr > td,
+    .table-responsive > .table > tfoot > tr > td {
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 1030px){
+
+	/* INDEX */
+
+	.container {
+		margin: 0 auto;
+	}
+
+	.justify-content-between {
+		text-align: center;
+	}
+
+	.content-left {
+		margin-right: 89px;
+		margin-top: 0px;
+		width: 100%;
+	}
+
+	.content-right {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+
+	.content-left h1, .content-left h2{
+        font-size: 60px;
+    }
+
+	.content-left h2{
+		margin-left: 60px;
+    }
+
+	#main_index{
+		margin-bottom: 350px;
+	}
+
+	#dato_faltante{
+		margin-top: 50px;
+	}
+
+	.footer_index {
+		height: 15%;
+	}
+
+	/*  */
+
+
+    .container__logo_principal{
+        width: 300px;
+		margin-left: 35px;
+    }
+
+
+
+	.input_registrar-full{
+		width: 85%;
+	}
+
+	.Tittle-admin {
+		width: 30%;
+	}
+
+	.Tittle-admin:hover{
+		width: 31%;
+	}
+	
+}
+
+@media screen and (max-width:900px){
+
+	.icon_usuario{
+		font-size: 40px;
+	}
+
+	.logotipo_dparking{
+		margin-right: 30px;
+	}
+
+	.footer-contenedor label{
+		font-size: 18px;
+		margin: auto 10px;
+	} 
+
+	.Tittle-admin {
+		width: 40%;
+	}
+
+	.Tittle-admin:hover{
+		width: 41%;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.formulario{
+		margin: auto;
+		width: 500px;
+		margin-top: 100px;
+		border-radius: 2%;
+		margin-bottom: 30px;
+	}
+}
+
+@media screen and (max-width:700px){
+	.header-dashboard__label--img{
+		margin-top: -60px;
+		margin-left: 77px;
+		width: 80px;
+	}
+
+	.header-dashboard__label--principal, .principal--sub{
+		font-size: 25px;
+	}
+
+	.icon_usuario{
+		font-size: 40px;
+		margin-top: -1000px;
+	}
+
+	.header-dashboard__label{
+		font-size: 20px;
+	}
+	
+	.header-dashboard__label--links .home, .config, .log_out{
+		font-size: 26px;
+	}
+
+	.footer-contenedor label{
+		font-size: 12px;
+	}
+
+	.formulario{
+        margin: auto;
+        width: 440px;
+        margin-top: 100px;
+        border-radius: 2%;
+    }
+
+	.controls {
+		width: 74%;
+	}
+
+    .container__logo_principal{
+        width: 250px;
+    }
+
+    .footer_index{
+        height: 10%;
+    }
+
+    .content-left h1, .content-left h2{
+        font-size: 40px;
+    }
+
+    /* Estilos notificacion contraseña/documento incompleto */
+    #dato_faltante{
+        margin-top:30px;
+    }
+}
+
+@media screen and (max-width: 634px){
+	.input_registrar-full{
+		width: 80%;
+	}
+
+	.content-form{
+		width: 100%;
+	}
+
+	.header-dashboard__label--img {
+		margin-top: -10%;
+	}
+
+	.Tittle-admin {
+		width: 80%;
+	}
+
+	.Tittle-admin:hover{
+		width: 82%;
+	}
+
+    .footer-contenedor label {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+    .input_registro{
+      width: 80%;
+      }
+  
+    .required_row::after{
+      content: "*";
+      position: absolute;
+      left: 25%;
+      padding-top: 2.5%;
+      color: rgb(251, 67, 67);
+      font-size: 25px;
+    }
+  
+    .required_row--active::after{
+      content: "*";
+      position: absolute;
+      left: 25%;
+      padding-top: 2%;
+      color: rgb(251, 67, 67);
+      font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 546px){
+	.controls{
+		width: 70%;
+	}
+
+	.input_registrar {
+		width: 80%;
+	}
+
+	.header-dashboard__label--img {
+		margin-top: -12%;
+	}
+
+    footer{
+		height: 235px;
+	}
+
+	.footer-contenedor {
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+	}
+	
+	.footer-credits {
+		width: 100%;
+	}
+
+	.footer-contenedor label {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width:443px){
+	.container {
+		max-width: 100%;
+		padding: 15px;
+	}
+
+	.logotipo_dparking {
+		margin-right: 30px;
+		display: none;
+	}
+
+	.label__datos_usuario {
+		text-align: left;
+	}
+
+	.tittle .tittle1, .tittle .tittle2 {
+		font-size: 30px;
+	}
+
+	.sub-1, .sub-2 {
+		font-size: 17px;
+	}
+
+	.container {
+		max-width: 100%;
+		padding: 15px;
+	}
+
+	.input_registrar-full{
+		width: 68%;
+	}
+
+	.input_registrar{
+		width: 70%;
+	}
+}
+
+
+@media screen and (max-width: 366px) {
+	.controls{
+		width: 66%;
+	}
+}

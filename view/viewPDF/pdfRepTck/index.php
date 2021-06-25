@@ -1,6 +1,7 @@
 <?php 
-    require '../../public/php/vendor/autoload.php';
-    require_once("../../controller/ticketPDF.php");
+    require '../../../public/php/vendor/autoload.php';
+    require_once "../../../controller/pdfReporteVenta.php";
+    $desde = $_GET['id'];
     $html = '
     <style>
     .negrita{
@@ -53,14 +54,6 @@
     .info .content-info4{
         padding-left: 128px;
     }
-
-    .info .content-info5{
-        padding-left: 112px;
-    }
-
-    .info .content-info6{
-        padding-left: 133px;
-    }
     
     
     
@@ -98,16 +91,52 @@
     }
     </style>';
 
-    if(isset($_GET['id_ticket_salida'])){
-        $html.= showTicketSalida($_GET['id_ticket_salida']);
-    }else{
-        $id = $_GET['id'];
-        $id_entrada = $_GET['id_entrada'];
-        $html.= createSalida($id_entrada, $id);
-    }
+    $html.="
+    <div class='contenedorTicket'>
+        <div class='header'>
+            <h1>Digital Parking</h1>
+            <p>Cra 50 # 26 - Paloquemao</p>
+            <p>Nit: 165856215441</span></p>
+            <p class='negrita'>Ticket de salida</p>
+        </div>
+
+        <div class='info'>
+            <p>
+                <span class='negrita'>No. Ticket:</span><span class='content-info1'>105</span>
+            </p>
+            <p><span class='negrita'>No. Estacionamiento:</span><span class='content-info2'>5</span></p>
+            <p><span class='negrita'>Placa:</span><span class='content-info3'>BGT345</span></p>
+            <p><span class='negrita'>Documento:</span><span class='content-info4'>100789235</span></p>
+
+        </div>
+
+        <div class='detalles_tiempo'>
+            <h2>Fecha y hora de ingreso</h2>
+            <span id='fecha'>27/10/2016</span> <span id='hora'>6:57:00 pm</span>
+            
+            <h2>Fecha y hora de salida</h2>
+            <span id='fecha'>27/10/2016</span> <span id='hora'>6:57:00 pm</span>
+            
+            <h2>Tiempo transcurrido</h2>
+            <span id='fecha'>2h 3min 30seg</span>
+        </div>
+
+        <div class='venta'>
+            <p>Valor venta: <span>$9.800</span></p>
+        </div>
+        
+        <div class='footerTicket'>
+            <h2>Atendido por: <span>Andrea Quiroga</span></h2>
+            <h2 class='fecha'>Fecha: <span>28/05/2021</span></h2>
+        </div>
+    </div>
+    ";
     
 
     use Dompdf\Dompdf;
+    //use Dompdf\Options;
+    // $options = new Options();
+    // $options->set('defaultPaperOrientation','landscape');
 
     $dompdf= new Dompdf();
     $dompdf->load_html($html);

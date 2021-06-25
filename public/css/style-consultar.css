@@ -14,12 +14,12 @@
     font-family: 'Heebo', sans-serif;
     background-image: linear-gradient(to right, #757472 0%, #cccccc 100%);
     border-radius: 1px 1px 50px 1px;
-    width: 17%;
+    width: 26%;
     transition: width 1s;
 }
 
 .Tittle-admin:hover{
-    width: 18%;
+    width: 28%;
 }
 
 .Tittle-admin a{
@@ -174,7 +174,7 @@
 	width: 100%;
 }
 /* Estilos contenedor alerta informe de errores (reportes) */
-#contenedor-alerta-reportes_venta{
+#contenedor-alerta{
     width: 50%;
 }
 
@@ -187,7 +187,7 @@
 .contenedor-table__table{
     margin: 0px auto;
     border-collapse: collapse;
-    width: 80%;
+    width: 95%;
     height: 50px;
 }
 
@@ -203,26 +203,46 @@
 } 
 
 /* Estilos elementos de la cabecera, por etiqueta */
-th{
-    /* #f38a00  #1992b1 */
+th {
     background: #1992b1;
-    position: sticky;
-    top: -1px;
-    /* border: 1px solid rgb(83, 83, 83); */
-    width:10% ;
+    width: auto;
     height: 50px;
-    padding-left: 37px;
-    padding-right: 37px;
-    z-index: 50;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-.tabla_reporte-ventas th{
+.tabla_gestion-usuarios th:nth-child(4){
+    width: 200px;
+}
+
+.tabla_gestion-usuarios th:nth-child(5){
+    width: 135px;
+}
+
+.tabla_reporte-ventas th:nth-child(1){
+    width: 140px;
+}
+
+.tabla_reporte-ventas th:nth-child(5){
+    width: 140px;
+}
+
+.tabla_reporte-ventas th:nth-child(7), 
+.tabla-reporte-ventas th:nth-child(8){
+    width: 135px;
+}
+
+
+
+
+
+/* .tabla_reporte-ventas th{
     min-width:100px ;
 }
 
 .tabla_gestion-usuarios th{
     min-width:100px ;
-}
+} */
 
 /* 
 .contenedor_table_principal--estacionamiento{
@@ -401,14 +421,14 @@ tbody{
 
 
 /* Estilos elementos del cuerpo tabla por etiqueta */
-td{
+td {
     border: 1px solid rgba(83, 83, 83, 0.582);
     padding: 1px 10px;
     text-align: center;
     height: 45px;
     max-width: 40px;
     overflow: hidden;
-    overflow-x:auto;
+    overflow-wrap: break-word;
 }
 
 td::-webkit-scrollbar{
@@ -482,7 +502,8 @@ td::-webkit-scrollbar-thumb{
 
 /* icono imprimir */
 #print{
-    color: rgb(2, 2, 2);
+    color: #f38a00;
+    font-size: 28px;
 }
 
 /* icono de ticket*/

@@ -3,7 +3,7 @@ $(document).ready(function() {
     let user = $('#id_usuario_responsable').val();
 
     
-        $.post("../../../controller/consCVET.php?op=showEditarTarifa&id="+id,function(data, status){
+        $.post("../../../controller/tarifa.php?op=showEditarTarifa&id="+id,function(data, status){
             $('#contenedor_resultado').html(data);
 
             function init(){
@@ -19,7 +19,7 @@ $(document).ready(function() {
                 e.preventDefault();
                 var formData = new FormData($("#form_editar")[0]);
                 $.ajax({
-                    url: "../../../controller/consCVET.php?op=updateTarifa&id="+id+"&user="+user,
+                    url: "../../../controller/tarifa.php?op=updateTarifa&id="+id+"&user="+user,
                     type: "POST",
                     data: formData,
                     contentType: false,

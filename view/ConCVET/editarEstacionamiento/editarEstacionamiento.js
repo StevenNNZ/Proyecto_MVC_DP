@@ -5,7 +5,7 @@ $(document).ready(function() {
     let user = $('#id_usuario_responsable').val();
 
     
-        $.post("../../../controller/consCVET.php?op=showEditarEstacionamiento&id="+id,function(data, status){
+        $.post("../../../controller/bahia.php?op=showEditarBahia&id="+id,function(data, status){
             $('#contenedor_resultado').html(data);
 
             function init(){
@@ -21,7 +21,7 @@ $(document).ready(function() {
                 e.preventDefault();
                 var formData = new FormData($("#form_editar")[0]);
                 $.ajax({
-                    url: "../../../controller/consCVET.php?op=updateEstacionamiento&id="+id+"&user="+user,
+                    url: "../../../controller/bahia.php?op=updateBahia&id="+id+"&user="+user,
                     type: "POST",
                     data: formData,
                     contentType: false,

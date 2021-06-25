@@ -146,28 +146,4 @@ text-align: center;
 color: #999;
 }
 
-@media screen and (max-width: 600px) {
-  .input_registro{
-    width: 80%;
-    }
-
-  .required_row::after{
-    content: "*";
-    position: absolute;
-    left: 25%;
-    padding-top: 2.5%;
-    color: rgb(251, 67, 67);
-    font-size: 25px;
-  }
-
-  .required_row--active::after{
-    content: "*";
-    position: absolute;
-    left: 25%;
-    padding-top: 2%;
-    color: rgb(251, 67, 67);
-    font-size: 25px;
-  }
-}
-
 

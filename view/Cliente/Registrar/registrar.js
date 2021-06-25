@@ -1,5 +1,3 @@
-
-
 function init(){
     $("#form_bahia").on("submit",function(e){
         var boton = $('#button_action');
@@ -11,12 +9,12 @@ function init(){
 }
 
 $(document).ready(function(){
-    
-    // boton.prop('disabled', true);
+
 });
 
 function guardaryeditar(e){
     e.preventDefault();
+    const documento = $('#documento_cliente').val();
     var formData = new FormData($("#form_bahia")[0]);
     $.ajax({
         url: "../../../controller/bahia.php?op=insert",
@@ -27,6 +25,8 @@ function guardaryeditar(e){
         success: function(datos){
             var boton = $('#button_action');
             if(typeof datos == 'string' && datos != ''){
+                console.log(datos);
+                console.log(typeof datos);
                 Swal.fire({
                     title: "¡Oops!",
                     text:"Algo ha salido mal, por favor inténtelo en unos minutos...",
@@ -37,8 +37,6 @@ function guardaryeditar(e){
                 boton.html('Registrar');
                 boton.prop('disabled', false);
             }else{
-                console.log(datos);
-                console.log(typeof datos);
                 $('#documento_cliente').val('');
                 $('#nombre_cliente').val('');
                 $('#apellido_cliente').val('');
@@ -69,7 +67,7 @@ function guardaryeditar(e){
                         </div>
                     </div>`;
                     
-                    location.href = '#respuesta_registroBahia';
+                    window.open(`../../viewPDF/pdfTickEntrada?doc=${documento}`);
             }
         }
     });

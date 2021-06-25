@@ -21,7 +21,7 @@
                 <label class="contenedor-main_barra-busqueda__label-busqueda_usuario"><i class="fas fa-search"></i></label>
                 <input class="contenedor-main_barra-busqueda__search_texto" type="text" id="search_usuario" name="search_usuario" placeholder="Buscar un usuario...">
             </div>
-            <div class="contenedor_table_principal--reporte_venta">
+            <div class="contenedor_table_principal">
                 <div id="contenedor_resultado" class="table-responsive">
                     
                 </div>

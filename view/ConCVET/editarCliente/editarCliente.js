@@ -6,7 +6,7 @@ $(document).ready(function() {
     let rol = $('#cargo_user').val();
     console.log(id, user, rol);
     
-        $.post("../../../controller/consCVET.php?op=showEditarCliente&documento="+id,function(data, status){
+        $.post("../../../controller/cliente.php?op=showEditarCliente&documento="+id,function(data, status){
             $('#contenedor_resultado').html(data);
 
             function init(){
@@ -22,7 +22,7 @@ $(document).ready(function() {
                 e.preventDefault();
                 var formData = new FormData($("#form_editar")[0]);
                 $.ajax({
-                    url: "../../../controller/consCVET.php?op=updateCliente&id="+id+"&user="+user,
+                    url: "../../../controller/cliente.php?op=updateCliente&id="+id+"&user="+user,
                     type: "POST",
                     data: formData,
                     contentType: false,

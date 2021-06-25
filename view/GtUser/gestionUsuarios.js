@@ -1,6 +1,6 @@
 function cargarUser(search){
     //Llamado al controlador de 
-        $.post("../../controller/gest_user.php?op=combo&search="+search+"",function(data, status){
+        $.post("../../controller/usuario.php?op=getUsuarios&search="+search+"",function(data, status){
                 $('#contenedor_resultado').html(data);
         });
 }
@@ -25,7 +25,7 @@ function deleteUser(documento, user_active = $('#user-active').val()){
       }).then((result) => {
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
-            $.post("../../controller/gest_user.php?op=delete&documento="+documento+"&user_active="+user_active,function(data, status){
+            $.post("../../controller/usuario.php?op=delete&documento="+documento+"&user_active="+user_active,function(data, status){
                 console.log(data);
                 Swal.fire('¡Campo eliminado!', '', 'error');
                 let search = '';
@@ -47,7 +47,7 @@ function activarUsuario(documento, user_active = $('#user-active').val()){
       }).then((result) => {
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
-            $.post("../../controller/gest_user.php?op=activarUser&documento="+documento+"&user_active="+user_active,function(data, status){
+            $.post("../../controller/usuario.php?op=activarUser&documento="+documento+"&user_active="+user_active,function(data, status){
                 console.log(data);
                 Swal.fire('¡Usuario activado!', '', 'success');
                 let search = ' ';
@@ -69,7 +69,7 @@ function desactivarUsuario(documento, user_active = $('#user-active').val()){
       }).then((result) => {
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
-            $.post("../../controller/gest_user.php?op=desactivarUser&documento="+documento+"&user_active="+user_active,function(data, status){
+            $.post("../../controller/usuario.php?op=desactivarUser&documento="+documento+"&user_active="+user_active,function(data, status){
                 console.log(data);
                 Swal.fire('¡Usuario desactivado!', '', 'success');
                 let search = ' ';
@@ -88,7 +88,6 @@ function updateUser(documento, estado){
         confirmButtonText: `Editar`,
         cancelButtonText: `Cancelar`,
       }).then((result) => {
-        // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
             window.location.href="editarUsuario/?id="+documento+"&estado="+estado;
             // return true;

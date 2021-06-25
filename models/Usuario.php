@@ -1,5 +1,107 @@
 <?php 
     class Usuario extends Conectar{
+
+        //Traer usuarios
+        public function getUsers($search){
+            $conectar = parent::Conexion();
+
+            $sql="  SELECT * FROM usuarios 
+                    WHERE est=1 AND (documento LIKE '%$search%' OR nombre LIKE '%$search%' 
+                    OR apellido LIKE '%$search%' OR Cargo LIKE '%$search%' OR estado_usuario LIKE '%$search%');";
+            $sql=$conectar->prepare($sql);
+            $sql->execute();
+
+            return $resultado=$sql->fetchAll();
+        }
+
+        //Eliminar usuario
+        public function deleteUser($documento, $id_usuario){
+            $conectar = parent::Conexion();
+
+            $sql="UPDATE usuarios SET est = '0' WHERE usuarios.documento = ?;";
+
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $documento);
+            $sql->execute();
+
+            //Registrar movimiento
+            $mov = "Ha eliminado el <b>usuario</b> con documento: <b>$documento</b>";
+            $this->insertMovimiento($id_usuario, $mov);
+
+            return $resultado=$sql->fetchAll();
+        }
+
+        public function getUser_x_id($documento){
+            $conectar = parent::Conexion();
+
+            $sql="SELECT * FROM usuarios WHERE documento = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $documento);
+            $sql->execute();
+
+            return $resultado=$sql->fetchAll();
+        }
+
+        public function activarUser($documento, $id_usuario){
+            $conectar = parent::Conexion();
+            parent::set_names();
+
+
+            $sql="UPDATE usuarios SET estado_usuario = 'Activo' WHERE usuarios.documento = ?;";
+
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $documento);
+            $sql->execute();
+
+            //Registrar movimiento
+            $mov = "Ha activado el <b>usuario</b> con documento: <b>$documento</b>";
+            $this->insertMovimiento($id_usuario, $mov);
+
+            return $resultado=$sql->fetchAll();
+        }
+
+        public function desactivarUser($documento, $id_usuario){
+            $conectar = parent::Conexion();
+            parent::set_names();
+
+            $sql="UPDATE usuarios SET estado_usuario = 'Bloqueado' WHERE usuarios.documento = ?;";
+
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $documento);
+            $sql->execute();
+
+            //Registrar movimiento
+            $mov = "Ha desactivado el <b>usuario</b> con documento: <b>$documento</b>";
+            $this->insertMovimiento($id_usuario, $mov);
+
+            return $resultado=$sql->fetchAll();
+        }
+
+        public function updateUser($id, $nombre, $apellido, $email, $cargo, $contrasena, $id_usuario){
+            $conectar = parent::Conexion();
+            parent::set_names();    
+
+            $sql="  UPDATE usuarios 
+                    SET nombre = ?, apellido = ?, correo = ?, Cargo = ?, contrasena = ? 
+                    WHERE usuarios.documento = ?";
+
+            $sql=$conectar->prepare($sql);
+
+            $sql->bindValue(1, $nombre);
+            $sql->bindValue(2, $apellido);
+            $sql->bindValue(3, $email);
+            $sql->bindValue(4, $cargo);
+            $sql->bindValue(5, $contrasena);
+            $sql->bindValue(6, $id);
+            
+            $sql->execute();
+
+            //Registrar movimiento
+            $mov = "Ha actualizado los datos del <b>usuario</b> con documento: <b>$id</b>";
+            $this->insertMovimiento($id_usuario, $mov);
+            
+            return $resultado=$sql->fetchAll();
+        }
         
         public function login(){
             $conectar = parent::conexion();
@@ -79,6 +181,32 @@
                 $resultado = 0;
             }
              return $resultado;
+        }
+
+
+        //Insertar movimientos
+        public function insertMovimiento($id_usuario, $descripcion_mov){
+            $conectar = parent::Conexion();
+
+            $sql = "INSERT INTO user_movimientos (mov_id, mov_user, mov_descrip, mov_fecha) VALUES(NULL, ?, ?, now());";
+
+            $sql = $conectar->prepare($sql);
+            $sql->bindValue(1, $id_usuario);
+            $sql->bindValue(2, $descripcion_mov); //últ. Mov 
+
+            $sql->execute();
+        }
+
+        //Traer los últimos movimientos
+        public function getMovimientos($search){
+            $conectar = parent::Conexion();
+            parent::set_names();
+
+            $sql="SELECT mov_id, documento, mov_user, CONCAT(nombre,' ',apellido) AS nombres, mov_descrip, mov_fecha FROM user_movimientos, usuarios WHERE mov_user=documento AND mov_user = $search ORDER BY user_movimientos.mov_fecha DESC LIMIT 20";
+            $sql=$conectar->prepare($sql);
+            $sql->execute();
+
+            return $resultado=$sql->fetchAll();
         }
     }
 

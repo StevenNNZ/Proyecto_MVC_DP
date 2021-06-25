@@ -4,10 +4,10 @@
 				<label>Parqueadero San Diego</label>
 			</div>
 			<div class="footer-credits">
-				<label>Dparking&copy; 2020</label>
+				<label>Dparking 2020&copy;</label>
 			</div>
 		<div class="footer-credits">
-			<label>Diseñado por: Dparking&copy; 2020</label>	
+			<label>Diseñado por: Dparking 2020&copy;</label>	
 		</div>
 	</div>
 	<div class="line"></div>

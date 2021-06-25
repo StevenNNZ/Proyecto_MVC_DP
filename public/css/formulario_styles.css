@@ -151,6 +151,14 @@
 	display: inline-block;
 }
 
+.contenido-cliente .input-contenedor{
+	width: 24%;
+}
+
+.contenido-vehiculo .input-contenedor{
+	width: 32%;
+}
+
 .input-contenedor-edit{
 	margin-bottom: 15px;
 	border: 2px solid  #a1a4a586;
@@ -160,7 +168,7 @@
 }
 
 /* Contenedores input secundarios */
-.contenedor_secundario{
+.contenido-vehiculo .contenedor_secundario{
 	width: 100%;
 }
 
@@ -182,9 +190,20 @@
 	border: none;
 } 
 
+.input_registrar-full{
+	width: 92%;
+	font-size: 15px;
+	padding: 10px;
+	border: none;
+}
+
 .input_registrar:hover{
     background: rgba(185, 187, 187, 0.080);
 } 
+
+.input_registrar-full:hover{
+	background: rgba(185, 187, 187, 0.080);
+}
 
 .textarea_registro{
 	font-size: 15px;
@@ -266,64 +285,4 @@
 
 .reset:hover{
 	background: #f3ae53;
-}
-
-/* Responsive design */
-
-@media screen and (max-width:1750px){
-	.input_registrar{
-		width: 80%;
-	}
-}
-
-@media screen and (max-width:1590px){
-	.input_registrar{
-		width: 75%;
-	}
-}
-
-@media screen and (max-width:1320px){
-	.input_registrar{
-		width: 72%;
-	}
-}
-
-@media screen and (max-width:1200px){
-	.input_registrar{
-		width: 68%;
-	}
-}
-
-@media screen and (max-width:1100px){
-	.input_registrar{
-		width: 62%;
-	}
-}
-
-@media screen and (max-width:1100px){
-	.input-contenedor{
-		display: block;
-		width: 100%;
-	}
-
-	.input_registrar{
-		width: 78%;
-	}
-
-	/* Estilos fieldset secundario  */
-	.second{
-		width: 100%;
-	}
-
-	.contenedor_secundario{
-		width: 100%;
-	}
-
-	.controls{
-		width: 70%;
-	}
-
-	.button{
-		width: 40%;
-	}
 }

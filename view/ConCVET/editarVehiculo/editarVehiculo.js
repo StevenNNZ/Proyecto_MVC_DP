@@ -6,7 +6,7 @@ $(document).ready(function() {
     let rol = $('#cargo_user').val();
 
     
-        $.post("../../../controller/consCVET.php?op=showEditarVehiculo&placa="+id,function(data, status){
+        $.post("../../../controller/vehiculo.php?op=showEditarVehiculo&placa="+id,function(data, status){
             $('#contenedor_resultado').html(data);
 
             function init(){
@@ -22,7 +22,7 @@ $(document).ready(function() {
                 e.preventDefault();
                 var formData = new FormData($("#form_editar")[0]);
                 $.ajax({
-                    url: "../../../controller/consCVET.php?op=updateVehiculo&id="+id+"&user="+user,
+                    url: "../../../controller/vehiculo.php?op=updateVehiculo&id="+id+"&user="+user,
                     type: "POST",
                     data: formData,
                     contentType: false,
