@@ -39,7 +39,7 @@ function ConfirmLogOut(){
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
               Swal.fire('¡Sesión finalizada!', '', 'success');
-            setTimeout(()=>{window.location.href="../Logout/logout.php"}, 1500);
+            setTimeout(()=>{window.location.href="../../controller/logout.php"}, 1500);
             // return true;
         }
     })
@@ -56,7 +56,7 @@ function ConfirmLogOutSub(){
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
               Swal.fire('¡Sesión finalizada!', '', 'success');
-            setTimeout(()=>{window.location.href="../../Logout/logout.php"}, 1500);
+            setTimeout(()=>{window.location.href="../../../controller/logout.php"}, 1500);
             // return true;
         }
     })
