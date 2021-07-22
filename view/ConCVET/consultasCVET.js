@@ -1,64 +1,88 @@
+const contenedor = $('#contenedor_resultado');
+
 function cargarCliente(){
+    contenedor.html(Spinner);
+
     $.post("../../controller/cliente.php?op=getClientes",function(data, status){
-        $('#contenedor_resultado').html(data);
+        contenedor.html(data);
     })
 }
 
 function cargarVehiculo(){
+    contenedor.html(Spinner);
+
     $.post("../../controller/vehiculo.php?op=getVehiculos",function(data, status){
-        $('#contenedor_resultado').html(data);
+        contenedor.html(data);
     })
 }
 
 function cargarBahias(){
+    contenedor.html(Spinner);
+
     $.post("../../controller/bahia.php?op=getBahias",function(data, status){
-        $('#contenedor_resultado').html(data);
+        contenedor.html(data);
     })
 }
 
 function cargarTarifas(){
+    contenedor.html(Spinner);
+
     $.post("../../controller/tarifa.php?op=getTarifas",function(data, status){
-        $('#contenedor_resultado').html(data);
+        contenedor.html(data);
     })
 }
 
 $(document).ready(function() {
-        $('#Consultar_cliente').on('click', function(){
-            //Llamado al controlador de 
-            
+    $('#Consultar_cliente').on('click', function(){
+        contenedor.html(Spinner);
+        //Llamado al controlador de 
+        setTimeout(() => {
             $.post("../../controller/cliente.php?op=getClientes",function(data, status){
-                $('#contenedor_resultado').html(data);
+                contenedor.html(data);
             })
             .done(function() {
                 $('#search_cliente').on('keyup', function(){
                     const search = $('#search_cliente').val();
+                    $('#contenedor_tabla-general').html(Spinner);
+
                     $.post("../../controller/cliente.php?op=consultaClientes&search="+search+"",function(data, status){
                         $('#contenedor_tabla-general').html(data);
                     });
                 });
             });
-        });
+        }, 1000);
+    });
 
-        $('#Consultar_vehiculo').on('click', function(){
+    $('#Consultar_vehiculo').on('click', function(){
+        contenedor.html(Spinner);
+
+        setTimeout(() => {
+            
             //Llamado al controlador de 
             $.post("../../controller/vehiculo.php?op=getVehiculos",function(data, status){
-                $('#contenedor_resultado').html(data);
+                contenedor.html(data);
             })
-
+            
             .done(function() {
                 $('#search_vehiculo').on('keyup', function(){
                     let search = $('#search_vehiculo').val();
+                    $('#contenedor_tabla-general').html(Spinner);
+
                     $.post("../../controller/vehiculo.php?op=consultaVehiculos&search="+search+"",function(data, status){
                         $('#contenedor_tabla-general').html(data);
                     });
                 });
             });
-        });
 
-        $('#Consultar_estacionamiento').on('click', function(){
-            //Llamado al controlador de 
+        }, 1000);
+    });
+
+    $('#Consultar_estacionamiento').on('click', function(){
+        contenedor.html(Spinner);
+        setTimeout(() => {
+            //Llamado al controlador de bahia
             $.post("../../controller/bahia.php?op=getBahias",function(data, status){
-                $('#contenedor_resultado').html(data);
+                contenedor.html(data);
             })
 
             .done(function() {
@@ -76,57 +100,65 @@ $(document).ready(function() {
                             </div>
                         </div>`;
                     }else{
+                        $('#contenedor_tabla-general').html(Spinner);
                         //Llamado al controlador de 
                         $.post("../../controller/bahia.php?op=getBahiaBetween&desde="+desde+"&hasta="+hasta+"",function(data, status){
-                                $('#contenedor_tabla-general').html(data);
+                            $('#contenedor_tabla-general').html(data);
                         });
                     }
                 });
             });
-        });
+        }, 1000);
+    });
 
-        $('#Consultar_tarifas').on('click', function(){
+    $('#Consultar_tarifas').on('click', function(){
+        contenedor.html(Spinner);
+        setTimeout(() => {
             //Llamado al controlador de 
             $.post("../../controller/tarifa.php?op=getTarifas",function(data, status){
-                $('#contenedor_resultado').html(data);
+                contenedor.html(data);
             })
-
+            
             .done(function() {
                 $('#search_tarifa').on('keyup', function(){
                     let search = $('#search_tarifa').val();
+                    $('#contenedor_tabla-general').html(Spinner);
+                    
                     $.post("../../controller/tarifa.php?op=consultaTarifas&search="+search+"",function(data, status){
                         $('#contenedor_tabla-general').html(data);
                     });
                 });
             });
-        });
 
-        function info(mensaje){
-            Swal.fire({
-                title: "¿Qué hace este botón?",
-                html:"Realiza una consulta "+mensaje+"<br> que hay actualmente en la base de datos.",
-                icon: 'info',
-                confirmButtonText: 'Aceptar',
-                toast: true,
-                position: 'bottom-end',
-            });
-        }
+        }, 1000);
+    });
 
-        $('#info_tarifa').on('click', function(){
-            info("sobre las tarifas");
+    function info(mensaje){
+        Swal.fire({
+            title: "¿Qué hace este botón?",
+            html:"Realiza una consulta "+mensaje+"<br> que hay actualmente en la base de datos.",
+            icon: 'info',
+            confirmButtonText: 'Aceptar',
+            toast: true,
+            position: 'bottom-end',
         });
+    }
 
-        $('#info_cliente').on('click', function(){
-            info("sobre los clientes");
-        });
+    $('#info_tarifa').on('click', function(){
+        info("sobre las tarifas");
+    });
 
-        $('#info_vehiculo').on('click', function(){
-            info("sobre los vehículos");
-        });
+    $('#info_cliente').on('click', function(){
+        info("sobre los clientes");
+    });
 
-        $('#info_estacionamiento').on('click', function(){
-            info("sobre los estacionamientos");
-        });
+    $('#info_vehiculo').on('click', function(){
+        info("sobre los vehículos");
+    });
+
+    $('#info_estacionamiento').on('click', function(){
+        info("sobre los estacionamientos");
+    });
 
 });
 

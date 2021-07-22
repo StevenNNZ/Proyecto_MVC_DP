@@ -40,9 +40,8 @@
         }
 
         //Retirar bahía activa
-        public function retirarBahiaActiva($id, $id_entrada, $id_usuario){
+        public function retirarBahiaActiva($id, $id_usuario){
             $usuario = new Usuario(); //Instancia clase usuario
-            $ticket = new Ticket(); //Instancia clase ticket
 
             $conectar = parent::Conexion();
 
@@ -55,13 +54,6 @@
             //Registrar movimiento
             $mov = "Ha retirado la <b>bahía</b> con id: <b>$id</b>";
             $usuario->insertMovimiento($id_usuario, $mov);
-
-            //Registrar ticket de salida
-            // $ticket->setTicketSalida($id_entrada, $id_usuario);
-
-            //Terminar ticket de salida
-            // $id_salida = $ticket->getTicketSalida_x_id($id_entrada);
-            // $ticket->terminarTicketSalida($id_salida, $id_usuario);
             
             return $resultado=$sql->fetchAll();
         }
@@ -175,32 +167,8 @@
             return $resultado = $sql->fetchAll();
         }
 
-        /* CONSULTA CLIENTES SIN LÍMITE */
-        public function getClienteWhitoutLimit(){
-            $conectar = parent::Conexion();
-            parent::set_names();
-
-            $sql="SELECT Documento FROM cliente WHERE est = 1;";
-            $sql=$conectar->prepare($sql);
-            $sql->execute();
-
-            return $resultado=$sql->fetchAll();
-        }
-
-        /* CONSULTA VEHÍCULOS SIN LÍMITE */
-        public function getVehiculoWhitoutLimit(){
-            $conectar = parent::Conexion();
-            parent::set_names();
-
-            $sql="SELECT Placa FROM vehiculo WHERE est = 1;";
-            $sql=$conectar->prepare($sql);
-            $sql->execute();
-
-            return $resultado=$sql->fetchAll();
-        }
-
         // Registrar un nuevo aparcamiento en la base de datos. (Bahia, Cliente, Vehículo)
-        public function insert_aparcamiento($documento, $nombre, $apellido, $telefono, $placa, $color_vehiculo = 'N/A', $modelo_vehiculo, $tamano_vehiculo, $tipo_vehiculo, $noEstacionamiento, $descripcion, $id_usuario){
+        public function insert_aparcamiento($documento, $nombre, $apellido, $telefono, $placa, $color_vehiculo , $modelo_vehiculo, $tamano_vehiculo, $tipo_vehiculo, $noEstacionamiento, $descripcion, $id_usuario){
 
             //Instancia de clases
             $Cliente = new Cliente();

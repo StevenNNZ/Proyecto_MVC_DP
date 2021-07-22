@@ -29,7 +29,7 @@
                     
                     break;
                 default: 
-                    $class = 'tabla_reporte-ventas';
+                    $class = '';
             }
             
             $head="<thead class='contenedor-table__thead'> <tr class='contenedor-table__tr--principal $class'>";
@@ -61,7 +61,7 @@
                         foreach($keys as $key){
                             if($campo[$key] == $campo['Pago_total']){
                                 //Formatear el campo de valor
-                                $body .= "<td>$".number_format($campo['Pago_total'])."</td>";
+                                $body .= "<td class='pago_repVta'>$".number_format($campo['Pago_total'])."</td>";
                             }else{
                                 $body .= "<td>$campo[$key]</td>";
                             }
@@ -513,15 +513,21 @@
         public function createBar($text='', $id='', $tipo=''){
             switch($tipo){
                 case 'bahia':
-                    $bar ="
-                    <div class='contenedor-main_barra-busqueda_cvet'>
-                        <label class='contenedor-main_barra-busqueda__label-busqueda'>Búsqueda <i class='fas fa-search'></i></label>
-                        <label class='contenedor-main_barra-busqueda__label' for='desde'> Desde:</label>
-                        <input class='contenedor-main_barra-busqueda__search' type='date' id='desde'>
-                        <label class='contenedor-main_barra-busqueda__label' for='hasta'>Hasta:</label>
-                        <input class='contenedor-main_barra-busqueda__search' type='date' id='hasta'>
-                        <input class='contenedor-main_barra-busqueda__button' type='submit' value='Consultar' id='consultar_estacionamientos'>
-                    </div>";
+                    $bar ='
+                    <div class="contenedor-main_barra-busqueda_cvet">
+                    <label class="contenedor-main_barra-busqueda__label-busqueda">Búsqueda <i class="fas fa-search"></i></label>
+                    <div class="datos_fecha">
+                        <label class="contenedor-main_barra-busqueda__label" for="desde"> Desde:</label>
+                        <input class="contenedor-main_barra-busqueda__search" type="date" id="desde">
+                        <label class="contenedor-main_barra-busqueda__label" for="hasta">Hasta:</label>
+                        <input class="contenedor-main_barra-busqueda__search" type="date" id="hasta">
+                    </div>
+    
+                    <div class="barra-busqueda__button">
+                        <input class="contenedor-main_barra-busqueda__button" type="submit" value="Consultar" id="consultar_reportes">
+                    </div>
+                    </div>';
+                    
                     break;
                 default: 
                     $bar = "
@@ -565,6 +571,7 @@
             return $options;
         }
 
+        //Se encarga de crear el HTML de los tickets de salida y entrada
         public function createTicket($tipo, $datos){
 
             $html = "

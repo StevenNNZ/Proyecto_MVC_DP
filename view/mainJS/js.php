@@ -12,8 +12,5 @@
     <!-- Script alertas confirmación -->
     <script src="../../public/js/confirm_window.js"></script>
 
-    <!-- Script JQUERY -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-
-    <!-- Script control busqueda reporte de ventas -->
-    <!-- <script type="text/javascript" src="../ReporteVenta/reportes_ventas.js"></script> -->
+    <!-- Script spinner -->
+    <script src="../../public/js/spinner.js"></script>

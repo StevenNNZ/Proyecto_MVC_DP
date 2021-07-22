@@ -1,6 +1,9 @@
 <?php 
     require '../../../public/php/vendor/autoload.php';
+    require_once("../../../config/conexion.php");
     require_once("../../../controller/viewPDF.php");
+    require_once("../../../controller/validate_session.php");
+
     $desde = $_GET['desde'];
     $hasta = $_GET['hasta'];
 

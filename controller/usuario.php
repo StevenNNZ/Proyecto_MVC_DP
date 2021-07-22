@@ -11,7 +11,11 @@
             registrar();
         break;
 
-        case 'getUsuarios': 
+        case 'getAllUsuarios': 
+            echo getAllUsers();
+        break;
+
+        case 'getUsuariosBusqueda': 
             echo getUsers();
         break;
 
@@ -55,7 +59,36 @@
         return $respuesta;
     }
 
-    //Traer usuarios
+    //Traer todos los usuarios
+    function getAllUsers(){
+        global $usuario;
+        global $interfaz;
+        
+        //elementos tabla
+        $tableHead = ['documento', 'nombre', 'apellido', 'correo', 'cargo', 'estado', 'ingreso', 'acciones'];
+        $tableBody = [];
+        $keysTable = ['documento', 'nombre', 'apellido', 'correo', 'Cargo', 'estado_usuario', 'ultimo_ingreso'];
+        $tipo_tabla = ['usuarios', 'users'];
+        $datos = $usuario->getAllUsers();
+        
+        if(is_array($datos) and count($datos)>0){
+            foreach($datos as $row){
+                array_push($tableBody, $row);
+            }
+
+            //Crear tabla de usuarios
+            $html = $interfaz->createTable($tableHead, $tableBody, $keysTable, $tipo_tabla);
+        }else{ 
+            //Traer la alerta de error
+            $html = $interfaz->getAlert('No hemos encontrado ningún registro. Asegúrese de haber introducido la <b>información</b> correcta.', 'alert_danger');
+
+            
+        }
+        //Retornar el HTML
+        return $html;
+    }
+
+    //Traer usuarios por búsqueda
     function getUsers(){
         global $usuario;
         global $interfaz;

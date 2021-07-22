@@ -151,22 +151,6 @@
             return $resultado=$sql->fetchAll();
         }
 
-
-        public function registrarPago($id_ticket, $tiempoTotal, $idTarifa, $pagoFinal){
-            $conectar = parent::Conexion();
-            parent::set_names();
-
-            $sql="INSERT INTO pagos VALUES (NULL, ?, ?, ?, ?)";
-            $sql = $conectar->prepare($sql);
-            $sql->bindValue(1, $id_ticket);
-            $sql->bindValue(2, $tiempoTotal);
-            $sql->bindValue(3, $idTarifa);
-            $sql->bindValue(4, $pagoFinal);
-            $sql->execute();
-
-            return $resultado=$sql->fetchAll();
-        }
-
         //Obtener el ticket de salida completo desde la base de datos
         public function getCompleteExitTicket($id_ticket){
             $conectar = parent::Conexion();
@@ -188,31 +172,6 @@
 
             return $resultado=$sql->fetchAll();
         }
-
-        public function getPagos_x_idSalida($id_salida){
-            $conectar = parent::Conexion();
-            parent::set_names();
-
-            $sql="SELECT id_pago FROM pagos WHERE Detalles_salida = ?";
-
-            $sql = $conectar->prepare($sql);
-            $sql->bindValue(1, $id_salida);
-            $sql->execute();
-
-            return $resultado=$sql->fetchAll();
-        }
-
-        public function createReporteVenta($id_pago){
-            $conectar = parent::Conexion();
-            parent::set_names();
-
-            $sql="INSERT INTO reporte_venta VALUES(NULL, ?)";
-
-            $sql = $conectar->prepare($sql);
-            $sql->bindValue(1, $id_pago);
-            $sql->execute();
-        }
-
        
         //Eliminar ticket de salida
         public function deleteTicketSalida($id, $id_usuario){
@@ -249,17 +208,5 @@
 
             return $resultado=$sql->fetchAll();
         }
-
-        // Get ticket de salida por id
-        // public function getTicket_x_id($id){
-        //     $conectar = parent::Conexion();
-        //     parent::set_names();
-
-        //     $sql="SELECT noTicket, noEstacionamiento, Placa, documento, fechaEntrada, horaentrada, fechasalida, horasalida, tiempo, totalPagar, cajero, fechaTicket";
-        //     $sql=$conectar->prepare($sql);
-        //     $sql->execute();
-
-        //     return $resultado=$sql->fetchAll();
-        // }
     }
 ?>

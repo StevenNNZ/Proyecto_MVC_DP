@@ -1,31 +1,51 @@
+
+const contenedor = $('#contenedor_resultado');
+
 function cargarCliente(){
-    $.post(`../../../controller/cliente.php?op=getClientes&eliminar=${true}`,function(data, status){
-        $('#contenedor_resultado').html(data);
-    })
-    .done(function() {
-        $('#search_cliente').on('keyup', function(){
+    contenedor.html(Spinner);
+
+    setTimeout(() => {
+        
+        $.post(`../../../controller/cliente.php?op=getClientes&eliminar=${true}`,function(data, status){
+            contenedor.html(data);
+        })
+        .done(function() {
+            $('#search_cliente').on('keyup', function(){
+                
+            $('#contenedor_tabla-general').html(Spinner);
+
             const search = $('#search_cliente').val();
             
             $.post(`../../../controller/cliente.php?op=consultaClientes&search=${search}&eliminar=${true}`,function(data, status){
                 $('#contenedor_tabla-general').html(data);
             });
+            
         });
-    });
+
+        });
+    }, 1800);
 }
 
 function cargarVehiculo(){
-    $.post(`../../../controller/vehiculo.php?op=getVehiculos&eliminar=${true}`,function(data, status){
-        $('#contenedor_resultado').html(data);
-    })
-    .done(function() {
-        $('#search_vehiculo').on('keyup', function(){
-            const search = $('#search_vehiculo').val();
-            
-            $.post(`../../../controller/vehiculo.php?op=consultaVehiculos&search=${search}&eliminar=${true}`,function(data, status){
-                $('#contenedor_tabla-general').html(data);
+    contenedor.html(Spinner);
+
+    setTimeout(()=>{
+        $.post(`../../../controller/vehiculo.php?op=getVehiculos&eliminar=${true}`,function(data, status){
+            contenedor.html(data);
+        })
+        .done(function() {
+            $('#search_vehiculo').on('keyup', function(){
+
+                $('#contenedor_tabla-general').html(Spinner);
+
+                const search = $('#search_vehiculo').val();
+                
+                $.post(`../../../controller/vehiculo.php?op=consultaVehiculos&search=${search}&eliminar=${true}`,function(data, status){
+                    $('#contenedor_tabla-general').html(data);
+                });
             });
         });
-    });
+    },1800);
     
 }
 
@@ -73,7 +93,7 @@ function updateCliente(documento){
       }).then((result) => {
         // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
-            window.location.href="../../conCVET/editarCliente/?id="+documento;
+            window.location.href="../../ConCVET/editarCliente/?id="+documento;
             // return true;
         }
     })

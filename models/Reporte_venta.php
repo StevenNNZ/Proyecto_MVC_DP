@@ -1,6 +1,7 @@
 <?php 
     class Reporte_venta extends Conectar{
 
+        //Insertar registro de reporte venta a la DB
         public function insertReporteVenta($id_pago){
             $conectar = parent::Conexion();
 
@@ -13,7 +14,7 @@
             return $resultado = $sql->fetchAll();
         }
 
-
+        //Traer reporte de venta desde la DB
         public function getReporte_venta($desde, $hasta){
             $conectar = parent::Conexion();
             

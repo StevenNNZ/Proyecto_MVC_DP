@@ -35,3 +35,6 @@
 	<!-- Estilos  responsive -->
 	<link rel="stylesheet" href="../../public/css/responsive.css">
 
+	<!-- CSS spinner -->
+	<link rel="stylesheet" href="../../public/css/style-spinner.css">
+

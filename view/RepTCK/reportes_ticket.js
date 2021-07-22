@@ -1,3 +1,5 @@
+const contenedor = $('#contenedor_resultado');
+
 $(document).ready(function() {
 
     $('#consultar_reportes').on('click', function(){
@@ -7,7 +9,7 @@ $(document).ready(function() {
             hastaH = $('#hasta_hora').val();
         if(!isNaN(desde) || !isNaN(hasta) || !isNaN(desdeH) || !isNaN(hastaH)){
             document.getElementById('contenedor_resultado').innerHTML = `
-            <div class='alert alert_warning alert_sm' id='contenedor-alerta-reportes_venta' style='animation-delay: .2s;margin:0 auto;'>
+            <div class='alert alert_warning alert_sm' id='contenedor-alerta-reportes_venta' style='animation-delay: .2s;margin:0 auto; width:60%;'>
                 <div class='alert--icon'>
                     <i class='fas fa-bell'></i>
                 </div>
@@ -17,10 +19,15 @@ $(document).ready(function() {
             </div>`;
             
         }else{
-            //Llamado al controlador de 
-            $.post("../../controller/ticket.php?op=getReporteTickets&desde="+desde+"&hasta="+hasta+"&desdeH="+desdeH+"&hastaH="+hastaH+"",function(data, status){
-                    $('#contenedor_resultado').html(data);
-            });
+            contenedor.html(Spinner);
+
+            setTimeout(() => {
+                //Llamado al controlador de tickets
+                $.post(`../../controller/ticket.php?op=getReporteTickets&desde=${desde}&hasta=${hasta}&desdeH=${desdeH}&hastaH=${hastaH}`,function(data, status)
+                {
+                    contenedor.html(data);
+                });
+            }, 1800);
         }
     });
 });
@@ -31,7 +38,7 @@ function cargarTickets(){
         hasta = $('#hasta').val(),
         hastaH = $('#hasta_hora').val();
     $.post("../../controller/ticket.php?op=getReporteTickets&desde="+desde+"&hasta="+hasta+"&desdeH="+desdeH+"&hastaH="+hastaH+"",function(data, status){
-        $('#contenedor_resultado').html(data);
+        contenedor.html(data);
     });
 }
 

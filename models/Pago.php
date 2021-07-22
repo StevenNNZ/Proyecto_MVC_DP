@@ -1,6 +1,7 @@
 <?php 
 
     class Pago extends Conectar{
+        //Insertar registro de pago a la base de datos
         public function insertPago($id_salida, $tiempo, $id_tarifa, $pago) {
             $conectar = parent::Conexion();
             parent::set_names();
@@ -20,6 +21,7 @@
             return $resultado = $sql->fetchAll();
         }
 
+        //Traer pago por id de salida
         public function getPago($id_salida){
             $conectar = parent::Conexion();
 

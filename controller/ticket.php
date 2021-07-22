@@ -169,6 +169,7 @@
         $ticket->terminarTicketSalida($id, $user_active);
     }
 
+    //Se encarga de crear el ticket de salida. Retorna el id de salida.
     function createTicketSalida($id_entrada, $id_estacionamiento, $id_usuario){
 
         $datos = calcularSalida($id_entrada, $id_estacionamiento, $id_usuario);

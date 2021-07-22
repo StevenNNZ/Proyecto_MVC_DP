@@ -1,17 +1,31 @@
-function cargarUser(search){
+function cargarUserBusqueda(search){
+    const contenedor = $('#contenedor_resultado');
+    contenedor.html(Spinner);
+    
     //Llamado al controlador de 
-        $.post("../../controller/usuario.php?op=getUsuarios&search="+search+"",function(data, status){
-                $('#contenedor_resultado').html(data);
+    $.post("../../controller/usuario.php?op=getUsuariosBusqueda&search="+search+"",function(data, status){
+        contenedor.html(data);
+    });
+}
+
+const cargarAllUsers = ()=>{
+    const contenedor = $('#contenedor_resultado');
+    contenedor.html(Spinner);
+
+    setTimeout(() => {
+        $.post("../../controller/usuario.php?op=getAllUsuarios",function(data, status){
+            contenedor.html(data);
         });
+    }, 1000);
 }
 
 $(document).ready(function() {
+    cargarAllUsers();
+
     $('#search_usuario').on('keyup', function(){
         let search = $('#search_usuario').val();
-        cargarUser(search);
+        cargarUserBusqueda(search);
     });
-
-    
 });
 
 function deleteUser(documento, user_active = $('#user-active').val()){
@@ -23,7 +37,6 @@ function deleteUser(documento, user_active = $('#user-active').val()){
         confirmButtonText: `Eliminar`,
         cancelButtonText: `Cancelar`,
       }).then((result) => {
-        // Read more about isConfirmed, isDenied below
         if (result.isConfirmed) {
             $.post("../../controller/usuario.php?op=delete&documento="+documento+"&user_active="+user_active,function(data, status){
                 console.log(data);

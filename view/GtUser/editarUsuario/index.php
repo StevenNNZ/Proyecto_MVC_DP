@@ -1,11 +1,13 @@
+<?php 
+    require_once("../../../config/conexion.php"); 
+    require_once("../../../controller/validate_session.php");
+    require_once("../../controller/validate_admin.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
-    
-	<?php 
-        require_once("../../../config/conexion.php"); 
-        require_once("../../mainHead/headSub.php") 
-    ?>
-    <title>Editando...</title>
+    <?php require_once("../../mainHead/headSub.php"); ?>
+    <title>Editando usuario...</title>
 </head>
 <body>
     <?php

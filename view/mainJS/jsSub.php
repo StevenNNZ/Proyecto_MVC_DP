@@ -12,7 +12,5 @@
     <!-- Script alertas confirmación -->
     <script src="../../../public/js/confirm_window.js"></script>
 
-    
-
-    <!-- Script control busqueda reporte de ventas -->
-    <!-- <script type="text/javascript" src="../ReporteVenta/reportes_ventas.js"></script> -->
+    <!-- Script spinner -->
+    <script src="../../../public/js/spinner.js"></script>

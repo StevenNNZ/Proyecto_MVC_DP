@@ -134,18 +134,19 @@ margin-left: 5.2%;
 .contenedor_opciones
 {
 	margin: 0 auto;
+	margin-top: 100px;
 	width: 80%;
 	height: 100%;
 }
 
 /* Estilos ul opciones */
 .contenedor_opciones ul {
-	margin: 10% auto;	
+	margin: 50px auto;	
 	list-style: none;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-
+	margin-bottom: 237px;
 }
 
 /* Estilos li, opciones */

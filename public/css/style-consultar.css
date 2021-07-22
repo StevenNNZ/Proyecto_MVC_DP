@@ -159,6 +159,14 @@
     background: #fff;
 }
 
+.datos_fecha{
+    display: inline;
+}
+
+.barra-busqueda__button{
+    display: inline;
+}
+
 .ultMovBtn{
     margin-left: 0;
     box-shadow: none; 
@@ -187,7 +195,7 @@
 .contenedor-table__table{
     margin: 0px auto;
     border-collapse: collapse;
-    width: 95%;
+    width: 1250px;
     height: 50px;
 }
 

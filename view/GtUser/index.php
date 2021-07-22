@@ -1,10 +1,12 @@
+<?php 
+    require_once("../../config/conexion.php"); 
+    require_once("../../controller/validate_session.php");
+    require_once("../../controller/validate_admin.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
-    
-	<?php 
-        require_once("../../config/conexion.php"); 
-        require_once("../mainHead/head.php") 
-    ?>
+    <?php require_once("../mainHead/head.php") ?>
     <title>Gestionar usuarios</title>
 </head>
 <body>
@@ -22,7 +24,7 @@
                 <input class="contenedor-main_barra-busqueda__search_texto" type="text" id="search_usuario" name="search_usuario" placeholder="Buscar un usuario...">
             </div>
             <div class="contenedor_table_principal">
-                <div id="contenedor_resultado" class="table-responsive">
+                <div id="contenedor_resultado">
                     
                 </div>
             </div>

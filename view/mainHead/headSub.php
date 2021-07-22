@@ -39,4 +39,7 @@
 	<!-- íconos fontawesome -->
 	<link rel="stylesheet" href="../../../public/css/lib/fontawesome/all.min.css">
 
+	<!-- CSS spinner -->
+	<link rel="stylesheet" href="../../../public/css/style-spinner.css">
+
 

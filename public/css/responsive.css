@@ -11,6 +11,12 @@
 	}
 }
 
+@media screen and (max-width:1647px){
+	.contenedor-main_barra-busqueda {
+		width: 86%;
+	}
+}
+
 @media screen and (max-width:1620px){
 	.contenido-cliente .input-contenedor {
 		width: 48%;
@@ -25,15 +31,32 @@
 	}
 }
 
+@media screen and (max-width: 1606px){
+	.table-responsive {
+        width: 100%;
+        margin-bottom: 15px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid #ddd;
+    }
+
+    .table-responsive > .table {
+        margin-bottom: 0;
+    }
+    .table-responsive > .table > thead > tr > th,
+    .table-responsive > .table > tbody > tr > th,
+    .table-responsive > .table > tfoot > tr > th,
+    .table-responsive > .table > thead > tr > td,
+    .table-responsive > .table > tbody > tr > td,
+    .table-responsive > .table > tfoot > tr > td {
+        white-space: nowrap;
+    }
+}
+
 @media screen and (max-width:1590px){
 	.input_registrar{
 		width: 75%;
 	}
-
-	/* .header-dashboard__label--img {
-		margin-top: -70px;
-		margin-left: 85px;
-	} */
 
 	.icon_usuario{
 		margin-left: -5%;
@@ -44,6 +67,10 @@
 		margin: 0 auto;
 		margin-top: -166px;
 		margin-right: -50px;
+	}
+
+	.tabla_reporte-ventas th:last-child{
+		width: 150px;
 	}
 }
 
@@ -59,17 +86,14 @@
 	.content-left {
 		margin-right: 0px;
 	}
+
+	
 }
 
 @media screen and (max-width:1320px){
 	.input_registrar{
 		width: 72%;
 	}
-
-	/* .header-dashboard__label--img{
-		margin-top: -6.3%;
-		margin-left: 7.2%;
-	} */
 
 	.content-left {
 		margin-right: 110px;
@@ -116,21 +140,6 @@
 		display: inline-block;
 		margin-left: 10px;
 	}
-
-	/* .content-left{
-		margin: -10px auto;
-	}
-	.content-right{
-		margin: auto;
-	} */
-
-	/* .formulario{
-	  margin: auto;
-	  width: 400px;
-	  margin-top: 100px;
-	  border-radius: 2%;
-	  
-	} */
   
 	.controls{
 	  width: 80%;
@@ -139,25 +148,14 @@
 	  background: none;
 	}
 
-	/* .container__logo_principal{
-		width: 400px;
-	} */
-
-	/* .footer_index{
-		height: 10%;
-	} */
-
-	/* .content-left h1, .content-left h2{
-		font-size: 65px;
-	} */
-
-	/* .Tittle-admin {
-		width: 22%;
+	.contenedor-main_barra-busqueda__label-busqueda {
+		padding-right: 18px;
+		margin-right: 20px;
 	}
 
-	.Tittle-admin:hover{
-		width: 23%;
-	} */
+	.contenedor-main_barra-busqueda__button {
+		margin-left: 17px;
+	}
 }
 
 @media screen and (max-width:1130px){
@@ -206,9 +204,6 @@
 		padding-top: 4px;
 	}
 
-
-	/* ? */
-
 	.contenido-vehiculo {
 		display: block;
 	}
@@ -223,8 +218,6 @@
 		margin-top: 0px;
 		margin-left: 0px;
 	}
-
-
 
 	.input_registrar{
 		width: 85%;
@@ -265,28 +258,8 @@
 		margin-left: -6.5%;
 		font-size: 47px;
 	}
-}
 
-@media screen and (max-width: 1043px){
-	.table-responsive {
-        width: 100%;
-        margin-bottom: 15px;
-        overflow-y: hidden;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
-        border: 1px solid #ddd;
-    }
-
-    .table-responsive > .table {
-        margin-bottom: 0;
-    }
-    .table-responsive > .table > thead > tr > th,
-    .table-responsive > .table > tbody > tr > th,
-    .table-responsive > .table > tfoot > tr > th,
-    .table-responsive > .table > thead > tr > td,
-    .table-responsive > .table > tbody > tr > td,
-    .table-responsive > .table > tfoot > tr > td {
-        white-space: nowrap;
-    }
+	
 }
 
 @media screen and (max-width: 1030px){
@@ -354,6 +327,41 @@
 	.Tittle-admin:hover{
 		width: 31%;
 	}
+
+	.contenedor-main_barra-busqueda {
+		width: 60%;
+	}
+
+	.contenedor-main_barra-busqueda__label-busqueda {
+		display: block;
+		width: 100%;
+	}
+
+	.contenedor-main_barra-busqueda__label-busqueda {
+		font-size: 29px;
+		padding-right: none;
+		margin-right: auto;
+		border-right: none;
+		border-bottom: 3px solid #fff;
+		padding-bottom: 14px;
+		margin-bottom: 10px;
+	}
+
+	.contenedor-main_barra-busqueda__button {
+		display: block;
+		/* margin: 5px 342px; */
+	}
+
+	.barra-busqueda__button {
+		display: flex;
+		margin: 7px auto;
+		justify-content: center;
+	}
+
+	.datos_fecha {
+		display: block;
+		margin: 21px 0px;
+	}
 	
 }
 
@@ -378,6 +386,18 @@
 
 	.Tittle-admin:hover{
 		width: 41%;
+	}
+
+	.contenedor-main_barra-busqueda__label {
+		display: block;
+		margin-top: 7px;
+	}
+
+	.datos_fecha input[type="date"] {
+		padding: 6px;
+		width: 70%;
+		text-align: center;
+		margin-top: 3px;
 	}
 }
 
@@ -446,6 +466,10 @@
     #dato_faltante{
         margin-top:30px;
     }
+
+	.contenedor-main_barra-busqueda_usuario {
+		width: 90%;
+	}
 }
 
 @media screen and (max-width: 634px){
@@ -528,6 +552,16 @@
 
 	.footer-contenedor label {
 		font-size: 18px;
+	}
+
+	.contenedor__consultas__cuerpo {
+		margin: 10px auto;
+			margin-bottom: 10px;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: 60px;
 	}
 }
 

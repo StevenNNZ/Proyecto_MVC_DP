@@ -1,7 +1,8 @@
 <?php 
 	require_once("../../config/conexion.php");
-	if (isset($_SESSION['documento'])){
+	require_once("../../controller/validate_session.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 	<?php require_once("../mainHead/head.php") ?>
@@ -76,9 +77,3 @@
 	<script src="rate.js"></script>
 </body>
 </html>
-
-<?php 
-	}else{
-		header("location:".Conectar::ruta()."index.php");
-	}
-?>

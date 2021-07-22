@@ -1,7 +1,12 @@
 function cargarBahia(){
-    $.post("../../controller/bahia.php?op=getBahiasActivas",function(data, status){
-        $('#contenedor_resultado').html(data);
-    })
+    const contenedor = $('#contenedor_resultado');
+    contenedor.html(Spinner);
+
+    setTimeout(() => {
+        $.post("../../controller/bahia.php?op=getBahiasActivas",function(data, status){
+            contenedor.html(data);
+        })
+    }, 1700);
 }
 
 $(document).ready(function() {

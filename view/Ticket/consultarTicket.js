@@ -1,13 +1,23 @@
+const contenedor = $('#contenedor_resultado');
+
 function cargarTicketEntrada(){
-    $.post("../../controller/ticket.php?op=listar_ticketE",function(data, status){
-        $('#contenedor_resultado').html(data);
-    })
+    contenedor.html(Spinner);   
+
+    setTimeout(() => {
+        $.post("../../controller/ticket.php?op=listar_ticketE",function(data, status){
+            contenedor.html(data);
+        })
+    }, 1000);
 }
 
 function cargarTicketSalida(){
-    $.post("../../controller/ticket.php?op=listar_ticketS",function(data, status){
-        $('#contenedor_resultado').html(data);
-    })
+    contenedor.html(Spinner);
+
+    setTimeout(() => {
+        $.post("../../controller/ticket.php?op=listar_ticketS",function(data, status){
+            contenedor.html(data);
+        })
+    }, 1000);
 }
 
 $(document).ready(function() {

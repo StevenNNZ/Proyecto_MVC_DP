@@ -1,9 +1,11 @@
+<?php 
+    require_once("../../../config/conexion.php");
+    require_once("../../../controller/validate_session.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
-    <?php 
-	    require_once("../../../config/conexion.php");
-        require_once("../../mainHead/headSub.php");
-    ?>
+    <?php require_once("../../mainHead/headSub.php");?>
     <title>Ingresar Bahía</title>
 </head>
 <body>

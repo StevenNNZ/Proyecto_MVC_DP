@@ -1,7 +1,18 @@
 <?php 
     class Usuario extends Conectar{
 
-        //Traer usuarios
+        //Traer todos los usuarios
+        public function getAllUsers(){
+            $conectar = parent::Conexion();
+
+            $sql="SELECT * FROM usuarios WHERE est=1 ";
+            $sql=$conectar->prepare($sql);
+            $sql->execute();
+
+            return $resultado=$sql->fetchAll();
+        }
+
+        //Traer usuarios por búsqueda
         public function getUsers($search){
             $conectar = parent::Conexion();
 
@@ -31,6 +42,7 @@
             return $resultado=$sql->fetchAll();
         }
 
+        //Traer usuario por documento
         public function getUser_x_id($documento){
             $conectar = parent::Conexion();
 
@@ -42,6 +54,7 @@
             return $resultado=$sql->fetchAll();
         }
 
+        //Activar un usuario
         public function activarUser($documento, $id_usuario){
             $conectar = parent::Conexion();
             parent::set_names();
@@ -59,7 +72,8 @@
 
             return $resultado=$sql->fetchAll();
         }
-
+        
+        //Desactivar un usuartio
         public function desactivarUser($documento, $id_usuario){
             $conectar = parent::Conexion();
             parent::set_names();
@@ -77,6 +91,7 @@
             return $resultado=$sql->fetchAll();
         }
 
+        //Actualizar un usuario
         public function updateUser($id, $nombre, $apellido, $email, $cargo, $contrasena, $id_usuario){
             $conectar = parent::Conexion();
             parent::set_names();    
@@ -103,6 +118,7 @@
             return $resultado=$sql->fetchAll();
         }
         
+        //Validar usuario para iniciar sesión
         public function login(){
             $conectar = parent::conexion();
             parent::set_names();
@@ -147,6 +163,7 @@
             }
         }
 
+        //Ingresar un usuario
         public function insertUser($documento, $nombre, $apellido, $email, $cargo, $password){
             $conectar = parent::Conexion();
             parent::set_names();
@@ -183,7 +200,6 @@
              return $resultado;
         }
 
-
         //Insertar movimientos
         public function insertMovimiento($id_usuario, $descripcion_mov){
             $conectar = parent::Conexion();
@@ -198,11 +214,11 @@
         }
 
         //Traer los últimos movimientos
-        public function getMovimientos($search){
+        public function getMovimientos($documento){
             $conectar = parent::Conexion();
             parent::set_names();
 
-            $sql="SELECT mov_id, documento, mov_user, CONCAT(nombre,' ',apellido) AS nombres, mov_descrip, mov_fecha FROM user_movimientos, usuarios WHERE mov_user=documento AND mov_user = $search ORDER BY user_movimientos.mov_fecha DESC LIMIT 20";
+            $sql="SELECT mov_id, documento, mov_user, CONCAT(nombre,' ',apellido) AS nombres, mov_descrip, mov_fecha FROM user_movimientos, usuarios WHERE mov_user=documento AND mov_user = $documento ORDER BY user_movimientos.mov_fecha DESC LIMIT 20";
             $sql=$conectar->prepare($sql);
             $sql->execute();
 

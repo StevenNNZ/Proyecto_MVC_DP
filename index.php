@@ -89,7 +89,7 @@
                                                         <i class='fas fa-bell'></i>
                                                     </div>
                                                     <div class='alert--content'>
-                                                        Su usuario no se encuentra activado. Por favor comuníquese con un administrador.
+                                                        Su usuario no se encuentra activado. <br>Por favor comuníquese con un administrador.
                                                     </div>
                                                     <div class='alert--close'>
                                                         <i class='far fa-times-circle'></i>

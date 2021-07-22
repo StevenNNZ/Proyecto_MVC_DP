@@ -1,7 +1,9 @@
 <?php 
 	require_once("../../config/conexion.php");
-	if (isset($_SESSION['documento'])){
+	require_once("../../controller/validate_session.php");
+	require_once("../../controller/validate_admin.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 	<?php require_once("../mainHead/head.php") ?>
@@ -16,7 +18,7 @@
                 <a href="../home/"><i class="fas fa-arrow-alt-circle-left"></i> Interfaz cajero</a>
         </h1>
 	<main>
-		<div class='alert alert_info alert_sm' id='contenedor-alerta-reportes_venta' style='animation-delay: .2s;margin:0 auto;'>
+		<div class='alert alert_info alert_sm' id='contenedor-alerta-reportes_venta' style='animation-delay: .2s;margin:0 auto; width:60%'>
 			<div class='alert--icon'>
 				<i class='fas fa-bell'></i>
 			</div>
@@ -50,9 +52,3 @@
     <?php require_once("../mainJS/js.php") ?>
 </body>
 </html>
-
-<?php 
-	}else{
-		header("location:".Conectar::ruta()."index.php");
-	}
-?>

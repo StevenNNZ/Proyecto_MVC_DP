@@ -1,10 +1,11 @@
+<?php 
+    require_once("../../config/conexion.php");
+    require_once("../../controller/validate_session.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
-    <?php 
-	    require_once("../../config/conexion.php");
-        require_once("../mainHead/head.php");
-    ?>
-    <title>Consulta tickets</title>
+    <?php require_once("../mainHead/head.php"); ?>
+    <title>Listado tickets</title>
 </head>
 <body>
     <?php require_once("../mainHeader/header.php") ?>

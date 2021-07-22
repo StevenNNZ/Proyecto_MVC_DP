@@ -3,7 +3,7 @@
     class Vehiculo extends Conectar{
         
          //Validar vehículos registrados
-         public function validateVehiculo($placa){
+        public function validateVehiculo($placa){
             $conectar = parent::Conexion();
             //Consulta vehículo existente
             $sql="SELECT Placa FROM vehiculos WHERE Placa =?";
@@ -54,12 +54,12 @@
         }
 
         /* Traer vehículo por id */
-        public function getVehiculo_x_id($documento){
+        public function getVehiculo_x_id($placa){
             $conectar = parent::Conexion();
 
             $sql="SELECT * FROM vehiculos WHERE Placa = ?";
             $sql=$conectar->prepare($sql);
-            $sql->bindValue(1, $documento);
+            $sql->bindValue(1, $placa);
             $sql->execute();
 
             return $resultado=$sql->fetchAll();
