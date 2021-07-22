@@ -21,7 +21,7 @@
 
         //ruta raiz del sistema
         public function ruta(){
-            return "http://localhost/proyecto_MVC_DP/";
+            return "http://localhost/Digital-parking/";
         }
     }
 ?>
